@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+---
+
+<Layout 
+  title="Events & Parties | Burgas 2027 Eurovision" 
+  description="Discover the EuroVillage interactive map, official afterparties, and the complete guide to the Arena Burgas bag policy and capacity."
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Event & Parties Guide</h1>
+    <p class="lead">The official schedule, secret club nights, and everything you need to know about getting into the Arena.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <section class="glass-panel mb-4">
+          <h2>🎶 EuroVillage Interactive Guide</h2>
+          <p>The EuroVillage will be located in the Sea Garden (Морска градина), stretching along the coast. Expect daily live performances, food trucks, and sponsor activations.</p>
+        </section>
+
+        <section class="glass-panel mb-4" id="bag-policy">
+          <h2>🎒 Arena Burgas Eurovision Capacity & Bag Policy</h2>
+          <p>If you scored a ticket, read this carefully to avoid being turned away at the gates.</p>
+          <ul>
+            <li><strong>Capacity:</strong> Arena Burgas will host approximately 10,000 fans per show (Family Show, Jury Show, and Live Broadcasts).</li>
+            <li><strong>Bag Policy:</strong> Strictly enforced. Only clear bags or small clutches (max A5 size) are permitted. Backpacks will NOT be allowed inside the security perimeter.</li>
+            <li><strong>Flags:</strong> Only flags of participating countries and the Pride flag are allowed. No sticks.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4">
+          <h2>🪩 Afterparties & Nightlife</h2>
+          <p>Burgas has a vibrant club scene. During the Eurovision week, the main hotspots will be the beach bars along the central promenade.</p>
+          <div class="insider-note">
+            <strong>Insider Note:</strong> Subscribe to our Telegram channel to get secret links for private yacht parties departing from the Port of Burgas.
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Secure Your Tickets</h3>
+          <p>Check official resale partners and secure your entrance to the biggest side-events.</p>
+          <AffiliateButton text="Browse Events" href="#" provider="generic" />
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 16px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .insider-note {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+import ZoneMap from '../components/ZoneMap.astro';
+---
+
+<Layout 
+  title="Where to Stay in Burgas 2027 | Arena Accommodation & Hotels" 
+  description="Discover the best places to stay for Eurovision 2027 in Burgas. From arena walking-distance hotels to coastal shuttle towns like Pomorie and Sozopol."
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Burgas 2027 Accommodation Hub</h1>
+    <p class="lead">Where to stay during the biggest event of the year? We break down the map so you don't end up stranded.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <ZoneMap />
+
+        <section class="glass-panel mb-4">
+          <h2>📍 Area 1: Arena Burgas Walking Distance</h2>
+          <p>The premium choice for hardcore fans looking for <strong>hotels walking distance to arena burgas</strong>. Prices will be highest here, but you'll save hours on late-night transit after the Grand Final.</p>
+          <div class="insider-note">
+            <strong>Insider Note:</strong> Look for apartments in the <em>Izgrev</em> and <em>Zornitsa</em> neighborhoods. They are directly adjacent to the Arena.
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4">
+          <h2>🏖️ Area 2: Sea Garden & City Center</h2>
+          <p>Perfect if you want to combine Eurovision with a beach holiday. You'll need a 15-minute taxi or bus ride to the Arena, but you get direct access to the EuroVillage, clubs, and the best seafood restaurants.</p>
+        </section>
+
+        <section class="glass-panel">
+          <h2>🚐 Area 3: Coastal Alternatives</h2>
+          <p>Towns like <strong>Pomorie, Sarafovo, and Nessebar</strong> offer cheaper rates and beautiful sea views. However, you MUST arrange a reliable transfer back after midnight.</p>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Secure Your Stay</h3>
+          <p>Availability is dropping rapidly. Check real-time prices now:</p>
+          <AffiliateButton text="Search Booking.com" href="#" provider="booking" />
+          
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+          
+          <h4>Want the Secret List?</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">We are negotiating direct rates with local apartment owners. Subscribe to get the drop.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed!');" style="display:flex; gap:8px;">
+            <input type="email" placeholder="Your email" required style="width:100%; padding:8px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(0,0,0,0.5); color:#fff;" />
+            <button type="submit" class="btn btn-primary" style="padding:8px 12px; font-size:0.8rem;">Join</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .insider-note {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

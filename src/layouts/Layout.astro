@@ -1,0 +1,210 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    
+    <!-- GTranslate -->
+    <script type="text/javascript">
+      window.gtranslateSettings = {"default_language":"en","native_language_names":true,"languages":["en","bg","ru","tr","de","fr","it","es"],"wrapper_selector":".gtranslate_wrapper"};
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+    
+    <!-- Travelpayouts Drive Script -->
+    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+      (function () {
+          var script = document.createElement("script");
+          script.async = 1;
+          script.setAttribute("data-cmp-ab","2");
+          script.src = 'https://emrldtp.cc/NTYzNjAw.js?t=563600';
+          document.head.appendChild(script);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header glass-panel">
+      <div class="container">
+        <a href="/" class="logo">
+          <span class="text-gradient">Burgas 2027</span> Guide
+        </a>
+        <nav class="main-nav">
+          <a href="/where-to-stay">Stay & Zones</a>
+          <a href="/transfers">Transport</a>
+          <a href="/events-and-parties">Events</a>
+          <a href="/black-sea-experience">Experience</a>
+        </nav>
+        <div class="gtranslate_wrapper"></div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="disclaimer">
+            <div class="about-copy">
+              <h4>The Local Insider Team</h4>
+              <p>Burgas 2027 Guide is an independent event and travel portal created by a team of local Black Sea residents and logistics specialists. We cut through the noise to bring international fans, travelers, and delegations verified lodging picks, stress-free transit playbooks, and genuine coastal recommendations.</p>
+            </div>
+            <p style="margin-top: 16px;">
+              <em>Disclaimer: burgas2027guide.com is an independent fan travel portal and is not affiliated with, endorsed by, or connected to the European Broadcasting Union (EBU), Bulgarian National Television (BNT), or the official Eurovision Song Contest.</em>
+            </p>
+          </div>
+          <div class="b2b-links">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer">Join RU Telegram</a></li>
+              <li style="margin-top: 16px;"><a href="#" class="discreet-b2b-link">Own property in Burgas? List with us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        padding: 16px 0;
+      }
+      
+      .site-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .main-nav a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .gtranslate_wrapper {
+        min-width: 120px;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      .site-footer {
+        margin-top: 64px;
+        padding: 48px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+      }
+
+      .disclaimer {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      .about-copy {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px dashed var(--glass-border);
+      }
+
+      .about-copy h4 {
+        color: var(--accent-amber);
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .about-copy p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--text-main);
+      }
+
+      .b2b-links h4 {
+        margin-bottom: 16px;
+        color: var(--accent-magenta);
+      }
+
+      .b2b-links ul {
+        list-style: none;
+      }
+
+      .b2b-links li {
+        margin-bottom: 8px;
+      }
+
+      .discreet-b2b-link {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        text-transform: none;
+        opacity: 0.7;
+      }
+
+      .discreet-b2b-link:hover {
+        opacity: 1;
+        color: var(--accent-amber);
+        text-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .main-nav {
+          display: none; /* Mobile menu should be implemented later */
+        }
+      }
+    </style>
+  </body>
+</html>

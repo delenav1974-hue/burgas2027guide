@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+import PlaceCard from '../components/PlaceCard.astro';
+---
+
+<Layout 
+  title="Black Sea Experience | Day Trips & Food in Burgas 2027" 
+  description="Explore beyond the Arena. The best day trips, seafood restaurants, and coastal experiences around Burgas during Eurovision."
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">The Black Sea Experience</h1>
+    <p class="lead">Turn your Eurovision trip into a proper coastal holiday. Discover historic towns, healing mud baths, and top-tier seafood.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <section class="glass-panel mb-4">
+          <h2>🏰 Day Trip: Old Nessebar</h2>
+          <p>A UNESCO World Heritage site located just 40 minutes north of Burgas. Walk through ancient ruins and dine on the peninsula overlooking the sea.</p>
+        </section>
+
+        <section class="glass-panel mb-4">
+          <h2>🧂 Wellness: Burgas Salt Pans (Pink Lakes)</h2>
+          <p>A unique local experience. Float in the hyper-saline pink pools and cover yourself in healing black mud—all just a short bike ride from the Sea Garden.</p>
+        </section>
+
+        <section class="glass-panel mb-4">
+          <h2>🍷 Local Gastronomy: Top 3 Seafood Spots</h2>
+          <p>Bulgarian coastal cuisine relies heavily on fresh Black Sea fish (Tsatsa), mussels, and incredible local wines. We strictly follow the "Rule of 3" — here are the only spots you need to know.</p>
+          
+          <div style="margin-top: 24px;">
+            <PlaceCard 
+              nameEn="Dalyana"
+              nameBg="Даляна"
+              priceTier="€€"
+              highlight="Fresh Black Sea mussels and fried Tsatsa."
+              insiderNote="Located right on the fishing port. Very authentic, slightly chaotic, absolutely delicious. Perfect for a sunset beer."
+              googleMapsUrl="https://maps.google.com"
+            />
+            
+            <PlaceCard 
+              nameEn="Neptun"
+              nameBg="Нептун"
+              priceTier="€€€"
+              highlight="Premium Mediterranean and Black Sea catch."
+              insiderNote="Located centrally in the Sea Garden. Book in advance. English speaking staff and great wine list."
+              googleMapsUrl="https://maps.google.com"
+            />
+
+            <PlaceCard 
+              nameEn="Zlatna Ribka"
+              nameBg="Златна Рибка"
+              priceTier="€€"
+              highlight="Traditional fish soup and grilled sea bass."
+              insiderNote="A local favorite outside the main tourist traps. They take cards, but tip in cash if possible."
+              googleMapsUrl="https://maps.google.com"
+            />
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Book Local Tours</h3>
+          <p>Skip the planning. Join guided tours to Nessebar, Sozopol, or wine tasting trips.</p>
+          <AffiliateButton text="Explore on GetYourGuide" href="#" provider="getyourguide" />
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .insider-note {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

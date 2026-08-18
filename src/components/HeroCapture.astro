@@ -1,0 +1,151 @@
+---
+interface Props {
+  headline: string;
+  subheadline: string;
+}
+
+const { headline, subheadline } = Astro.props;
+---
+
+<section class="hero-capture">
+  <div class="hero-content">
+    <h1 class="text-gradient">{headline}</h1>
+    <p class="subheadline">{subheadline}</p>
+    
+    <div class="capture-box glass-panel">
+      <h3>Join the Secret Waitlist</h3>
+      <p>Get notified instantly on ticket sales & access our secret accommodation list before the crowds.</p>
+      
+      <form class="capture-form" onsubmit="event.preventDefault(); alert('Subscribed! (Webhook integration pending)');">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit" class="btn btn-primary">Get Early Access</button>
+      </form>
+      <div class="spam-notice">We respect your privacy. No spam.</div>
+      
+      <div class="telegram-banner">
+        <p>🇷🇺 🇧🇬 Русскоязычный? Узнай о билетах первым!</p>
+        <a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+          Присоединиться к Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-capture {
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Optional background effect */
+  .hero-capture::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,122,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .subheadline {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .capture-box {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+
+  .capture-box h3 {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+  }
+
+  .capture-box p {
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+
+  .capture-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .capture-form input {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .capture-form input:focus {
+    border-color: var(--accent-cyan);
+  }
+
+  .spam-notice {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .telegram-banner {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--glass-border);
+  }
+
+  .telegram-banner p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+  }
+
+  .btn-telegram {
+    background: #0088cc;
+    color: white;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .btn-telegram:hover {
+    background: #0077b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

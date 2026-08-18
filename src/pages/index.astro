@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroCapture from '../components/HeroCapture.astro';
+import CountdownBanner from '../components/CountdownBanner.astro';
+import OccupancyMeter from '../components/OccupancyMeter.astro';
+import TransitCalculator from '../components/TransitCalculator.astro';
+
+const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
+---
+
+<Layout 
+  title="Burgas 2027 Guide | The Ultimate Eurovision Fan Portal" 
+  description="Independent guide for Burgas 2027. Find the best arena accommodation, airport transfers, and secret local spots for the Eurovision Song Contest."
+>
+  <div class="container">
+    <HeroCapture 
+      headline="Your Ultimate Guide to Burgas 2027"
+      subheadline="The independent local playbook for surviving and thriving during the biggest music event on the Black Sea coast."
+    />
+
+    <CountdownBanner targetDate={targetDate} />
+
+    <section class="features">
+      <div class="feature-card glass-panel">
+        <h3>📍 Where to Stay</h3>
+        <p>Avoid the tourist traps. We map out the best <strong>hotels walking distance to arena burgas</strong> and coastal shuttle towns.</p>
+        <OccupancyMeter percentage={82} />
+        <a href="/where-to-stay" class="btn btn-primary" style="margin-top:16px;">View Lodging Guide</a>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <h3>🚕 Transit & Logistics</h3>
+        <p>Master your commute. From <strong>bus from istanbul new airport to burgas timetable</strong> to official night shuttles.</p>
+        <TransitCalculator />
+        <a href="/transfers" class="btn btn-primary" style="margin-top:16px;">View Transit Hub</a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin: 64px 0;
+  }
+
+  .feature-card h3 {
+    color: var(--accent-amber);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    font-size: 1.05rem;
+  }
+</style>

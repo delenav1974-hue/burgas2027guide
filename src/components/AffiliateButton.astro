@@ -1,0 +1,26 @@
+---
+import { getAffiliateLink } from '../config/affiliates';
+
+interface Props {
+  href?: string;
+  text: string;
+  provider?: 'booking' | 'kiwitaxi' | 'discovercars' | 'airalo' | 'getyourguide' | 'generic';
+}
+
+const { href, text, provider = 'generic' } = Astro.props;
+
+// Automatically generate tracking link if provider is recognized
+const finalHref = provider !== 'generic' ? getAffiliateLink(provider, href) : (href || '#');
+---
+
+<a href={finalHref} class="btn btn-primary affiliate-btn" data-provider={provider} target="_blank" rel="noopener noreferrer">
+  {text}
+</a>
+
+<style>
+  .affiliate-btn {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 1.1rem;
+  }
+</style>

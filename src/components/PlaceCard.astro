@@ -1,0 +1,140 @@
+---
+interface Props {
+  nameEn: string;
+  nameBg?: string;
+  priceTier: '€' | '€€' | '€€€';
+  highlight: string;
+  insiderNote: string;
+  googleMapsUrl?: string;
+  instagramUrl?: string;
+}
+
+const { 
+  nameEn, 
+  nameBg, 
+  priceTier, 
+  highlight, 
+  insiderNote,
+  googleMapsUrl = '#',
+  instagramUrl = '#'
+} = Astro.props;
+---
+
+<div class="place-card glass-panel">
+  <div class="card-header">
+    <div class="venue-names">
+      <h4>{nameEn}</h4>
+      {nameBg && <span class="bg-name">{nameBg}</span>}
+    </div>
+    <span class="price-tier">{priceTier}</span>
+  </div>
+
+  <div class="highlight">
+    <span class="highlight-badge">Signature</span> {highlight}
+  </div>
+
+  <div class="insider-note-compact">
+    <strong>Tested by Our Team:</strong> {insiderNote}
+  </div>
+
+  <div class="card-actions">
+    <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" class="micro-link">
+      📍 Google Maps
+    </a>
+    <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="micro-link">
+      📸 Instagram
+    </a>
+  </div>
+</div>
+
+<style>
+  .place-card {
+    padding: 20px;
+    margin-bottom: 24px;
+    border-left: 3px solid var(--accent-cyan);
+    transition: transform 0.2s ease;
+  }
+
+  .place-card:hover {
+    transform: translateX(4px);
+    border-left-color: var(--accent-magenta);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .venue-names h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-main);
+  }
+
+  .bg-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .price-tier {
+    font-weight: 700;
+    color: var(--accent-amber);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .highlight {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    color: var(--text-main);
+  }
+
+  .highlight-badge {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent-cyan);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-right: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+  }
+
+  .insider-note-compact {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+  .insider-note-compact strong {
+    color: var(--accent-amber);
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 16px;
+    border-top: 1px dashed var(--glass-border);
+    padding-top: 12px;
+  }
+
+  .micro-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+
+  .micro-link:hover {
+    color: var(--text-main);
+    text-shadow: none;
+  }
+</style>

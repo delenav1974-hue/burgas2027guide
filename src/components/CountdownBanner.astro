@@ -1,0 +1,131 @@
+---
+interface Props {
+  targetDate: string; // ISO string, e.g. '2027-05-15T20:00:00+03:00'
+}
+
+const { targetDate } = Astro.props;
+---
+
+<div class="countdown-banner glass-panel">
+  <div class="countdown-content">
+    <h2>The Grand Final in Burgas Arena begins in:</h2>
+    <div class="timer" id="countdown-timer" data-target={targetDate}>
+      <div class="time-block">
+        <span class="number" id="cd-days">00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="separator">:</div>
+      <div class="time-block">
+        <span class="number" id="cd-hours">00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="separator">:</div>
+      <div class="time-block">
+        <span class="number" id="cd-minutes">00</span>
+        <span class="label">Min</span>
+      </div>
+      <div class="separator">:</div>
+      <div class="time-block">
+        <span class="number" id="cd-seconds">00</span>
+        <span class="label">Sec</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .countdown-banner {
+    margin: 40px 0;
+    text-align: center;
+    border: 1px solid var(--accent-magenta);
+    box-shadow: 0 0 20px rgba(255, 0, 122, 0.1);
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 24px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .time-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 80px;
+  }
+
+  .number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-main);
+  }
+
+  .label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  .separator {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    margin-top: -24px;
+  }
+
+  @media (max-width: 600px) {
+    .number { font-size: 2.5rem; }
+    .time-block { min-width: 60px; }
+    .separator { font-size: 2rem; margin-top: -20px; }
+    .timer { gap: 8px; }
+  }
+</style>
+
+<script>
+  function updateCountdown() {
+    const timerElement = document.getElementById('countdown-timer');
+    if (!timerElement) return;
+
+    const target = new Date(timerElement.dataset.target || '').getTime();
+    
+    function tick() {
+      const now = new Date().getTime();
+      const distance = target - now;
+
+      if (distance < 0) {
+        timerElement.innerHTML = "<h2>The Event Has Started!</h2>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days')!.innerText = String(days).padStart(2, '0');
+      document.getElementById('cd-hours')!.innerText = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes')!.innerText = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds')!.innerText = String(seconds).padStart(2, '0');
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // Run on initial load
+  updateCountdown();
+  // Run on client-side navigation (if Astro ViewTransitions are added later)
+  document.addEventListener('astro:page-load', updateCountdown);
+</script>

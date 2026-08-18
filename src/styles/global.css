@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Theme Tokens from Specification */
+  --bg-primary:      #0B0F19; /* Deep Stage Black / Midnight Sea */
+  --bg-surface:      #161D2F; /* Frosted Glass Container Background */
+  --accent-cyan:     #00F0FF; /* Turquoise Carpet / Primary Action */
+  --accent-magenta:  #FF007A; /* Stage Spotlight / Energy Pink */
+  --accent-amber:    #FFB800; /* Sunset Gold / Action Highlight */
+  --text-main:       #FFFFFF; /* High-contrast headers */
+  --text-muted:      #94A3B8; /* Slate gray for secondary copy */
+  --glass-border:    rgba(255, 255, 255, 0.08);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+  --gradient-glow: linear-gradient(90deg, rgba(0, 240, 255, 0.15), rgba(255, 0, 122, 0.15));
+
+  /* Layout / Sizes */
+  --max-width: 1200px;
+  --container-padding: 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-family: 'Outfit', system-ui, sans-serif;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background-color: rgba(22, 29, 47, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Base Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 0, 122, 0.3);
+  text-shadow: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

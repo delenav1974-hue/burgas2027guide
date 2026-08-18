@@ -1,0 +1,172 @@
+---
+---
+
+<div class="transit-calculator glass-panel">
+  <h3>Transit Calculator</h3>
+  <p>Plan your journey to Arena Burgas</p>
+  
+  <div class="calculator-form">
+    <label for="airport-select">Arriving at Airport:</label>
+    <select id="airport-select">
+      <option value="" disabled selected>Select an airport...</option>
+      <option value="boj">Burgas Airport (BOJ)</option>
+      <option value="var">Varna Airport (VAR)</option>
+      <option value="ist">Istanbul Airport (IST / SAW)</option>
+      <option value="sof">Sofia Airport (SOF)</option>
+    </select>
+  </div>
+
+  <div id="calculator-result" class="result-box hidden">
+    <div class="result-row">
+      <span class="label">Est. Time:</span>
+      <span class="value" id="res-time">--</span>
+    </div>
+    <div class="result-row">
+      <span class="label">Avg. Cost:</span>
+      <span class="value" id="res-cost">--</span>
+    </div>
+    <div class="result-recommendation" id="res-rec">
+      --
+    </div>
+    <a href="#" class="btn btn-primary" id="res-link">Book Now</a>
+  </div>
+</div>
+
+<style>
+  .transit-calculator {
+    border: 1px solid var(--accent-cyan);
+    margin-bottom: 32px;
+  }
+
+  .transit-calculator h3 {
+    color: var(--accent-cyan);
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
+  .transit-calculator p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .calculator-form label {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .calculator-form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .calculator-form select:focus {
+    border-color: var(--accent-cyan);
+  }
+
+  .result-box {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-cyan);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .result-box.hidden {
+    display: none;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--glass-border);
+    padding-bottom: 8px;
+  }
+
+  .result-row .label {
+    color: var(--text-muted);
+  }
+
+  .result-row .value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+  }
+
+  .result-recommendation {
+    font-size: 0.9rem;
+    color: var(--accent-amber);
+    margin: 8px 0 16px 0;
+  }
+
+  .result-box .btn {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const data = {
+    'boj': {
+      time: '15-20 mins',
+      cost: '€15 - €25',
+      rec: 'Official Eko Taxi or Public Bus Line 15.',
+      link: '/transfers#burgas-airport'
+    },
+    'var': {
+      time: '2 - 2.5 hours',
+      cost: '€70 - €100',
+      rec: 'Private transfer is highly recommended for Varna.',
+      link: '/transfers#varna-airport'
+    },
+    'ist': {
+      time: '4.5 - 6 hours',
+      cost: '€150 - €250+',
+      rec: 'VIP Minivan crossing Dereköy border. Book in advance!',
+      link: '/transfers#istanbul-transit'
+    },
+    'sof': {
+      time: '3.5 - 4 hours',
+      cost: '€20 (Bus) - €200 (Car)',
+      rec: 'Direct highway (A1). Intercity bus or domestic flight to BOJ.',
+      link: '/transfers#sofia-transit'
+    }
+  };
+
+  const select = document.getElementById('airport-select');
+  const resultBox = document.getElementById('calculator-result');
+  const resTime = document.getElementById('res-time');
+  const resCost = document.getElementById('res-cost');
+  const resRec = document.getElementById('res-rec');
+  const resLink = document.getElementById('res-link') as HTMLAnchorElement;
+
+  if (select) {
+    select.addEventListener('change', (e) => {
+      const val = (e.target as HTMLSelectElement).value;
+      if (data[val as keyof typeof data]) {
+        const info = data[val as keyof typeof data];
+        resTime!.innerText = info.time;
+        resCost!.innerText = info.cost;
+        resRec!.innerText = info.rec;
+        resLink.href = info.link;
+        resultBox!.classList.remove('hidden');
+      }
+    });
+  }
+</script>
