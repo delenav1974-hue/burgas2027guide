@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import ZoneMap from '../components/ZoneMap.astro';
+import PlaceCard from '../components/PlaceCard.astro';
 ---
 
 <Layout 
@@ -17,38 +18,108 @@ import ZoneMap from '../components/ZoneMap.astro';
         <ZoneMap />
 
         <section class="glass-panel mb-4">
-          <h2>📍 Area 1: Arena Burgas Walking Distance</h2>
-          <p>The premium choice for hardcore fans looking for <strong>hotels walking distance to arena burgas</strong>. Prices will be highest here, but you'll save hours on late-night transit after the Grand Final.</p>
-          <div class="insider-note">
-            <strong>Insider Note:</strong> Look for apartments in the <em>Izgrev</em> and <em>Zornitsa</em> neighborhoods. They are directly adjacent to the Arena.
+          <h2>📍 Area 1: Burgas City (The Core)</h2>
+          <p>The absolute premium choice for fans. Staying in the city means you are closest to the EuroVillage, the Arena, and the main afterparties. Demand here is the highest, and prices reflect that.</p>
+          
+          <div class="places-grid mt-3">
+            <PlaceCard 
+              title="Zornitsa & Izgrev (Walk to Arena)"
+              description="Purely residential areas, but they are directly adjacent to Arena Burgas. The biggest advantage: you can literally walk home after the Grand Final in 10 minutes instead of waiting 2 hours for a taxi."
+              price="$$$$"
+              link="https://www.booking.com/searchresults.html?city=-832791&dist=0&nflt=di%3D9333" 
+              linkText="Search Zornitsa Apartments"
+              insiderNote="There are no hotels here, only apartments (AirBnb/Booking). Book immediately, they will sell out first."
+            />
+            <PlaceCard 
+              title="Lazur (The Beach Hub)"
+              description="The most beautiful neighborhood in Burgas, right next to the Sea Garden. It's a 20-30 minute walk to the Arena, but you get the sea breeze and the best parks."
+              price="$$$"
+              link="https://www.booking.com/searchresults.html?city=-832791&dist=0&nflt=di%3D9334" 
+              linkText="Search Lazur Hotels"
+            />
+            <PlaceCard 
+              title="City Center (EuroVillage Hub)"
+              description="The heart of the action. Bars, restaurants, and the likely location of the EuroVillage. You will need a 15-minute taxi or a dedicated shuttle to reach the Arena."
+              price="$$$$"
+              link="https://www.booking.com/searchresults.html?city=-832791&dist=0&nflt=di%3D9332" 
+              linkText="Search Center Hotels"
+              insiderNote="If you plan to party every night at the EuroClub, this is your spot."
+            />
+          </div>
+          
+          <div class="red-flag-zone mt-3">
+            <h3 style="color: #ff4444; margin-bottom: 8px;">🚨 The "Do Not Book" Zones</h3>
+            <p style="font-size: 0.95rem;">You might find extremely cheap apartments in districts like <strong>Meden Rudnik</strong> and <strong>Pobeda</strong>. As locals, our advice is simple: <strong>do not book there</strong>. Meden Rudnik is the furthest possible point from the Arena (you will spend a fortune on taxis crossing the whole city), and Pobeda is generally not recommended for foreign tourists walking home late at night.</p>
           </div>
         </section>
 
         <section class="glass-panel mb-4">
-          <h2>🏖️ Area 2: Sea Garden & City Center</h2>
-          <p>Perfect if you want to combine Eurovision with a beach holiday. You'll need a 15-minute taxi or bus ride to the Arena, but you get direct access to the EuroVillage, clubs, and the best seafood restaurants.</p>
+          <h2>🏖️ Area 2: The North Coast (Airport & Resorts)</h2>
+          <p>The coastline north of Burgas offers incredible resorts and cheaper prices. The trade-off? You MUST arrange a reliable transfer back after midnight, as public buses stop running.</p>
+          
+          <div class="places-grid mt-3">
+            <PlaceCard 
+              title="Pomorie & Sarafovo (Airport Hub)"
+              description="Sarafovo is right next to Burgas Airport (BOJ), and Pomorie is 10 minutes further. Extremely convenient for logistics and very close to the Arena (15 mins by taxi)."
+              price="$$"
+              link="https://www.booking.com/searchresults.html?city=-837385" 
+              linkText="Search Pomorie"
+            />
+            <PlaceCard 
+              title="Sunny Beach (Party Hub)"
+              description="The biggest resort in Bulgaria. Thousands of cheap hotels, massive clubs, and endless beaches. It's 40 minutes away from the Arena by car."
+              price="$"
+              link="https://www.booking.com/searchresults.html?city=-838686" 
+              linkText="Search Sunny Beach"
+              insiderNote="The official Eurovision shuttles will likely have a major hub here. Great for budget fans."
+            />
+            <PlaceCard 
+              title="Sveti Vlas & Nessebar"
+              description="Sveti Vlas offers premium yacht-club vibes and luxury resorts. Nessebar offers a romantic UNESCO Old Town. Both are 40-45 mins from the Arena."
+              price="$$$"
+              link="https://www.booking.com/searchresults.html?city=-838706" 
+              linkText="Search Sveti Vlas"
+            />
+          </div>
         </section>
 
         <section class="glass-panel">
-          <h2>🚐 Area 3: Coastal Alternatives</h2>
-          <p>Towns like <strong>Pomorie, Sarafovo, and Nessebar</strong> offer cheaper rates and beautiful sea views. However, you MUST arrange a reliable transfer back after midnight.</p>
+          <h2>🌅 Area 3: The South Coast (Authentic Riviera)</h2>
+          <p>The southern coast is more dramatic, authentic, and arguably more beautiful. However, because Arena Burgas is in the extreme North of the city, staying in the South means crossing the entire city for every show.</p>
+          
+          <div class="places-grid mt-3">
+            <PlaceCard 
+              title="Sozopol (Romantic & Historic)"
+              description="One of the oldest towns in Europe with stunning wooden houses and incredible seafood. Ideal for delegations or fans who want a true vacation."
+              price="$$$"
+              link="https://www.booking.com/searchresults.html?city=-838421" 
+              linkText="Search Sozopol"
+              insiderNote="WARNING: The drive from Sozopol to the Arena takes about 45-50 minutes. Book here only if you rent a car or hire a private driver."
+            />
+            <PlaceCard 
+              title="Chernomorets"
+              description="A quieter alternative to Sozopol, slightly closer to Burgas (30 mins to the Arena). Great beaches and very relaxed atmosphere."
+              price="$$"
+              link="https://www.booking.com/searchresults.html?city=-832958" 
+              linkText="Search Chernomorets"
+            />
+          </div>
         </section>
       </div>
 
       <aside class="sidebar">
         <div class="glass-panel sticky-box">
           <h3>Secure Your Stay</h3>
-          <p>Availability is dropping rapidly. Check real-time prices now:</p>
-          <AffiliateButton text="Search Booking.com" href="#" provider="booking" />
+          <p>Availability is dropping rapidly. Check real-time prices across all areas now:</p>
+          <AffiliateButton text="Search All Burgas Region" href="https://www.booking.com/searchresults.html?region=4221" provider="booking" />
           
           <hr style="margin: 24px 0; border-color: var(--glass-border);" />
           
-          <h4>Want the Secret List?</h4>
-          <p style="font-size: 0.85rem; margin-bottom: 12px;">We are negotiating direct rates with local apartment owners. Subscribe to get the drop.</p>
-          <form onsubmit="event.preventDefault(); alert('Subscribed!');" style="display:flex; gap:8px;">
-            <input type="email" placeholder="Your email" required style="width:100%; padding:8px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(0,0,0,0.5); color:#fff;" />
-            <button type="submit" class="btn btn-primary" style="padding:8px 12px; font-size:0.8rem;">Join</button>
-          </form>
+          <h4>The Transport Warning</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px; color: var(--text-muted);">
+            If you book outside of Burgas city limits, <strong>do not rely on public transport after 23:00</strong>. The Eurovision shows end late. Book a rental car or an official shuttle.
+          </p>
+          <a href="/transfers" class="btn btn-secondary" style="width: 100%; text-align: center; display: inline-block;">Read Transit Guide</a>
         </div>
       </aside>
     </div>
@@ -79,22 +150,32 @@ import ZoneMap from '../components/ZoneMap.astro';
   }
 
   .mb-4 {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
+  }
+
+  .mt-3 {
+    margin-top: 24px;
   }
 
   h2 {
     color: var(--accent-cyan);
     margin-bottom: 16px;
     font-size: 1.5rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: 8px;
   }
 
-  .insider-note {
-    margin-top: 16px;
+  .places-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .red-flag-zone {
     padding: 16px;
-    background: rgba(255, 184, 0, 0.1);
-    border-left: 4px solid var(--accent-amber);
+    background: rgba(255, 68, 68, 0.1);
+    border-left: 4px solid #ff4444;
     border-radius: 4px;
-    font-size: 0.95rem;
   }
 
   .sticky-box {
