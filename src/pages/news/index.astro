@@ -17,7 +17,7 @@ allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
     <div class="news-grid">
       {allNews.map((post) => (
-        <a href={`/news/${post.slug}`} class="news-card glass-panel">
+        <a href={`/news/${post.id}`} class="news-card glass-panel">
           <div class="news-content">
             <div class="news-meta">
               <span class="date">{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
