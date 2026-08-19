@@ -5,6 +5,8 @@ interface Props {
   transitTime: string;
   priceTier: '$' | '$$' | '$$$' | '$$$$';
   description: string;
+  whatToDo?: string;
+  transportInfo?: string;
   bookingUrl: string;
   insiderNote?: string;
 }
@@ -14,7 +16,9 @@ const {
   type, 
   transitTime, 
   priceTier, 
-  description, 
+  description,
+  whatToDo,
+  transportInfo,
   bookingUrl,
   insiderNote
 } = Astro.props;
@@ -35,6 +39,27 @@ const {
   <div class="acc-description">
     <p>{description}</p>
   </div>
+  
+  {(whatToDo || transportInfo) && (
+    <div class="mini-guide">
+      {whatToDo && (
+        <div class="guide-item">
+          <span class="guide-icon">🎯</span>
+          <div>
+            <strong>Vibe & Attractions:</strong> {whatToDo}
+          </div>
+        </div>
+      )}
+      {transportInfo && (
+        <div class="guide-item">
+          <span class="guide-icon">🚌</span>
+          <div>
+            <strong>Logistics:</strong> {transportInfo}
+          </div>
+        </div>
+      )}
+    </div>
+  )}
 
   {insiderNote && (
     <div class="insider-note-compact">
@@ -119,6 +144,34 @@ const {
     line-height: 1.6;
     color: var(--text-muted);
   }
+  
+  .mini-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .guide-item {
+    display: flex;
+    gap: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  
+  .guide-icon {
+    font-size: 1.2rem;
+  }
+  
+  .guide-item strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 2px;
+  }
 
   .insider-note-compact {
     font-size: 0.9rem;
@@ -148,6 +201,6 @@ const {
 
   .book-btn:hover {
     background: linear-gradient(135deg, #ff6b6b 0%, var(--accent-magenta) 100%);
-    transform: none; /* Rely on button's base hover if any, or disable */
+    transform: none;
   }
 </style>

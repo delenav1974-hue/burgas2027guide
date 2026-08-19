@@ -28,15 +28,19 @@ import AccommodationCard from '../components/AccommodationCard.astro';
               transitTime="🚶‍♂️ 10 min walk"
               priceTier="$$$$"
               description="Purely residential areas, but they are directly adjacent to Arena Burgas. The biggest advantage: you can literally walk home after the Grand Final instead of waiting hours for a taxi."
+              whatToDo="Explore Park Veleka and enjoy a local, untouristed vibe. Not much nightlife, but you are sleeping right next to the Arena."
+              transportInfo="5-10 minutes walking to Arena Burgas. No buses or taxis needed!"
               bookingUrl="https://www.booking.com/searchresults.html?ss=Zornitsa,+Burgas,+Bulgaria" 
               insiderNote="There are no hotels here, only apartments (AirBnb/Booking). Book immediately, they will sell out first."
             />
             <AccommodationCard 
               name="Lazur"
-              type="Hotel"
+              type="Hotel / Apt"
               transitTime="🚶‍♂️ 25 min walk"
               priceTier="$$$"
               description="The most beautiful neighborhood in Burgas, right next to the Sea Garden. It's a longer walk to the Arena, but you get the sea breeze and the best parks."
+              whatToDo="Morning runs in the Sea Garden, Flora Expo Center, beachfront cafes, and premium coastal living."
+              transportInfo="A pleasant 25-minute walk through the park to the Arena, or a quick 5-minute taxi ride."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Lazur,+Burgas,+Bulgaria" 
             />
             <AccommodationCard 
@@ -45,8 +49,30 @@ import AccommodationCard from '../components/AccommodationCard.astro';
               transitTime="🚕 15 min taxi"
               priceTier="$$$$"
               description="The heart of the action. Bars, restaurants, and the likely location of the EuroVillage. You will need a taxi or a dedicated shuttle to reach the Arena."
+              whatToDo="EuroVillage, official EuroClub afterparties, museums, high-end dining, and the main entrance to the Sea Garden."
+              transportInfo="Use the fast B1/B2 bus lines (they use dedicated bus lanes) to reach the Arena in 20 mins, or take a taxi."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Burgas+Center,+Bulgaria" 
               insiderNote="If you plan to party every night at the EuroClub, this is your spot."
+            />
+            <AccommodationCard 
+              name="Sarafovo"
+              type="Coastal Suburb"
+              transitTime="🚕 15 min taxi"
+              priceTier="$$"
+              description="Sarafovo is the neighborhood directly adjacent to Burgas Airport (BOJ). Excellent logistics for flying in, but a longer commute to the Arena."
+              whatToDo="Aviation Museum, wide sandy beaches, and a quiet, family-friendly atmosphere away from the city noise."
+              transportInfo="Take City Bus #15 directly to Burgas center. By car/taxi, it's about 15 minutes to Arena Burgas."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sarafovo,+Bulgaria" 
+            />
+            <AccommodationCard 
+              name="Kraimorie"
+              type="Suburban Beach"
+              transitTime="🚕 25 min taxi"
+              priceTier="$$"
+              description="A southern coastal neighborhood of Burgas. It offers a very relaxed beach vibe, but it is located on the opposite side of the city from the Arena."
+              whatToDo="Quiet beach days and visiting the nearby Chengene Skele fishing village for authentic seafood."
+              transportInfo="City Bus #17 connects Kraimorie to the South Bus Station. To reach the Arena, you must cross the entire city (20-25 mins by car)."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Kraimorie,+Bulgaria" 
             />
           </div>
           
@@ -63,33 +89,49 @@ import AccommodationCard from '../components/AccommodationCard.astro';
         </section>
 
         <section class="glass-panel mb-4" id="area2">
-          <h2>🏖️ Area 2: The North Coast (Airport & Resorts)</h2>
+          <h2>🏖️ Area 2: The North Coast (Resorts)</h2>
           <p>The coastline north of Burgas offers incredible resorts and cheaper prices. The trade-off? You MUST arrange a reliable transfer back after midnight, as public buses stop running.</p>
           
           <div class="places-grid mt-3">
             <AccommodationCard 
-              name="Pomorie & Sarafovo"
-              type="Coastal Towns"
+              name="Pomorie"
+              type="Coastal Town"
               transitTime="🚕 30 min taxi"
               priceTier="$$"
-              description="Sarafovo is the neighborhood adjacent to Burgas Airport. Pomorie is a separate coastal town about 15 minutes from the airport and 30 minutes from Burgas by car. Excellent logistics for flying in, but a longer commute to the Arena."
+              description="A separate coastal town built on a peninsula. Known for its salt lakes and relaxed vibe. Excellent logistics for flying in."
+              whatToDo="Visit the Salt Museum, try the famous healing mud baths, and explore the charming old town."
+              transportInfo="Intercity buses depart from Burgas South Bus Station every 30 mins. By car, it's a 30-minute drive to the Arena."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Pomorie,+Bulgaria" 
             />
             <AccommodationCard 
               name="Sunny Beach"
-              type="Resort"
+              type="Mega Resort"
               transitTime="🚕 40 min taxi"
               priceTier="$"
               description="The biggest resort in Bulgaria. Thousands of cheap hotels, massive clubs, and endless beaches. It's further away, but offers the best budget options."
+              whatToDo="Massive nightlife, huge beach bars, and non-stop summer parties."
+              transportInfo="Direct intercity buses from Burgas South Bus Station take about 45 minutes. By car/taxi, it's a 40-minute drive."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Sunny+Beach,+Bulgaria" 
               insiderNote="The official Eurovision shuttles will likely have a major hub here. Great for budget fans."
             />
             <AccommodationCard 
-              name="Sveti Vlas & Nessebar"
-              type="Resort"
+              name="Sveti Vlas"
+              type="Premium Resort"
+              transitTime="🚕 45 min taxi"
+              priceTier="$$$$"
+              description="Nestled between the mountains and the sea, Sveti Vlas is the luxury alternative to Sunny Beach, offering premium yacht-club vibes."
+              whatToDo="Stroll around the Marina Dinevi yacht port, enjoy high-end dining, and hike the nearby eco-trails."
+              transportInfo="Take a bus to Sunny Beach and transfer, or drive for 45+ minutes to reach Burgas Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sveti+Vlas,+Bulgaria" 
+            />
+            <AccommodationCard 
+              name="Nessebar (Old Town)"
+              type="UNESCO Heritage"
               transitTime="🚕 45 min taxi"
               priceTier="$$$"
-              description="Sveti Vlas offers premium yacht-club vibes. Nessebar offers a romantic UNESCO Old Town. Both require a long drive to the Arena."
+              description="One of the oldest towns in Europe, situated on a rocky peninsula. Highly romantic, but requires a long drive to the Arena."
+              whatToDo="Explore ancient wooden houses, Byzantine church ruins, and incredible seafood restaurants right on the cliffs."
+              transportInfo="Buses run from Burgas South Bus Station. A taxi or rental car will take about 45 minutes to the Arena."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Old+Town+Nessebar,+Bulgaria" 
             />
           </div>
@@ -106,15 +148,19 @@ import AccommodationCard from '../components/AccommodationCard.astro';
               transitTime="🚕 50 min taxi"
               priceTier="$$$"
               description="One of the oldest towns in Europe with stunning wooden houses and incredible seafood. Ideal for delegations or fans who want a true vacation."
+              whatToDo="Wander the cobblestone streets of the Old Town, eat fresh Black Sea mussels, and visit the fairytale Ravadinovo Castle."
+              transportInfo="Buses to Burgas depart every 30 minutes, but it takes 45-50 minutes by car to cross Burgas and reach the Arena."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Sozopol,+Bulgaria" 
               insiderNote="WARNING: The drive from Sozopol to the Arena takes about 45-50 minutes. Book here only if you rent a car or hire a private driver."
             />
             <AccommodationCard 
               name="Chernomorets"
-              type="Apartments"
+              type="Coastal Village"
               transitTime="🚕 35 min taxi"
               priceTier="$$"
               description="A quieter alternative to Sozopol, slightly closer to Burgas. Great beaches and a very relaxed atmosphere."
+              whatToDo="Relax on Vromos beach and enjoy a slower, family-friendly coastal pace without the tourist crowds."
+              transportInfo="Intercity buses are available, but a taxi or rental car (35 mins) is highly recommended for late-night Arena returns."
               bookingUrl="https://www.booking.com/searchresults.html?ss=Chernomorets,+Bulgaria" 
             />
           </div>
