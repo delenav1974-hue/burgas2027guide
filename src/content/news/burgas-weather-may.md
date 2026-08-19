@@ -1,7 +1,7 @@
 ---
 title: "What to Expect: Burgas Weather in May 2027"
 date: 2026-08-19
-excerpt: "Packing for Eurovision? May in Burgas is beautiful, but the Black Sea breeze means you should come prepared for everything."
+description: "Packing for Eurovision? May in Burgas is beautiful, but the Black Sea breeze means you should come prepared for everything."
 author: "Burgas Local Team"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "How to Avoid Accommodation Scams for Eurovision 2027"
 date: 2026-08-19
-excerpt: "With demand skyrocketing, scammers are taking advantage of fans. Here is how to ensure your Booking.com or Airbnb reservation is legit."
+description: "With demand skyrocketing, scammers are taking advantage of fans. Here is how to ensure your Booking.com or Airbnb reservation is legit."
 author: "Burgas Local Team"
 ---
 
