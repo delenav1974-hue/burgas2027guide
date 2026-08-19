@@ -3,64 +3,194 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Essential Apps & Resources for Burgas - Eurovision 2027">
-	<main class="container mx-auto px-4 py-12 max-w-4xl">
-		<h1 class="text-4xl font-black uppercase text-gray-900 mb-6">Burgas Survival Guide: Essential Apps & Resources</h1>
-		<p class="text-xl text-gray-600 mb-12">
+	<div class="container essential-container">
+		<h1 class="page-title text-gradient">Burgas Survival Guide: Essential Apps & Resources</h1>
+		<p class="subtitle">
 			Navigating a new city during a massive event like Eurovision requires the right tools. From public transport to ordering a taxi or paying road tolls, here are the essential apps you need to download before arriving in Bulgaria.
 		</p>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+		<div class="apps-grid">
 			<!-- Transport Apps -->
-			<div class="bg-white/50 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl">
-				<h2 class="text-2xl font-bold mb-4">🚍 Public Transport</h2>
-				<ul class="space-y-4 text-gray-700">
+			<div class="glass-panel app-card">
+				<h2>🚍 Public Transport</h2>
+				<ul>
 					<li><strong>Moovit:</strong> The most reliable app for Burgas bus routes, schedules, and live tracking. A must-have for getting to Arena Burgas.</li>
 					<li><strong>Transport Burgas:</strong> The official municipal app (sometimes spotty, but good for official route maps and purchasing digital tickets).</li>
 				</ul>
 			</div>
 
 			<!-- Taxi Apps -->
-			<div class="bg-white/50 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl">
-				<h2 class="text-2xl font-bold mb-4">🚕 Taxis & Ride Hailing</h2>
-				<ul class="space-y-4 text-gray-700">
+			<div class="glass-panel app-card">
+				<h2>🚕 Taxis & Ride Hailing</h2>
+				<ul>
 					<li><strong>Maxim / TaxiMe:</strong> Uber is NOT available in Bulgaria. These are the closest local equivalents for ordering reliable, metered taxis without getting scammed.</li>
 					<li><strong>Omega Taxi:</strong> One of the most reputable local taxi companies in Burgas with their own ordering app.</li>
 				</ul>
 			</div>
 
 			<!-- Driving -->
-			<div class="bg-white/50 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl">
-				<h2 class="text-2xl font-bold mb-4">🚗 Driving & Vignettes</h2>
-				<ul class="space-y-4 text-gray-700">
+			<div class="glass-panel app-card">
+				<h2>🚗 Driving & Vignettes</h2>
+				<ul>
 					<li><strong>BGTOLL (bgtoll.bg):</strong> If you rent a car or drive into Bulgaria, you MUST buy an electronic vignette. Do it officially via this site/app to avoid massive fines.</li>
 					<li><strong>Burgas Parking:</strong> For paying the "Blue Zone" and "Green Zone" street parking fees via SMS or card.</li>
 				</ul>
 			</div>
 
 			<!-- Food & Delivery -->
-			<div class="bg-white/50 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl">
-				<h2 class="text-2xl font-bold mb-4">🍕 Food Delivery</h2>
-				<ul class="space-y-4 text-gray-700">
-					<li><strong>Takeaway.com:</strong> The biggest food delivery network in Burgas.</li>
+			<div class="glass-panel app-card">
+				<h2>🍕 Food Delivery</h2>
+				<ul>
 					<li><strong>Glovo:</strong> Excellent for fast food, groceries, and pharmacy deliveries straight to your hotel or Airbnb.</li>
+					<li><strong>Happy Delivery:</strong> The legendary Bulgarian restaurant chain (Happy Bar & Grill) has its own app for massive portions of comfort food.</li>
 				</ul>
 			</div>
 		</div>
 
 		<!-- Newsletter Lead Magnet -->
-		<div class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-10 text-white shadow-2xl text-center">
-			<h2 class="text-3xl font-black uppercase mb-4">Want the Full PDF Survival Guide?</h2>
-			<p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-				We are preparing a massive, printable 20-page **Burgas 2027 Eurovision Survival Guide** (including offline maps, emergency numbers, and insider local tips). Drop your email below and we'll send it to you as soon as it's published!
-			</p>
-			<form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-				<input type="email" placeholder="Enter your email address" class="px-6 py-4 rounded-full text-gray-900 w-full focus:outline-none focus:ring-4 focus:ring-pink-300" required>
-				<button type="submit" class="bg-gray-900 text-white font-bold px-8 py-4 rounded-full hover:bg-gray-800 transition transform hover:scale-105 whitespace-nowrap">
-					Send Me The Guide
-				</button>
-			</form>
-			<p class="text-sm mt-4 opacity-75">No spam. You can unsubscribe at any time.</p>
+		<div class="newsletter-cta glass-panel">
+			<div class="newsletter-content">
+				<h2>Want the Full PDF Survival Guide?</h2>
+				<p>
+					We are preparing a massive, printable 20-page <strong>Burgas 2027 Eurovision Survival Guide</strong> (including offline maps, emergency numbers, and insider local tips). Drop your email below and we'll send it to you as soon as it's published!
+				</p>
+				<form class="subscribe-form">
+					<input type="email" placeholder="Enter your email address" required>
+					<button type="submit" class="btn btn-primary">Send Me The Guide</button>
+				</form>
+				<p class="spam-notice">No spam. You can unsubscribe at any time.</p>
+			</div>
 		</div>
-
-	</main>
+	</div>
 </Layout>
+
+<style>
+	.essential-container {
+		padding-top: 48px;
+		padding-bottom: 64px;
+		max-width: 1000px;
+	}
+
+	.page-title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 16px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.subtitle {
+		text-align: center;
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		max-width: 800px;
+		margin: 0 auto 48px;
+		line-height: 1.8;
+	}
+
+	.apps-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 24px;
+		margin-bottom: 48px;
+	}
+
+	.app-card {
+		padding: 32px;
+	}
+
+	.app-card h2 {
+		font-size: 1.5rem;
+		margin-bottom: 24px;
+		color: var(--text-main);
+	}
+
+	.app-card ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.app-card li {
+		margin-bottom: 16px;
+		line-height: 1.6;
+		color: var(--text-muted);
+	}
+
+	.app-card li strong {
+		color: var(--accent-amber);
+		display: block;
+		margin-bottom: 4px;
+		font-size: 1.1rem;
+	}
+
+	.newsletter-cta {
+		background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 122, 0.1));
+		border: 1px solid rgba(255, 0, 122, 0.3);
+		text-align: center;
+		padding: 48px 32px;
+		border-radius: 24px;
+	}
+
+	.newsletter-content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.newsletter-content h2 {
+		font-size: 2rem;
+		margin-bottom: 16px;
+		color: var(--text-main);
+	}
+
+	.newsletter-content p {
+		margin-bottom: 32px;
+		font-size: 1.1rem;
+		color: var(--text-muted);
+	}
+
+	.subscribe-form {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		margin-bottom: 16px;
+	}
+
+	.subscribe-form input {
+		flex: 1;
+		max-width: 400px;
+		padding: 16px 24px;
+		border-radius: 8px;
+		border: 1px solid var(--glass-border);
+		background: rgba(11, 15, 25, 0.8);
+		color: var(--text-main);
+		font-size: 1rem;
+		outline: none;
+		transition: all 0.2s;
+	}
+
+	.subscribe-form input:focus {
+		border-color: var(--accent-cyan);
+		box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+	}
+
+	.subscribe-form button {
+		padding: 16px 32px;
+		font-size: 1rem;
+	}
+
+	.spam-notice {
+		font-size: 0.85rem !important;
+		opacity: 0.7;
+		margin-bottom: 0 !important;
+	}
+
+	@media (max-width: 600px) {
+		.subscribe-form {
+			flex-direction: column;
+		}
+		
+		.subscribe-form input {
+			max-width: 100%;
+		}
+	}
+</style>
