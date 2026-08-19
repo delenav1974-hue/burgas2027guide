@@ -4,6 +4,7 @@ import HeroCapture from '../components/HeroCapture.astro';
 import CountdownBanner from '../components/CountdownBanner.astro';
 import OccupancyMeter from '../components/OccupancyMeter.astro';
 import TransitCalculator from '../components/TransitCalculator.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
 
 const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
 ---
@@ -17,6 +18,12 @@ const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
       headline="Your Ultimate Guide to Burgas 2027"
       subheadline="The independent local playbook for surviving and thriving during the biggest music event on the Black Sea coast."
     />
+
+    <div class="quick-links glass-panel" style="margin-top: -32px; margin-bottom: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 24px;">
+      <a href="/where-to-stay" class="btn btn-secondary">🏨 Find Accommodation</a>
+      <a href="/transfers" class="btn btn-secondary">🚕 Book Airport Transfer</a>
+      <AffiliateButton text="📱 Get Tourist eSIM (Airalo)" href="https://www.airalo.com/bulgaria-esim" provider="generic" />
+    </div>
 
     <CountdownBanner targetDate={targetDate} />
 
@@ -33,6 +40,12 @@ const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
         <p>Master your commute. From <strong>bus from istanbul new airport to burgas timetable</strong> to official night shuttles.</p>
         <TransitCalculator />
         <a href="/transfers" class="btn btn-primary" style="margin-top:16px;">View Transit Hub</a>
+      </div>
+      
+      <div class="feature-card glass-panel">
+        <h3>🪩 Events & Parties</h3>
+        <p>Discover the EuroVillage, official EuroClub afterparties, and VIP yacht events departing from the Port of Burgas.</p>
+        <a href="/events-and-parties" class="btn btn-primary" style="margin-top:16px; display: block;">See the Schedule</a>
       </div>
     </section>
   </div>
@@ -54,5 +67,6 @@ const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
 
   .feature-card p {
     font-size: 1.05rem;
+    margin-bottom: 24px;
   }
 </style>

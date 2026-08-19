@@ -29,19 +29,49 @@ import AffiliateButton from '../components/AffiliateButton.astro';
         </section>
 
         <section class="glass-panel mb-4">
+          <h2>📱 Stay Connected (No Roaming Fees)</h2>
+          <p>You will need internet for your digital tickets, ordering Ubers/taxis, and posting videos from the EuroClub. Roaming fees in Bulgaria can be astronomical if you are outside the EU.</p>
+          <div class="insider-note">
+            <strong>Insider Note:</strong> Don't buy physical SIM cards at the airport (they overcharge tourists). Buy a digital eSIM before you fly.
+          </div>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Buy Bulgaria eSIM (Airalo)" href="https://www.airalo.com/bulgaria-esim" provider="generic" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4">
           <h2>🪩 Afterparties & Nightlife</h2>
           <p>Burgas has a vibrant club scene. During the Eurovision week, the main hotspots will be the beach bars along the central promenade.</p>
-          <div class="insider-note">
-            <strong>Insider Note:</strong> Subscribe to our Telegram channel to get secret links for private yacht parties departing from the Port of Burgas.
+          <div style="margin-top: 16px; padding: 24px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid var(--glass-border);">
+            <h3 style="color: var(--accent-magenta); margin-bottom: 8px;">👑 VIP Table Booking & Secret Parties</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 16px;">We have direct contacts with the top club managers in Burgas. Leave your email, and we will send you the secret links for private yacht parties and VIP table reservations before they sell out.</p>
+            <form onsubmit="event.preventDefault(); alert('Request sent! Our concierge will contact you soon.');" style="display:flex; flex-direction:column; gap:12px;">
+              <input type="text" placeholder="Your Name or Delegation" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
+              <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
+              <select style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:#111; color:#fff;">
+                <option value="yacht">Private Yacht Party Access</option>
+                <option value="vip">EuroClub VIP Table</option>
+                <option value="both">Both</option>
+              </select>
+              <button type="submit" class="btn btn-primary" style="padding:10px; font-weight:bold;">Request Access</button>
+            </form>
           </div>
         </section>
       </div>
 
       <aside class="sidebar">
         <div class="glass-panel sticky-box">
+          <h3>Essential Services</h3>
+          <p>Don't land without these:</p>
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+            <AffiliateButton text="Tourist eSIM (Airalo)" href="https://www.airalo.com/bulgaria-esim" provider="generic" />
+          </div>
+          
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+          
           <h3>Secure Your Tickets</h3>
           <p>Check official resale partners and secure your entrance to the biggest side-events.</p>
-          <AffiliateButton text="Browse Events" href="#" provider="generic" />
+          <AffiliateButton text="Browse Events (Viator)" href="https://www.viator.com/" provider="generic" />
         </div>
       </aside>
     </div>

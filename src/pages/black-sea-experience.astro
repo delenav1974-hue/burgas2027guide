@@ -17,11 +17,17 @@ import PlaceCard from '../components/PlaceCard.astro';
         <section class="glass-panel mb-4">
           <h2>🏰 Day Trip: Old Nessebar</h2>
           <p>A UNESCO World Heritage site located just 40 minutes north of Burgas. Walk through ancient ruins and dine on the peninsula overlooking the sea.</p>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Book Nessebar Guided Tour" href="https://www.getyourguide.com/s?q=Nessebar" provider="getyourguide" />
+          </div>
         </section>
 
         <section class="glass-panel mb-4">
           <h2>🧂 Wellness: Burgas Salt Pans (Pink Lakes)</h2>
           <p>A unique local experience. Float in the hyper-saline pink pools and cover yourself in healing black mud—all just a short bike ride from the Sea Garden.</p>
+          <div class="insider-note">
+            <strong>Insider Note:</strong> Take the scenic mini-train from the Sea Garden to get there, or rent an e-bike!
+          </div>
         </section>
 
         <section class="glass-panel mb-4">
@@ -35,7 +41,8 @@ import PlaceCard from '../components/PlaceCard.astro';
               priceTier="€€"
               highlight="Fresh Black Sea mussels and fried Tsatsa."
               insiderNote="Located right on the fishing port. Very authentic, slightly chaotic, absolutely delicious. Perfect for a sunset beer."
-              googleMapsUrl="https://maps.google.com"
+              link="https://www.tripadvisor.com/Search?q=Dalyana+Burgas"
+              linkText="Read Reviews"
             />
             
             <PlaceCard 
@@ -44,7 +51,8 @@ import PlaceCard from '../components/PlaceCard.astro';
               priceTier="€€€"
               highlight="Premium Mediterranean and Black Sea catch."
               insiderNote="Located centrally in the Sea Garden. Book in advance. English speaking staff and great wine list."
-              googleMapsUrl="https://maps.google.com"
+              link="https://www.tripadvisor.com/Search?q=Neptun+Burgas"
+              linkText="Read Reviews"
             />
 
             <PlaceCard 
@@ -53,7 +61,8 @@ import PlaceCard from '../components/PlaceCard.astro';
               priceTier="€€"
               highlight="Traditional fish soup and grilled sea bass."
               insiderNote="A local favorite outside the main tourist traps. They take cards, but tip in cash if possible."
-              googleMapsUrl="https://maps.google.com"
+              link="https://www.tripadvisor.com/Search?q=Zlatna+Ribka+Burgas"
+              linkText="Read Reviews"
             />
           </div>
         </section>
@@ -63,7 +72,16 @@ import PlaceCard from '../components/PlaceCard.astro';
         <div class="glass-panel sticky-box">
           <h3>Book Local Tours</h3>
           <p>Skip the planning. Join guided tours to Nessebar, Sozopol, or wine tasting trips.</p>
-          <AffiliateButton text="Explore on GetYourGuide" href="#" provider="getyourguide" />
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <AffiliateButton text="Explore on GetYourGuide" href="https://www.getyourguide.com/burgas-l2005/" provider="getyourguide" />
+            <AffiliateButton text="Explore on Viator" href="https://www.viator.com/Burgas/d26197" provider="generic" />
+          </div>
+          
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+          
+          <h3>Need a Car?</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">The best beaches and authentic villages require driving.</p>
+          <AffiliateButton text="Rent a Car" href="https://www.discovercars.com/" provider="discovercars" />
         </div>
       </aside>
     </div>

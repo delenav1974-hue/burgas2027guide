@@ -20,37 +20,58 @@ import TransitCalculator from '../components/TransitCalculator.astro';
           <h2>✈️ Flying into Burgas (BOJ)</h2>
           <p>Burgas Airport is only 10 km from the city center. During the event week, expect high demand for official taxis.</p>
           <ul>
-            <li><strong>Public Bus:</strong> Line No. 15 runs every 20-30 minutes. Costs ~1.50 BGN (cash only in some cases, so carry small change).</li>
+            <li><strong>Public Bus:</strong> Line No. 15 runs every 20-30 minutes. Costs ~1.50 BGN.</li>
             <li><strong>Official Taxi:</strong> Eko Taxi is the official airport partner.</li>
-            <li><strong>Private Transfer:</strong> Highly recommended for groups arriving late.</li>
+            <li><strong>Private Transfer:</strong> Highly recommended. Book a driver with a name sign to avoid waiting in line.</li>
           </ul>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Book Private Airport Transfer (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+          </div>
         </section>
 
-        <section class="glass-panel mb-4" id="varna-airport">
-          <h2>🌊 How to get from Varna Airport to Arena Burgas</h2>
-          <p>Varna (VAR) is the second closest airport. The drive takes about 2 hours along the scenic coastal road.</p>
-        </section>
-
-        <section class="glass-panel mb-4" id="istanbul-transit">
-          <h2>🇹🇷 The Istanbul Route (IST to Burgas)</h2>
-          <p>Many international fans will fly into Istanbul (IST) due to better global flight connections. If you are looking for a <strong>bus from istanbul new airport to burgas timetable</strong>, note that direct public buses are limited and often sell out months in advance. The drive takes about 4-5 hours depending on the Dereköy/Malko Tarnovo border crossing.</p>
+        <section class="glass-panel mb-4" id="intercity-buses">
+          <h2>🚌 Intercity Buses (Sofia, Varna, Plovdiv & Istanbul)</h2>
+          <p>If you fly into a different major city, taking a bus is the most affordable way to reach Burgas.</p>
+          <ul>
+            <li><strong>Sofia to Burgas:</strong> ~5 hours via the highway. Extremely popular route.</li>
+            <li><strong>Plovdiv to Burgas:</strong> ~3.5 hours.</li>
+            <li><strong>Varna to Burgas:</strong> ~2 hours along the scenic coastal road.</li>
+            <li><strong>Istanbul (IST) to Burgas:</strong> ~4-5 hours depending on the Dereköy border crossing. Demand will be insane, book months in advance.</li>
+          </ul>
           <div class="insider-note">
-            <strong>Insider Note:</strong> We are organizing dedicated VIP minivans (Mercedes V-Class) directly from IST to Burgas. 
+            <strong>Insider Note:</strong> Use Omio or FlixBus to book tickets in advance. Local Bulgarian bus companies (like Union Ivkoni or Enturtrans) sell out very fast during summer events.
+          </div>
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <AffiliateButton text="Search Buses on Omio" href="https://www.omio.com/" provider="booking" />
+            <AffiliateButton text="Check FlixBus Routes" href="https://www.flixbus.com/" provider="booking" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="rent-a-car">
+          <h2>🚗 Rent a Car: The Ultimate Freedom</h2>
+          <p>Don't just stay in your hotel room between Eurovision rehearsals and the Grand Final. Renting a car gives you the freedom to explore the entire coast, from the ancient ruins of Nessebar to the wild beaches south of Sozopol.</p>
+          <p><em>Check out our <a href="/black-sea-experience" style="color: var(--accent-cyan);">Black Sea Experience guide</a> to see where a car can take you.</em></p>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Compare Rental Prices (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
           </div>
         </section>
       </div>
 
       <aside class="sidebar">
         <div class="glass-panel sticky-box">
-          <h3>Book Your Transfer</h3>
-          <p>Secure your ride from the airport in advance to avoid surge pricing.</p>
-          <AffiliateButton text="Book via KiwiTaxi" href="#" provider="kiwitaxi" />
+          <h3>Secure Your Ride</h3>
+          <p>Surge pricing will be in effect during Eurovision week. Book now.</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <AffiliateButton text="Airport Transfer (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+            <AffiliateButton text="Rent a Car (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+          </div>
           
           <hr style="margin: 24px 0; border-color: var(--glass-border);" />
           
-          <h3>Rent a Car</h3>
-          <p>Staying in Sozopol or Pomorie? A rental car might be cheaper than daily taxis.</p>
-          <AffiliateButton text="Compare Cars" href="#" provider="discovercars" />
+          <h4>VIP Minivans</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">Need a Mercedes V-Class from Istanbul or Sofia for your delegation? Contact our local team directly.</p>
+          <a href="#" class="btn btn-secondary" style="width: 100%; text-align: center; display: inline-block;">Request VIP Quote</a>
         </div>
       </aside>
     </div>
@@ -113,7 +134,7 @@ import TransitCalculator from '../components/TransitCalculator.astro';
     top: 100px;
   }
 
-  .sticky-box h3 {
+  .sticky-box h3, .sticky-box h4 {
     color: var(--accent-magenta);
     margin-bottom: 8px;
   }
