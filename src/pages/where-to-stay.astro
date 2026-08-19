@@ -50,9 +50,15 @@ import AccommodationCard from '../components/AccommodationCard.astro';
             />
           </div>
           
-          <div class="red-flag-zone mt-3">
-            <h3 style="color: #ff4444; margin-bottom: 8px;">🚨 The "Do Not Book" Zones</h3>
-            <p style="font-size: 0.95rem;">You might find extremely cheap apartments in districts like <strong>Meden Rudnik</strong> and <strong>Pobeda</strong>. As locals, our advice is simple: <strong>do not book there</strong>. Meden Rudnik is the furthest possible point from the Arena (you will spend a fortune on taxis crossing the whole city).</p>
+          <div class="red-flag-zone mt-3" style="background: rgba(255, 184, 0, 0.1); border-left: 4px solid var(--accent-amber);">
+            <h3 style="color: var(--accent-amber); margin-bottom: 8px;">⚠️ Areas to Book with Caution</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">You might find extremely cheap apartments in <strong>Meden Rudnik</strong> and <strong>Pobeda</strong>. Before booking, keep these local nuances in mind:</p>
+            <ul style="font-size: 0.9rem; padding-left: 20px; margin-bottom: 12px;">
+              <li style="margin-bottom: 8px;"><strong>Meden Rudnik (Zones A & B):</strong> The most developed and greenest parts of the district with better transport links. If you must stay here, choose these zones.</li>
+              <li style="margin-bottom: 8px;"><strong>Meden Rudnik (Zone V / В):</strong> Actively developing with new complexes, but you may face unpaved roads, parking issues, heavy rush-hour traffic, and proximity to the Roma neighborhood.</li>
+              <li><strong>Pobeda:</strong> Strictly <strong>NOT recommended</strong>.</li>
+            </ul>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;"><em>Note: Meden Rudnik is the furthest point from the Arena. While cheap, you may spend the savings on long taxi rides across the city.</em></p>
           </div>
         </section>
 
