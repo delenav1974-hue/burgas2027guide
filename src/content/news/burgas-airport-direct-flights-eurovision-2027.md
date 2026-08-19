@@ -40,5 +40,11 @@ Public buses run from the airport to the city center, but they do not operate la
 
 ***
 
+### ⚠️ Important: Flight Schedules Will Change!
+As we get closer to Eurovision week in May 2027, airlines will announce special charter flights, extra capacities, and altered schedules specifically for the event. The flight information you see today will rapidly change and expand.
+
+**Don't miss a single update!** 
+Bookmark this page and **subscribe to our daily newsletter** below to receive the most urgent logistics news, hidden routes, and flash sales before they sell out.
+
 **Ready to secure your logistics?** 
 Before flights sell out or algorithm-driven prices skyrocket, lock in your travel. Use our [Transport Guide](/transfers) to figure out your local transit, and secure your accommodation immediately through our [Where to Stay Hub](/where-to-stay).
