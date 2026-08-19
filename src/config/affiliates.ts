@@ -12,30 +12,8 @@ export const AFFILIATE_CONFIG = {
 
 // Helper function to generate tracked links
 export function getAffiliateLink(provider: string, defaultHref?: string): string {
-  const marker = AFFILIATE_CONFIG.travelpayoutsMarker;
-  
-  switch (provider) {
-    case 'booking':
-      // Using Travelpayouts Hotellook/Booking white-label or direct Booking.com
-      return `https://search.hotellook.com/hotels?destination=Burgas&marker=${marker}`;
-      
-    case 'kiwitaxi':
-      // KiwiTaxi via Travelpayouts
-      return `https://kiwitaxi.com/?pap=${marker}`;
-      
-    case 'discovercars':
-      // DiscoverCars via Travelpayouts
-      return `https://www.discovercars.com/?a_aid=${marker}`;
-      
-    case 'airalo':
-      // Airalo eSIM via Travelpayouts
-      return `https://airalo.tp.st/${marker}`;
-      
-    case 'getyourguide':
-      // GetYourGuide direct or via TP
-      return `https://getyourguide.tp.st/${marker}`;
-      
-    default:
-      return defaultHref || '#';
-  }
+  // Since we are using the Travelpayouts Drive script in the <head>,
+  // we no longer need to manually construct affiliate URLs.
+  // The Drive script will automatically convert standard domains into affiliate links.
+  return defaultHref || '#';
 }
