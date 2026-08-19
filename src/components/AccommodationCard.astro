@@ -1,0 +1,153 @@
+---
+interface Props {
+  name: string;
+  type: 'Apartments' | 'Hotel' | 'Boutique Hotel' | 'Resort';
+  transitTime: string;
+  priceTier: '$' | '$$' | '$$$' | '$$$$';
+  description: string;
+  bookingUrl: string;
+  insiderNote?: string;
+}
+
+const { 
+  name, 
+  type, 
+  transitTime, 
+  priceTier, 
+  description, 
+  bookingUrl,
+  insiderNote
+} = Astro.props;
+---
+
+<div class="acc-card glass-panel">
+  <div class="acc-header">
+    <div class="acc-title-group">
+      <h4>{name}</h4>
+      <div class="acc-badges">
+        <span class="badge type-badge">{type}</span>
+        <span class="badge time-badge">{transitTime}</span>
+      </div>
+    </div>
+    <span class="price-tier">{priceTier}</span>
+  </div>
+
+  <div class="acc-description">
+    <p>{description}</p>
+  </div>
+
+  {insiderNote && (
+    <div class="insider-note-compact">
+      <strong>Insider Tip:</strong> {insiderNote}
+    </div>
+  )}
+
+  <div class="acc-actions">
+    <a href={bookingUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary book-btn">
+      Check Availability &rarr;
+    </a>
+  </div>
+</div>
+
+<style>
+  .acc-card {
+    padding: 24px;
+    margin-bottom: 24px;
+    border-left: 4px solid var(--accent-magenta);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .acc-card:hover {
+    transform: translateY(-2px);
+    border-left-color: var(--accent-cyan);
+    box-shadow: 0 8px 24px -12px rgba(0, 240, 255, 0.2);
+  }
+
+  .acc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .acc-title-group h4 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    color: var(--text-main);
+  }
+
+  .acc-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .type-badge {
+    background: rgba(255, 184, 0, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(255, 184, 0, 0.3);
+  }
+
+  .time-badge {
+    background: rgba(0, 240, 255, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+  }
+
+  .price-tier {
+    font-weight: 800;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+  }
+
+  .acc-description p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .insider-note-compact {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 2px solid var(--accent-amber);
+  }
+
+  .insider-note-compact strong {
+    color: var(--accent-amber);
+  }
+
+  .acc-actions {
+    margin-top: 8px;
+  }
+
+  .book-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--accent-magenta) 0%, #ff6b6b 100%);
+    border: none;
+  }
+
+  .book-btn:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, var(--accent-magenta) 100%);
+    transform: none; /* Rely on button's base hover if any, or disable */
+  }
+</style>
