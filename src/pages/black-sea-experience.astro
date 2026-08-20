@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import PlaceCard from '../components/PlaceCard.astro';
@@ -15,7 +15,17 @@ import PlaceCard from '../components/PlaceCard.astro';
     <div class="content-grid">
       <div class="main-column">
         <section class="glass-panel mb-4">
-          <h2>🏰 Day Trip: Old Nessebar</h2>
+          <h2>📸 Must-See Landmarks in Burgas</h2>
+          <p>Before you venture out of the city, make sure you check out the iconic spots right in Burgas that define its coastal charm.</p>
+          <ul style="padding-left: 20px; line-height: 1.6; margin-top: 16px;">
+            <li style="margin-bottom: 12px;"><strong>The Sea Garden (Morska Gradina):</strong> The absolute soul of Burgas. A massive, lush park stretching for kilometers along the coast. It's packed with cafes, open-air stages, and will likely be the epicenter of Eurovision side-events.</li>
+            <li style="margin-bottom: 12px;"><strong>The Pier (Mosta):</strong> The iconic T-shaped bridge extending nearly 300 meters into the Black Sea. A sunset walk here is mandatory for any visitor.</li>
+            <li style="margin-bottom: 12px;"><strong>St. Anastasia Island:</strong> Take a short boat trip from the Port of Burgas to this tiny, volcanic island. It has a fascinating history (it was once a prison!), a lighthouse, and a fantastic little seafood restaurant.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4">
+          <h2>ðŸ° Day Trip: Old Nessebar</h2>
           <p>A UNESCO World Heritage site located just 40 minutes north of Burgas. Walk through ancient ruins and dine on the peninsula overlooking the sea.</p>
           <div style="margin-top: 16px;">
             <AffiliateButton text="Book Nessebar Guided Tour" href="https://www.getyourguide.com/s?q=Nessebar" provider="getyourguide" />
@@ -23,32 +33,32 @@ import PlaceCard from '../components/PlaceCard.astro';
         </section>
 
         <section class="glass-panel mb-4">
-          <h2>🧂 Wellness: Burgas Salt Pans (Pink Lakes)</h2>
-          <p>A unique local experience. Float in the hyper-saline pink pools and cover yourself in healing black mud—all just a short bike ride from the Sea Garden.</p>
+          <h2>ðŸ§‚ Wellness: Burgas Salt Pans (Pink Lakes)</h2>
+          <p>A unique local experience. Float in the hyper-saline pink pools and cover yourself in healing black mudâ€”all just a short bike ride from the Sea Garden.</p>
           <div class="insider-note">
             <strong>Insider Note:</strong> Take the scenic mini-train from the Sea Garden to get there, or rent an e-bike!
           </div>
         </section>
 
         <section class="glass-panel mb-4">
-          <h2>🍷 Local Gastronomy: Top 3 Seafood Spots</h2>
-          <p>Bulgarian coastal cuisine relies heavily on fresh Black Sea fish, mussels, and incredible local wines. We strictly follow the "Rule of 3" — here are the only spots you need to know.</p>
+          <h2>ðŸ· Local Gastronomy: Top 3 Seafood Spots</h2>
+          <p>Bulgarian coastal cuisine relies heavily on fresh Black Sea fish, mussels, and incredible local wines. We strictly follow the "Rule of 3" â€” here are the only spots you need to know.</p>
           
           <div class="local-food-guide mt-3 mb-4 p-4" style="background: rgba(0, 240, 255, 0.05); border-radius: 8px; border-left: 4px solid var(--accent-cyan);">
-            <h3 style="color: var(--accent-cyan); font-size: 1.2rem; margin-bottom: 12px;">🍽️ What to Try in May (Local Burgas Cuisine)</h3>
+            <h3 style="color: var(--accent-cyan); font-size: 1.2rem; margin-bottom: 12px;">ðŸ½ï¸ What to Try in May (Local Burgas Cuisine)</h3>
             <ul style="padding-left: 20px; line-height: 1.6; font-size: 0.95rem;">
-              <li style="margin-bottom: 8px;"><strong>Tsatsa (Цаца) with Cold Beer:</strong> The absolute staple of the Bulgarian coast. Small, salty fried sprat fish eaten whole like French fries. You haven't been to Burgas if you haven't eaten Tsatsa on the beach.</li>
-              <li style="margin-bottom: 8px;"><strong>Black Sea Mussels (Черноморски миди):</strong> May is a fantastic season for local mussels. Try them steamed with white wine and garlic, or traditional "Midi s oriz" (mussels with rice).</li>
-              <li style="margin-bottom: 8px;"><strong>Ribena Chorba (Рибена чорба):</strong> A rich, traditional fish soup made from freshly caught local fish, often served with a side of spicy garlic vinegar to add to taste.</li>
-              <li><strong>Tarator (Таратор):</strong> A refreshing cold soup made of Bulgarian yogurt, cucumbers, garlic, dill, and walnuts. Perfect for warm May afternoons before heading to the EuroClub.</li>
+              <li style="margin-bottom: 8px;"><strong>Tsatsa (Ð¦Ð°Ñ†Ð°) with Cold Beer:</strong> The absolute staple of the Bulgarian coast. Small, salty fried sprat fish eaten whole like French fries. You haven't been to Burgas if you haven't eaten Tsatsa on the beach.</li>
+              <li style="margin-bottom: 8px;"><strong>Black Sea Mussels (Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ð¼Ð¸Ð´Ð¸):</strong> May is a fantastic season for local mussels. Try them steamed with white wine and garlic, or traditional "Midi s oriz" (mussels with rice).</li>
+              <li style="margin-bottom: 8px;"><strong>Ribena Chorba (Ð Ð¸Ð±ÐµÐ½Ð° Ñ‡Ð¾Ñ€Ð±Ð°):</strong> A rich, traditional fish soup made from freshly caught local fish, often served with a side of spicy garlic vinegar to add to taste.</li>
+              <li><strong>Tarator (Ð¢Ð°Ñ€Ð°Ñ‚Ð¾Ñ€):</strong> A refreshing cold soup made of Bulgarian yogurt, cucumbers, garlic, dill, and walnuts. Perfect for warm May afternoons before heading to the EuroClub.</li>
             </ul>
           </div>
           
           <div style="margin-top: 24px;">
             <PlaceCard 
               nameEn="Dalyana"
-              nameBg="Даляна"
-              priceTier="€€"
+              nameBg="Ð”Ð°Ð»ÑÐ½Ð°"
+              priceTier="â‚¬â‚¬"
               highlight="Fresh Black Sea mussels and fried Tsatsa."
               insiderNote="Located right on the fishing port. Very authentic, slightly chaotic, absolutely delicious. Perfect for a sunset beer."
               link="https://www.tripadvisor.com/Search?q=Dalyana+Burgas"
@@ -59,8 +69,8 @@ import PlaceCard from '../components/PlaceCard.astro';
             
             <PlaceCard 
               nameEn="Neptun"
-              nameBg="Нептун"
-              priceTier="€€€"
+              nameBg="ÐÐµÐ¿Ñ‚ÑƒÐ½"
+              priceTier="â‚¬â‚¬â‚¬"
               highlight="Premium dining with a sea view."
               insiderNote="Located in the Sea Garden. Excellent service and high-end Mediterranean and local cuisine."
               link="https://www.tripadvisor.com/Search?q=Neptun+Burgas"
@@ -71,8 +81,8 @@ import PlaceCard from '../components/PlaceCard.astro';
 
             <PlaceCard 
               nameEn="Zlatna Ribka"
-              nameBg="Златна Рибка"
-              priceTier="€€"
+              nameBg="Ð—Ð»Ð°Ñ‚Ð½Ð° Ð Ð¸Ð±ÐºÐ°"
+              priceTier="â‚¬â‚¬"
               highlight="Classic Bulgarian seafood restaurant."
               insiderNote="A long-time local favorite for traditional fish soup (Ribena chorba) and fried sprat."
               link="https://www.tripadvisor.com/Search?q=Zlatna+Ribka+Burgas"
@@ -84,7 +94,7 @@ import PlaceCard from '../components/PlaceCard.astro';
         </section>
 
         <section class="glass-panel mb-4">
-          <h2>📅 Book Your Day Trips</h2>
+          <h2>ðŸ“… Book Your Day Trips</h2>
           <p>Don't wait until you arrive. The week of Eurovision will see tens of thousands of extra tourists in Burgas. Book your wine tasting, boat trips, and Nessebar tours in advance.</p>
           <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
             <AffiliateButton text="Explore on GetYourGuide" href="https://www.getyourguide.com/s?q=Burgas" provider="getyourguide" />
@@ -177,3 +187,4 @@ import PlaceCard from '../components/PlaceCard.astro';
     }
   }
 </style>
+
