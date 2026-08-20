@@ -1,0 +1,257 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+
+// SEO Structured Data for Google FAQ Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When do Eurovision 2027 tickets go on sale for Burgas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, Eurovision tickets go on sale in waves starting from late November or early December of the preceding year. For Burgas 2027, expect the first wave of tickets for the live shows and jury rehearsals to be released via the official ticketing partner around late 2026. Keep an eye on our newsletter for exact dates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to get from Sofia Airport to Burgas for Eurovision?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can take a domestic flight (45 mins), hop on a VIP bus from the central bus station (approx 5 hours), take the BDZ night train (comfortable but slow, ~8 hours), or rent a car and drive via the A1 Trakiya Highway (about 3.5 hours). Beware that train tickets sell out extremely fast during peak season."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where will the Eurovision Village be located in Burgas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the official location hasn't been strictly confirmed, local insiders expect the EuroVillage to be hosted at the Port of Burgas (Morski Gara) or within the Sea Garden (Morska Gradina), both of which offer massive open-air capacity and stunning coastal views."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to stay in Burgas city center or Sunny Beach for Eurovision?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Staying in Burgas City Center (or Lazur/Zornitsa) is best for being close to Arena Burgas and the EuroVillage. Sunny Beach offers much cheaper accommodation and massive resort parties, but you will need a 40-minute bus or taxi ride each way to reach the Arena."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to avoid taxi scams in Burgas and Bulgaria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uber is not available in Bulgaria. Always use official ride-hailing apps like TaxiMe, Maxim, or call reputable companies like Yellow! or Omega Taxi. Never accept a ride from drivers soliciting inside the airport terminal or at the train station without a pre-agreed meter running."
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Eurovision 2027 Burgas: Frequently Asked Questions (FAQ)" 
+  description="Your ultimate local guide to Eurovision 2027 in Burgas. Answers to your most common questions about tickets, transport, accommodation, and safety."
+>
+  <head>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  </head>
+
+  <div class="container page-content">
+    <h1 class="page-title text-gradient">Frequently Asked Questions</h1>
+    <p class="subtitle">
+      The official Eurovision FAQ covers the basics, but we are locals. Here is the unvarnished truth about navigating Burgas in May 2027—from securing tickets to surviving the taxi queues.
+    </p>
+
+    <div class="faq-container">
+      
+      <div class="faq-section">
+        <h2>🎟️ Tickets & Arena</h2>
+        
+        <details class="faq-item">
+          <summary>When do Eurovision 2027 tickets go on sale for Burgas?</summary>
+          <div class="faq-answer">
+            <p><strong>Official Line:</strong> Check eurovision.tv for updates.</p>
+            <p><strong>Local Insider:</strong> Historically, tickets drop in waves starting late November to early December. Because Arena Burgas has a slightly smaller capacity than massive stadiums, tickets for the Grand Final will sell out in minutes. We highly recommend aiming for the <em>Jury Shows</em> or <em>Family Shows</em> which are identical in production but much easier to get tickets for.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the capacity of Arena Burgas?</summary>
+          <div class="faq-answer">
+            <p>Arena Burgas is a state-of-the-art multi-functional hall. For a concert configuration with a massive Eurovision stage and green room, the expected capacity is roughly 8,000 to 10,000 fans per show. It's an intimate and electric venue!</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>✈️ Transport & Logistics</h2>
+        
+        <details class="faq-item">
+          <summary>How to get from Sofia Airport to Burgas for Eurovision?</summary>
+          <div class="faq-answer">
+            <p>If you fly into Sofia (SOF), you have four main options to reach the coast:</p>
+            <ul>
+              <li><strong>Domestic Flight:</strong> Bulgaria Air flies to Burgas (BOJ). It takes 45 minutes, but book early.</li>
+              <li><strong>Rent a Car:</strong> A 3.5-hour drive via the A1 Trakiya highway. (Don't forget the BGTOLL vignette!).</li>
+              <li><strong>Bus:</strong> Union Ivkoni or Karat-S operate comfortable coaches from Sofia Central Bus Station (~5 hours).</li>
+              <li><strong>Night Train (BDZ):</strong> A classic experience. You can book a sleeping cabin. It takes about 8 hours. Tickets open 30 days in advance and <em>will</em> sell out instantly for Eurovision week.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How to avoid taxi scams in Burgas?</summary>
+          <div class="faq-answer">
+            <p><strong>Uber does not operate in Bulgaria.</strong> To avoid being overcharged, never accept rides from people shouting "Taxi!" at arrivals. Instead, download local apps like <strong>TaxiMe</strong>, <strong>Maxim</strong>, or use local trusted operators like <strong>Omega Taxi</strong>. If hailing on the street, look at the sticker on the passenger window to verify the rate per kilometer (should be around 1.20 - 1.50 BGN/km).</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>🏨 Accommodation & Lifestyle</h2>
+        
+        <details class="faq-item">
+          <summary>Is it better to stay in Burgas city center or Sunny Beach?</summary>
+          <div class="faq-answer">
+            <p>It depends entirely on your budget and vibe:</p>
+            <p><strong>Stay in Burgas (Lazur, Zornitsa, Center):</strong> If you want to walk to the Arena and the EuroVillage. Prices will be at a massive premium.</p>
+            <p><strong>Stay in Sunny Beach / Nessebar:</strong> If you are on a budget or want a resort vacation. You'll have hundreds of hotels to choose from, but you must factor in a 40-minute drive to the Arena for the shows.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where will the Eurovision Village be located in Burgas?</summary>
+          <div class="faq-answer">
+            <p>While official announcements are pending, local consensus points to the <strong>Port of Burgas (Morski Gara)</strong> or the <strong>Sea Garden</strong>. Both locations frequently host massive summer festivals (like SPICE Music Festival), have the necessary security infrastructure, and offer breathtaking views of the Black Sea.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to carry cash (Levs) in Bulgaria?</summary>
+          <div class="faq-answer">
+            <p>Bulgaria is transitioning to the Euro, but as of right now, the local currency is the Bulgarian Lev (BGN). You can pay by card (Visa/Mastercard) at 95% of restaurants, supermarkets, and hotels. However, you should carry a small amount of cash (50-100 BGN) for tipping, small bakeries, or paying for sunbeds on the beach.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    max-width: 900px;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 12px;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item[open] {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 0, 122, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-item summary {
+    padding: 20px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+    color: var(--accent-magenta);
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px 24px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .faq-answer p {
+    margin-bottom: 12px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer ul {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+  .faq-answer li {
+    margin-bottom: 8px;
+  }
+
+  .faq-answer strong {
+    color: var(--text-main);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
