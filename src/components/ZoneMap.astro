@@ -17,25 +17,37 @@
       <div class="station" onclick="scrollToZone(event, 'area2')">
         <div class="line north-line"></div>
         <div class="node north-node"></div>
-        <div class="label">Sunny Beach <span class="badge">Budget/Party</span></div>
+        <div class="label">
+          Sunny Beach <span class="badge">Budget/Party</span>
+          <span class="time">🚗 40 min</span>
+        </div>
       </div>
       
       <div class="station" onclick="scrollToZone(event, 'area2')">
         <div class="line north-line"></div>
         <div class="node north-node"></div>
-        <div class="label">Sveti Vlas <span class="badge">Luxury</span></div>
+        <div class="label">
+          Sveti Vlas <span class="badge">Luxury</span>
+          <span class="time">🚗 45 min</span>
+        </div>
       </div>
       
       <div class="station" onclick="scrollToZone(event, 'area2')">
         <div class="line north-line"></div>
         <div class="node north-node"></div>
-        <div class="label">Nessebar <span class="badge">Heritage</span></div>
+        <div class="label">
+          Nessebar <span class="badge">Heritage</span>
+          <span class="time">🚗 45 min</span>
+        </div>
       </div>
       
       <div class="station" onclick="scrollToZone(event, 'area2')">
         <div class="line north-line"></div>
         <div class="node north-node"></div>
-        <div class="label">Pomorie <span class="badge">Relaxed</span></div>
+        <div class="label">
+          Pomorie <span class="badge">Relaxed</span>
+          <span class="time">🚗 30 min</span>
+        </div>
       </div>
     </div>
 
@@ -46,31 +58,46 @@
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node">✈️</div>
-        <div class="label">Sarafovo <span class="badge airport">Airport</span></div>
+        <div class="label">
+          Sarafovo <span class="badge airport">Airport</span>
+          <span class="time">🚌 15 min</span>
+        </div>
       </div>
 
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node highlight">🎤</div>
-        <div class="label">Zornitsa / Izgrev <span class="badge primary">Arena</span></div>
+        <div class="label">
+          Zornitsa / Izgrev <span class="badge primary">Arena</span>
+          <span class="time">🚶 10 min</span>
+        </div>
       </div>
 
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node"></div>
-        <div class="label">Lazur <span class="badge">Sea Garden</span></div>
+        <div class="label">
+          Lazur <span class="badge">Sea Garden</span>
+          <span class="time">🚶 25 min</span>
+        </div>
       </div>
 
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node">🏙️</div>
-        <div class="label">City Center <span class="badge secondary">EuroVillage</span></div>
+        <div class="label">
+          City Center <span class="badge secondary">EuroVillage</span>
+          <span class="time">🚌 15 min</span>
+        </div>
       </div>
       
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node"></div>
-        <div class="label">Kraimorie <span class="badge">Beach</span></div>
+        <div class="label">
+          Kraimorie <span class="badge">Beach</span>
+          <span class="time">🚌 25 min</span>
+        </div>
       </div>
     </div>
 
@@ -81,13 +108,19 @@
       <div class="station" onclick="scrollToZone(event, 'area3')">
         <div class="line south-line"></div>
         <div class="node south-node"></div>
-        <div class="label">Chernomorets <span class="badge">Quiet</span></div>
+        <div class="label">
+          Chernomorets <span class="badge">Quiet</span>
+          <span class="time">🚗 35 min</span>
+        </div>
       </div>
       
       <div class="station" onclick="scrollToZone(event, 'area3')">
         <div class="line south-line"></div>
         <div class="node south-node"></div>
-        <div class="label">Sozopol <span class="badge">Riviera</span></div>
+        <div class="label">
+          Sozopol <span class="badge">Riviera</span>
+          <span class="time">🚗 50 min</span>
+        </div>
       </div>
     </div>
     
@@ -102,7 +135,6 @@
       const y = element.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
       
-      // Add a brief highlight flash to the section
       element.style.transition = 'box-shadow 0.5s ease';
       element.style.boxShadow = '0 0 30px rgba(0, 240, 255, 0.5)';
       setTimeout(() => {
@@ -222,7 +254,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px; /* for emojis */
+    font-size: 14px;
   }
 
   .north-node { border-color: var(--accent-cyan); }
@@ -244,7 +276,8 @@
     color: var(--text-main);
     display: flex;
     align-items: center;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
     transition: all 0.2s ease;
   }
 
@@ -256,6 +289,7 @@
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
 
   .badge.primary {
@@ -274,5 +308,12 @@
     background: rgba(255, 184, 0, 0.2);
     color: var(--accent-amber);
     border: 1px solid rgba(255, 184, 0, 0.3);
+  }
+
+  .time {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+    white-space: nowrap;
   }
 </style>
