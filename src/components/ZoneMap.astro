@@ -1,25 +1,96 @@
----
-// Interactive Zone Map
+﻿---
+// Interactive Metro-Style Coast Map
 ---
 
 <div class="zone-map-container">
-  <h3>Select Your Vibe</h3>
-  <div class="zone-grid">
-    <a href="#area2" class="zone-block north" onclick="scrollToZone(event, 'area2')">
-      <span class="icon">✈️</span>
-      <span class="title">North Coast</span>
-      <span class="desc">Airport & Resorts</span>
-    </a>
-    <a href="#area1" class="zone-block center" onclick="scrollToZone(event, 'area1')">
-      <span class="icon">🎤</span>
-      <span class="title">City Center</span>
-      <span class="desc">Arena & Parties</span>
-    </a>
-    <a href="#area3" class="zone-block south" onclick="scrollToZone(event, 'area3')">
-      <span class="icon">🌅</span>
-      <span class="title">South Coast</span>
-      <span class="desc">Riviera & History</span>
-    </a>
+  <div class="map-header">
+    <h3>📍 The Burgas 2027 Coastal Map</h3>
+    <p>Click a station to explore accommodation options in that area.</p>
+  </div>
+
+  <div class="metro-map">
+    
+    <!-- North Coast Area -->
+    <div class="metro-section">
+      <div class="section-label north">North Coast (Area 2)</div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area2')">
+        <div class="line north-line"></div>
+        <div class="node north-node"></div>
+        <div class="label">Sunny Beach <span class="badge">Budget/Party</span></div>
+      </div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area2')">
+        <div class="line north-line"></div>
+        <div class="node north-node"></div>
+        <div class="label">Sveti Vlas <span class="badge">Luxury</span></div>
+      </div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area2')">
+        <div class="line north-line"></div>
+        <div class="node north-node"></div>
+        <div class="label">Nessebar <span class="badge">Heritage</span></div>
+      </div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area2')">
+        <div class="line north-line"></div>
+        <div class="node north-node"></div>
+        <div class="label">Pomorie <span class="badge">Relaxed</span></div>
+      </div>
+    </div>
+
+    <!-- City Center Area -->
+    <div class="metro-section">
+      <div class="section-label center">Burgas City (Area 1)</div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area1')">
+        <div class="line center-line"></div>
+        <div class="node center-node">✈️</div>
+        <div class="label">Sarafovo <span class="badge airport">Airport</span></div>
+      </div>
+
+      <div class="station" onclick="scrollToZone(event, 'area1')">
+        <div class="line center-line"></div>
+        <div class="node center-node highlight">🎤</div>
+        <div class="label">Zornitsa / Izgrev <span class="badge primary">Arena</span></div>
+      </div>
+
+      <div class="station" onclick="scrollToZone(event, 'area1')">
+        <div class="line center-line"></div>
+        <div class="node center-node"></div>
+        <div class="label">Lazur <span class="badge">Sea Garden</span></div>
+      </div>
+
+      <div class="station" onclick="scrollToZone(event, 'area1')">
+        <div class="line center-line"></div>
+        <div class="node center-node">🏙️</div>
+        <div class="label">City Center <span class="badge secondary">EuroVillage</span></div>
+      </div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area1')">
+        <div class="line center-line"></div>
+        <div class="node center-node"></div>
+        <div class="label">Kraimorie <span class="badge">Beach</span></div>
+      </div>
+    </div>
+
+    <!-- South Coast Area -->
+    <div class="metro-section">
+      <div class="section-label south">South Coast (Area 3)</div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area3')">
+        <div class="line south-line"></div>
+        <div class="node south-node"></div>
+        <div class="label">Chernomorets <span class="badge">Quiet</span></div>
+      </div>
+      
+      <div class="station" onclick="scrollToZone(event, 'area3')">
+        <div class="line south-line"></div>
+        <div class="node south-node"></div>
+        <div class="label">Sozopol <span class="badge">Riviera</span></div>
+      </div>
+    </div>
+    
   </div>
 </div>
 
@@ -28,9 +99,15 @@
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      // Offset for sticky header
       const y = element.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
+      
+      // Add a brief highlight flash to the section
+      element.style.transition = 'box-shadow 0.5s ease';
+      element.style.boxShadow = '0 0 30px rgba(0, 240, 255, 0.5)';
+      setTimeout(() => {
+        element.style.boxShadow = 'none';
+      }, 1000);
     }
   }
 </script>
@@ -38,84 +115,164 @@
 <style>
   .zone-map-container {
     margin-bottom: 48px;
-    padding: 32px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
-    border: 1px solid var(--glass-border);
+    padding: 32px 24px;
+    background: rgba(10, 10, 25, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
   }
 
-  .zone-map-container h3 {
+  .map-header {
     text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .map-header h3 {
     color: var(--text-main);
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     font-size: 1.5rem;
   }
 
-  .zone-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  .map-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
   }
 
-  .zone-block {
+  .metro-map {
     display: flex;
     flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .metro-section {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: 50px;
+  }
+
+  .section-label.north { color: var(--accent-cyan); }
+  .section-label.center { color: var(--accent-magenta); }
+  .section-label.south { color: var(--accent-amber); }
+
+  .station {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 48px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .station:hover {
+    transform: translateX(10px);
+  }
+
+  .station:hover .label {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  }
+
+  .line {
+    position: absolute;
+    left: 15px;
+    top: -24px;
+    bottom: -24px;
+    width: 6px;
+    z-index: 1;
+  }
+
+  /* Fix line ends */
+  .metro-section:first-child .station:first-child .line { top: 50%; }
+  .metro-section:last-child .station:last-child .line { bottom: 50%; }
+
+  .north-line { background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-cyan)); }
+  .center-line { background: linear-gradient(to bottom, var(--accent-magenta), var(--accent-magenta)); }
+  .south-line { background: linear-gradient(to bottom, var(--accent-amber), var(--accent-amber)); }
+
+  /* Gradient transitions between sections */
+  .metro-section:nth-child(1) .station:last-child .line {
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-magenta));
+    bottom: -40px;
+  }
+  .metro-section:nth-child(2) .station:last-child .line {
+    background: linear-gradient(to bottom, var(--accent-magenta), var(--accent-amber));
+    bottom: -40px;
+  }
+
+  .node {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #111;
+    border: 4px solid #fff;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px 16px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    text-decoration: none;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    text-align: center;
+    font-size: 14px; /* for emojis */
   }
 
-  .zone-block .icon {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+  .north-node { border-color: var(--accent-cyan); }
+  .center-node { border-color: var(--accent-magenta); }
+  .south-node { border-color: var(--accent-amber); }
+
+  .node.highlight {
+    width: 24px;
+    height: 24px;
+    margin-left: 6px;
+    background: #fff;
+    box-shadow: 0 0 15px var(--accent-magenta);
   }
 
-  .zone-block .title {
-    font-size: 1.2rem;
-    font-weight: 700;
+  .label {
+    margin-left: 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
   }
 
-  .zone-block .desc {
-    font-size: 0.85rem;
+  .badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
-  /* Hover States */
-  .zone-block.north:hover {
-    border-color: var(--accent-cyan);
-    background: rgba(0, 240, 255, 0.1);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px -10px rgba(0, 240, 255, 0.3);
+  .badge.primary {
+    background: rgba(255, 0, 255, 0.2);
+    color: var(--accent-magenta);
+    border: 1px solid rgba(255, 0, 255, 0.3);
   }
 
-  .zone-block.center:hover {
-    border-color: var(--accent-magenta);
-    background: rgba(255, 0, 255, 0.1);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px -10px rgba(255, 0, 255, 0.3);
+  .badge.secondary {
+    background: rgba(0, 240, 255, 0.2);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.3);
   }
-
-  .zone-block.south:hover {
-    border-color: var(--accent-amber);
-    background: rgba(255, 184, 0, 0.1);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px -10px rgba(255, 184, 0, 0.3);
-  }
-
-  @media (max-width: 768px) {
-    .zone-grid {
-      grid-template-columns: 1fr;
-    }
+  
+  .badge.airport {
+    background: rgba(255, 184, 0, 0.2);
+    color: var(--accent-amber);
+    border: 1px solid rgba(255, 184, 0, 0.3);
   }
 </style>
