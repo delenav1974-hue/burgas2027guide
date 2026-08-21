@@ -16,10 +16,11 @@ const { headline, subheadline } = Astro.props;
       <h3>Join the Secret Waitlist</h3>
       <p>Get notified instantly on ticket sales & access our secret accommodation list before the crowds.</p>
       
-      <form class="capture-form" action="https://formsubmit.co/delenav1974@gmail.com" method="POST">
+      <form class="capture-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395">
         <input type="email" name="email" placeholder="Enter your email address" required />
-        <input type="hidden" name="_next" value="https://burgas2027guide.com/">
-        <input type="hidden" name="_subject" value="New Subscriber from Hero Section!">
+        <input type="hidden" name="redirect" value="https://burgas2027guide.com/">
+        <input type="hidden" name="subject" value="New Subscriber from Hero Section!">
         <button type="submit" class="btn btn-primary">Get Early Access</button>
       </form>
       <div class="spam-notice">We respect your privacy. No spam.</div>
