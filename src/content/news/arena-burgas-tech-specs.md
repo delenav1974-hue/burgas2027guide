@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Arena Burgas Cleared for Massive Stage Production!"
-date: "2026-08-21"
+date: 2026-08-21
 author: "Local Insider"
 description: "Architects officially confirm Arena Burgas can handle a massive 300-tonne roof load. Stage designers now have absolute freedom to create one of the most spectacular visual shows in Eurovision history."
 image: "/images/news/arena-burgas-roof.jpg"
