@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -73,9 +73,11 @@ import Layout from '../layouts/Layout.astro';
 				<p>
 					We are preparing a massive, printable 20-page <strong>Burgas 2027 Eurovision Survival Guide</strong> (including offline maps, emergency numbers, and insider local tips). Drop your email below and we'll send it to you as soon as it's published!
 				</p>
-				<form class="subscribe-form">
-					<input type="email" placeholder="Enter your email address" required>
-					<button type="submit" class="btn btn-primary">Send Me The Guide</button>
+				<form class="subscribe-form" action="https://formsubmit.co/delenav1974@gmail.com" method="POST">
+					<input type="email" name="email" placeholder="Enter your email address" required>
+					<input type="hidden" name="_next" value="https://burgas2027guide.com/essential-apps">
+					<input type="hidden" name="_subject" value="Survival Guide Request!">
+					<button type="submit" class="btn btn-primary">Send me the Guide</button>
 				</form>
 				<p class="spam-notice">No spam. You can unsubscribe at any time.</p>
 			</div>

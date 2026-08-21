@@ -45,14 +45,16 @@ import AffiliateButton from '../components/AffiliateButton.astro';
           <div style="margin-top: 16px; padding: 24px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid var(--glass-border);">
             <h3 style="color: var(--accent-magenta); margin-bottom: 8px;">👑 VIP Table Booking & Secret Parties</h3>
             <p style="font-size: 0.9rem; margin-bottom: 16px;">We have direct contacts with the top club managers in Burgas. Leave your email, and we will send you the secret links for private yacht parties and VIP table reservations before they sell out.</p>
-            <form onsubmit="event.preventDefault(); alert('Request sent! Our concierge will contact you soon.');" style="display:flex; flex-direction:column; gap:12px;">
-              <input type="text" placeholder="Your Name or Delegation" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
-              <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
-              <select style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:#111; color:#fff;">
+            <form action="https://formsubmit.co/delenav1974@gmail.com" method="POST" style="display:flex; flex-direction:column; gap:12px;">
+              <input type="text" name="name" placeholder="Your Name or Delegation" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
+              <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.05); color:#fff;" />
+              <select name="request_type" style="width:100%; padding:10px; border-radius:4px; border:1px solid var(--glass-border); background:#111; color:#fff;">
                 <option value="yacht">Private Yacht Party Access</option>
                 <option value="vip">EuroClub VIP Table</option>
                 <option value="both">Both</option>
               </select>
+              <input type="hidden" name="_next" value="https://burgas2027guide.com/events-and-parties">
+              <input type="hidden" name="_subject" value="VIP Concierge Request!">
               <button type="submit" class="btn btn-primary" style="padding:10px; font-weight:bold;">Request Access</button>
             </form>
           </div>

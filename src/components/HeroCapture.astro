@@ -16,8 +16,10 @@ const { headline, subheadline } = Astro.props;
       <h3>Join the Secret Waitlist</h3>
       <p>Get notified instantly on ticket sales & access our secret accommodation list before the crowds.</p>
       
-      <form class="capture-form" onsubmit="event.preventDefault(); alert('Subscribed! (Webhook integration pending)');">
-        <input type="email" placeholder="Enter your email address" required />
+      <form class="capture-form" action="https://formsubmit.co/delenav1974@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Enter your email address" required />
+        <input type="hidden" name="_next" value="https://burgas2027guide.com/">
+        <input type="hidden" name="_subject" value="New Subscriber from Hero Section!">
         <button type="submit" class="btn btn-primary">Get Early Access</button>
       </form>
       <div class="spam-notice">We respect your privacy. No spam.</div>
