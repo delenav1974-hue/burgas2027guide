@@ -1,5 +1,434 @@
 ---
 import '../styles/global.css';
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  /** Page-specific JSON-LD (Event, FAQPage, Article...). Object or array. */
+  schema?: object | object[];
+  /** Human label for this page in the breadcrumb trail. */
+  breadcrumb?: string;
+}
+
+const {
+  title,
+  description,
+  image = SITE.defaultImage,
+  schema,
+  breadcrumb,
+} = Astro.props;
+
+// Canonical: always the trailing-slash form on the production origin,
+// stripped of query strings and fragments.
+const canonicalPath = Astro.url.pathname.replace(/\/+$/, '') || '';
+const canonicalURL = new URL(canonicalPath + '/', SITE.url).href;
+
+// Breadcrumb trail, built from the URL. Home-only pages get no trail.
+const segments = canonicalPath.split('/').filter(Boolean);
+const breadcrumbSchema =
+  segments.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${SITE.url}/`,
+          },
+          ...segments.map((seg, i) => ({
+            '@type': 'ListItem',
+            position: i + 2,
+            name:
+              i === segments.length - 1 && breadcrumb
+                ? breadcrumb
+                : seg
+                    .split('-')
+                    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                    .join(' '),
+            item: `${SITE.url}/${segments.slice(0, i + 1).join('/')}/`,
+          })),
+        ],
+      }
+    : null;
+
+// Site-wide identity graph: emitted once, on every page.
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: `${SITE.url}/`,
+      name: SITE.name,
+      description: SITE.description,
+      inLanguage: 'en',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: `${SITE.url}/`,
+      logo: `${SITE.url}${SITE.logo}`,
+      sameAs: [SITE.telegram],
+    },
+  ],
+};
+
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []), ...pageSchemas];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Preload the hero art so it is not discovered late -->
+    <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+    
+    <!-- GTranslate -->
+    <script type="text/javascript">
+      window.gtranslateSettings = {"default_language":"en","native_language_names":true,"languages":["en","bg","ru","tr","de","fr","it","es"],"wrapper_selector":".gtranslate_wrapper"};
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+    
+    <!-- Travelpayouts Drive Script -->
+    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+      (function () {
+          var script = document.createElement("script");
+          script.async = 1;
+          script.setAttribute("data-cmp-ab","2");
+          script.src = 'https://emrldtp.cc/NTYzNjAw.js?t=563600';
+          document.head.appendChild(script);
+      })();
+    </script>
+
+    <!-- Structured data -->
+    {allSchemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <header class="site-header glass-panel">
+      <div class="container">
+        <a href="/" class="logo">
+          <span class="text-gradient">Burgas 2027</span> Guide
+        </a>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+          <a href="/news">News</a>
+          <a href="/where-to-stay">Stay & Zones</a>
+          <a href="/transfers">Transport</a>
+          <a href="/events-and-parties">Events</a>
+          <a href="/black-sea-experience">Experience</a>
+          <a href="/faq" class="text-cyan-400 font-bold">FAQ</a>
+          <a href="/essential-apps" class="text-pink-400">Survival Apps</a>
+        </nav>
+        <div class="gtranslate_wrapper"></div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="disclaimer">
+            <div class="about-copy">
+              <h4>The Local Insider Team</h4>
+              <p>Burgas 2027 Guide is an independent event and travel portal. We are locals in love with Burgas and the coast. We cut through the noise to bring international fans, travelers, and delegations verified lodging picks, stress-free transit playbooks, and genuine coastal recommendations.</p>
+            </div>
+            <p style="margin-top: 16px;">
+              <em>Disclaimer: burgas2027guide.com is an independent fan travel portal and is not affiliated with, endorsed by, or connected to the European Broadcasting Union (EBU), Bulgarian National Television (BNT), or the official Eurovision Song Contest.</em>
+            </p>
+          </div>
+          <div class="b2b-links">
+            <h4>Community & Legal</h4>
+            <ul>
+              <li><a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer">Join RU Telegram</a></li>
+              <li><a href="/about" class="discreet-b2b-link">Contact & About Us</a></li>
+              <li><a href="/privacy" class="discreet-b2b-link">Privacy Policy</a></li>
+              <li><a href="/terms" class="discreet-b2b-link">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Partner</h4>
+            <ul>
+              <li><a href="/investors">For Property Owners (B2B)</a></li>
+              <li><a href="/disclosure">Affiliate Disclosure</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        padding: 16px 0;
+      }
+      
+      .site-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .main-nav a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .gtranslate_wrapper {
+        min-width: 120px;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      .site-footer {
+        margin-top: 64px;
+        padding: 48px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 32px;
+      }
+
+      .disclaimer {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      .about-copy {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px dashed var(--glass-border);
+      }
+
+      .about-copy h4 {
+        color: var(--accent-amber);
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .about-copy p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--text-main);
+      }
+
+      .b2b-links h4 {
+        margin-bottom: 16px;
+        color: var(--accent-magenta);
+      }
+
+      .b2b-links ul {
+        list-style: none;
+      }
+
+      .b2b-links li {
+        margin-bottom: 8px;
+      }
+
+      .discreet-b2b-link {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        text-transform: none;
+        opacity: 0.7;
+      }
+
+      .discreet-b2b-link:hover {
+        opacity: 1;
+        color: var(--accent-amber);
+        text-shadow: none;
+      }
+
+      /* Hamburger — hidden on desktop, shown below 900px */
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        background: transparent;
+        border: 1px solid var(--glass-border);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .nav-toggle-bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 0 auto;
+        background: var(--text-main);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      @media (max-width: 900px) {
+        .site-header .container {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .nav-toggle {
+          display: flex;
+          order: 3;
+        }
+
+        .gtranslate_wrapper {
+          order: 2;
+          margin-left: auto;
+        }
+
+        .main-nav {
+          order: 4;
+          flex-basis: 100%;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .main-nav.is-open {
+          max-height: 70vh;
+          overflow-y: auto;
+          margin-top: 8px;
+          border-top: 1px solid var(--glass-border);
+        }
+
+        .main-nav a {
+          padding: 14px 4px;
+          font-size: 1rem;
+          border-bottom: 1px solid var(--glass-border);
+        }
+
+        .main-nav a:last-child {
+          border-bottom: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const nav = document.getElementById('main-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute(
+            'aria-label',
+            open ? 'Close navigation menu' : 'Open navigation menu'
+          );
+        });
+
+        // Close the menu when a link is followed or Escape is pressed.
+        nav.addEventListener('click', (e) => {
+          if ((e.target as HTMLElement).tagName === 'A') {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+---
+import '../styles/global.css';
 
 interface Props {
   title: string;
