@@ -53,10 +53,9 @@ const faqSchema = {
 <Layout 
   title="Eurovision 2027 Burgas: Frequently Asked Questions (FAQ)" 
   description="Your ultimate local guide to Eurovision 2027 in Burgas. Answers to your most common questions about tickets, transport, accommodation, and safety."
+  schema={faqSchema}
+  breadcrumb="FAQ"
 >
-  <head>
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
-  </head>
 
   <div class="container page-content">
     <h1 class="page-title text-gradient">Frequently Asked Questions</h1>
