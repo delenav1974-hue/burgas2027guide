@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import TransitCalculator from '../components/TransitCalculator.astro';
@@ -6,40 +6,69 @@ import TransitCalculator from '../components/TransitCalculator.astro';
 
 <Layout 
   title="Burgas Airport Transfers (BOJ) & Transit | Burgas 2027 Guide" 
-  description="How to get to Burgas 2027. Ultimate guide to Burgas airport transfers, Istanbul border crossing, and getting to the Arena."
+  description="Detailed step-by-step routes to Burgas from Sofia, Varna, and Istanbul airports for Eurovision 2027. Prices, bus numbers, and travel times included."
 >
   <div class="container page-content">
     <h1 class="text-gradient">Transit & Logistics Playbook</h1>
-    <p class="lead">Don't let logistics ruin your Eurovision experience. Here is the ultimate guide to Burgas airport transfers and getting around the coast.</p>
+    <p class="lead">Don't let logistics ruin your Eurovision experience. Here are detailed, step-by-step instructions on how to reach Burgas from all major regional airports.</p>
 
     <div class="content-grid">
       <div class="main-column">
         <TransitCalculator />
 
         <section class="glass-panel mb-4">
-          <h2>✈️ Flying into Burgas (BOJ)</h2>
-          <p>Burgas Airport is only 10 km from the city center. During the event week, expect high demand for official taxis.</p>
+          <h2>✈️ From Burgas Airport (BOJ) to City Center</h2>
+          <p>Burgas Airport (Sarafovo) is the closest and most convenient hub, located just 10 km from the city center.</p>
           <ul>
-            <li><strong>Public Bus:</strong> Line No. 15 runs every 20-30 minutes. Costs ~1.50 BGN.</li>
-            <li><strong>Official Taxi:</strong> Eko Taxi is the official airport partner.</li>
-            <li><strong>Private Transfer:</strong> Highly recommended. Book a driver with a name sign to avoid waiting in line.</li>
+            <li><strong>Step 1: Public Bus No. 15.</strong> The bus stop is located right outside the Departures terminal.</li>
+            <li><strong>Duration:</strong> 20–30 minutes to reach <strong>Bus Station South (Автогара Юг)</strong> in central Burgas.</li>
+            <li><strong>Cost:</strong> 1.50 BGN (~0.80 EUR). Buy the ticket directly from the conductor on the bus (cash only in Leva).</li>
+            <li><strong>Alternatives:</strong> Eko Taxi (official airport partner) costs ~25-30 BGN (~15 EUR). Private transfers are highly recommended during Eurovision week to skip taxi queues.</li>
           </ul>
           <div style="margin-top: 16px;">
             <AffiliateButton text="Book Private Airport Transfer (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
           </div>
         </section>
 
-        <section class="glass-panel mb-4" id="intercity-buses">
-          <h2>🚌 Intercity Buses (Sofia, Varna, Plovdiv & Istanbul)</h2>
-          <p>If you fly into a different major city, taking a bus is the most affordable way to reach Burgas.</p>
+        <section class="glass-panel mb-4" id="from-sofia">
+          <h2>🏙️ From Sofia Airport (SOF) to Burgas</h2>
+          <p>Flying into the capital is often cheaper, but you will need to cross the country (approx. 400 km).</p>
           <ul>
-            <li><strong>Sofia to Burgas:</strong> ~5 hours via the highway. Extremely popular route.</li>
-            <li><strong>Plovdiv to Burgas:</strong> ~3.5 hours.</li>
-            <li><strong>Varna to Burgas:</strong> ~2 hours along the scenic coastal road.</li>
-            <li><strong>Istanbul (IST) to Burgas:</strong> ~4-5 hours depending on the Dereköy border crossing. Demand will be insane, book months in advance.</li>
+            <li><strong>Step 1: Metro to City Center.</strong> Take Metro Line 4 (Yellow Line) directly from Terminal 2 to the <strong>Central Railway/Bus Station</strong> (Спирка "Централна гара").
+              <br/><em>Time: 30 mins | Cost: 1.60 BGN (~0.80 EUR)</em>
+            </li>
+            <li><strong>Step 2: Coach to Burgas.</strong> Board a direct bus (carriers: Union Ivkoni or Karat-S) heading to Burgas South. 
+              <br/><em>Time: 5.5 hours | Cost: 35-40 BGN (~18-20 EUR)</em>
+            </li>
+            <li><strong>Total Travel Time:</strong> ~6 hours.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-varna">
+          <h2>🌊 From Varna Airport (VAR) to Burgas</h2>
+          <p>Varna is the second major coastal airport, about 120 km north of Burgas.</p>
+          <ul>
+            <li><strong>Step 1: Bus 409.</strong> Take public bus #409 from the airport to <strong>Varna Central Bus Station</strong> (Автогара Варна).
+              <br/><em>Time: 20 mins | Cost: 2.00 BGN (~1.00 EUR)</em>
+            </li>
+            <li><strong>Step 2: Minibus to Burgas.</strong> Take a coastal coach (carrier: M-Bus) down to Burgas South. 
+              <br/><em>Time: 2 hours | Cost: 15-20 BGN (~8-10 EUR)</em>
+            </li>
+            <li><strong>Total Travel Time:</strong> ~2.5 hours.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-istanbul">
+          <h2>🇹🇷 From Istanbul Airports (IST / SAW) to Burgas</h2>
+          <p>Istanbul is a massive global hub and a very popular gateway to Bulgaria for international fans.</p>
+          <ul>
+            <li><strong>Direct Coaches:</strong> Companies like <strong>Nisikli</strong> and <strong>Arda Tur</strong> run direct buses from Istanbul Esenler (Buyuk Otogar) to Burgas South. 
+              <br/><em>Time: 5-6 hours | Cost: ~60-80 BGN (~30-40 EUR)</em>
+            </li>
+            <li><strong>Border Control:</strong> You will cross the Malko Tarnovo border. Expect delays during peak Eurovision days.</li>
           </ul>
           <div class="insider-note">
-            <strong>Insider Note:</strong> Use Omio or FlixBus to book tickets in advance. Local Bulgarian bus companies (like Union Ivkoni or Enturtrans) sell out very fast during summer events.
+            <strong>Insider Note:</strong> Use Omio or FlixBus to book intercity tickets in advance. Local Bulgarian bus companies sell out very fast during summer events.
           </div>
           <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
             <AffiliateButton text="Search Buses on Omio" href="https://www.omio.com/" provider="booking" />
