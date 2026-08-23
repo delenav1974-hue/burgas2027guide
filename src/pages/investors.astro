@@ -1,0 +1,88 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import CountdownBanner from '../components/CountdownBanner.astro';
+
+const seoTitle = "Rent Out Your Apartment for Eurovision 2027 Burgas | B2B & Landlords";
+const seoDescription = "Join our network of verified Burgas landlords. Discover how to maximize your short-term rental income during the Eurovision Song Contest 2027 in Burgas. High demand, premium rates.";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <CountdownBanner />
+  
+  <div class="container page-content">
+    <header class="b2b-header">
+      <h1 class="text-gradient">Maximize Your Rental Yield During Eurovision 2027</h1>
+      <p class="subtitle">An exclusive partnership program for Burgas property owners, investors, and landlords.</p>
+    </header>
+
+    <div class="main-column" style="margin-top: 40px;">
+      <section class="glass-panel">
+        <h2>The Opportunity (Евровизия 2027 Бургас нощувки)</h2>
+        <p>In May 2027, Burgas will host the 71st Eurovision Song Contest. Based on historical data from past host cities like Malmö, Liverpool, and Turin, the city will experience an unprecedented influx of international visitors. The 15,000-capacity Arena Burgas combined with tens of thousands of ticketless fans congregating in the Sea Garden EuroVillage will stretch the city's hotel infrastructure to its absolute breaking point.</p>
+        
+        <p><strong>This is where your property comes in.</strong></p>
+      </section>
+
+      <section class="glass-panel" style="margin-top: 24px;">
+        <h2>Why Partner With Us? (Как да дам апартамента си под наем за Евровизия Бургас)</h2>
+        <ul style="line-height: 1.8; margin-left: 20px;">
+          <li><strong>Direct Access to High-Paying Fans:</strong> We are building the #1 independent hub for Eurovision fans. Our audience is actively looking for safe, verified accommodation near Arena Burgas and the City Center.</li>
+          <li><strong>Bypass High Platform Fees:</strong> We connect you directly with delegations, press members, and fan groups looking for bulk bookings and premium short-term rentals.</li>
+          <li><strong>Security & Trust:</strong> We educate fans on avoiding scams, meaning they trust our verified listings more than random posts on social media.</li>
+        </ul>
+      </section>
+
+      <section class="glass-panel" style="margin-top: 24px; text-align: center; border-color: var(--accent-magenta);">
+        <h2 style="color: var(--accent-magenta);">Register Your Property</h2>
+        <p>Leave your details below. Our team will review your property and contact you with our placement and promotion packages before the official ticket sales begin.</p>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="landlord-form" style="max-width: 500px; margin: 24px auto 0; text-align: left;">
+          <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395">
+          <input type="hidden" name="subject" value="New Property Listing Request!">
+          <input type="hidden" name="redirect" value="https://burgas2027guide.com/investors">
+          
+          <div style="margin-bottom: 16px;">
+            <label style="display:block; margin-bottom: 8px;">Name / Company</label>
+            <input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); color: #fff;">
+          </div>
+          
+          <div style="margin-bottom: 16px;">
+            <label style="display:block; margin-bottom: 8px;">Email</label>
+            <input type="email" name="email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); color: #fff;">
+          </div>
+          
+          <div style="margin-bottom: 16px;">
+            <label style="display:block; margin-bottom: 8px;">Property Location (Neighborhood)</label>
+            <select name="location" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--glass-border); background: #111; color: #fff;">
+              <option value="center">Burgas Center (Центьр)</option>
+              <option value="lazur">Lazur (Лазур)</option>
+              <option value="izgrev">Izgrev (Изгрев - near Arena)</option>
+              <option value="zornitsa">Zornitsa (Зорница)</option>
+              <option value="other">Other / Outside Burgas</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; font-size: 1.1rem;">Submit Property</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .b2b-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+  }
+  .b2b-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+</style>

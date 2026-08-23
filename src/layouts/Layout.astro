@@ -93,7 +93,13 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
               <li><a href="/about" class="discreet-b2b-link">Contact & About Us</a></li>
               <li><a href="/privacy" class="discreet-b2b-link">Privacy Policy</a></li>
               <li><a href="/terms" class="discreet-b2b-link">Terms of Service</a></li>
-              <li><a href="/disclosure" class="discreet-b2b-link">Affiliate Disclosure</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Partner</h4>
+            <ul>
+              <li><a href="/investors">For Property Owners (B2B)</a></li>
+              <li><a href="/disclosure">Affiliate Disclosure</a></li>
             </ul>
           </div>
         </div>
@@ -155,7 +161,7 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
 
       .footer-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
         gap: 32px;
       }
 
