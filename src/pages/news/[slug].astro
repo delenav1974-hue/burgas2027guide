@@ -15,6 +15,15 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
+// Articles specifically about flights get an extra Aviasales CTA.
+// Hardcoded (not tag-based) because the content collection schema doesn't declare `tags`.
+const FLIGHT_RELATED_SLUGS = [
+  'airport-flights-2027',
+  'sofia-burgas-flights',
+  'burgas-airport-direct-flights-eurovision-2027',
+];
+const showFlightsCta = FLIGHT_RELATED_SLUGS.includes(entry.id);
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'NewsArticle',
@@ -67,6 +76,9 @@ const articleSchema = {
         <div style="display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
           <AffiliateButton text="Find Hotels" href="/where-to-stay" provider="booking" />
           <AffiliateButton text="Book Airport Shuttle" href="/transfers" provider="kiwitaxi" />
+          {showFlightsCta && (
+            <AffiliateButton text="Search Flights (Aviasales)" href="https://www.aviasales.com/search" provider="aviasales" />
+          )}
         </div>
       </div>
     </article>
