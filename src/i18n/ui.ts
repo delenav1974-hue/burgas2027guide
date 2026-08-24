@@ -38,6 +38,15 @@ export const LOCALE_TAGS: Record<Locale, string> = {
  */
 export const LOCALIZED_ROUTES = ['', 'where-to-stay', 'transfers', 'faq'] as const;
 
+/**
+ * Languages offered through the GTranslate widget: machine translation only,
+ * for visitors whose language we do not write ourselves. The four hand-written
+ * locales are deliberately absent — machine output on the same URL would
+ * compete with the real copy. The page's own language is prepended at runtime
+ * so GTranslate knows what it is translating from.
+ */
+export const MACHINE_ONLY_LANGUAGES = ['tr', 'fr', 'it', 'es', 'pl', 'cs', 'nl'] as const;
+
 export const ui = {
   en: {
     'nav.news': 'News',
