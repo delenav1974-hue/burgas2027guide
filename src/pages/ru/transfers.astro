@@ -26,8 +26,10 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
             <li><strong>Стоимость:</strong> 0,80 €. Билет покупается у кондуктора в салоне.</li>
             <li><strong>Альтернативы:</strong> Eko Taxi (официальный партнёр аэропорта) — около 15 €. На неделе Евровидения лучше заказать трансфер заранее: очереди на такси будут заметными.</li>
           </ul>
-          <div style="margin-top: 16px;">
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
             <AffiliateButton text="Заказать индивидуальный трансфер (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+            <AffiliateButton text="Сравнить трансфер (GetTransfer)" href="https://gettransfer.com/" provider="gettransfer" />
+            <AffiliateButton text="Забронировать через intui.travel" href="https://intui.travel/" provider="intui" />
           </div>
         </section>
 
@@ -35,10 +37,10 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
           <h2>🏙️ Из аэропорта Софии (SOF) в Бургас</h2>
           <p>Прилёт в столицу часто дешевле, но придётся пересечь страну — около 400 км.</p>
           <ul>
-            <li><strong>Шаг 1: метро до центра.</strong> Линия 4 (жёлтая) идёт прямо от Терминала 2 до <strong>Центрального вокзала</strong> (остановка «Централна гара»).
+            <li><strong>Шаг 1: метро до центра.</strong> Линия 4 (жёлтая) идёт прямо от Терминала 2 до <strong>Центрального вокзала</strong> (Остановка «Централная гара»).
               <br/><em>Время: 30 минут | Стоимость: 0,80 €</em>
             </li>
-            <li><strong>Шаг 2: автобус до Бургаса.</strong> Прямые рейсы перевозчиков Union Ivkoni и Karat-S до автовокзала «Юг».
+            <li><strong>Шаг 2: автобус до Бургаса.</strong> Прямые рейсы перевозчиков Union Ivkoni и Karat-S до автобусоитала «Юг».
               <br/><em>Время: 5,5 часа | Стоимость: 18–20 €</em>
             </li>
             <li><strong>Итого в пути:</strong> около 6 часов.</li>
@@ -47,7 +49,7 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
 
         <section class="glass-panel mb-4" id="from-varna">
           <h2>🌊 Из аэропорта Варны (VAR) в Бургас</h2>
-          <p>Варна — второй крупный аэропорт на побережье, примерно в 120 км севернее Бургаса.</p>
+          <p>Варна — второй крупный аэропорт на Побережье, примерно в 120 км севернее Бургаса.</p>
           <ul>
             <li><strong>Шаг 1: автобус №409.</strong> Городской маршрут от аэропорта до <strong>центрального автовокзала Варны</strong> (Автогара Варна).
               <br/><em>Время: 20 минут | Стоимость: 1,00 €</em>
@@ -63,7 +65,7 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
           <h2>🇹🇷 Из аэропортов Стамбула (IST / SAW) в Бургас</h2>
           <p>Стамбул — крупный пересадочный узел и популярный вход в Болгарию для зрителей со всего мира.</p>
           <ul>
-            <li><strong>Прямые автобусы:</strong> перевозчики <strong>Nisikli</strong> и <strong>Arda Tur</strong> возят напрямую с автовокзала Стамбула Эсенлер (Büyük Otogar) до автовокзала «Юг» в Бургасе.
+            <li><strong>Прямые автобусы:</strong> перевозчики Нisikli и Arda Tur возят напрямую а автобусоитала «Юг» в Бургасе.
               <br/><em>Время: 5–6 часов | Стоимость: 30–40 €</em>
             </li>
             <li><strong>Граница:</strong> переход Малко-Тырново. В пиковые дни Евровидения закладывайте запас времени.</li>
@@ -81,8 +83,9 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
           <h2>🚗 Аренда авто: полная свобода</h2>
           <p>Между репетициями и финалом не обязательно сидеть в отеле. С машиной можно объехать всё побережье — от античных руин Несебра до диких пляжей южнее Созополя.</p>
           <p><em>Загляните в наш <a href="/black-sea-experience/" style="color: var(--accent-cyan);">гид по Черноморскому побережью</a> (на английском), чтобы понять, куда стоит съездить.</em></p>
-          <div style="margin-top: 16px;">
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
             <AffiliateButton text="Сравнить цены аренды (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+            <AffiliateButton text="Предложения GetRentacar" href="https://getrentacar.com/" provider="getrentacar" />
           </div>
         </section>
       </div>
@@ -94,7 +97,9 @@ import TransitCalculator from '../../components/TransitCalculator.astro';
 
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <AffiliateButton text="Трансфер из аэропорта (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+            <AffiliateButton text="Сравнить трансферы (GetTransfer)" href="https://gettransfer.com/" provider="gettransfer" />
             <AffiliateButton text="Аренда авто (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+            <AffiliateButton text="Предложения GetRentacar" href="https://getrentacar.com/" provider="getrentacar" />
           </div>
 
           <hr style="margin: 24px 0; border-color: var(--glass-border);" />
