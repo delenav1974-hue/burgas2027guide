@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroCapture from '../../components/HeroCapture.astro';
+import CountdownBanner from '../../components/CountdownBanner.astro';
+import OccupancyMeter from '../../components/OccupancyMeter.astro';
+import TransitCalculator from '../../components/TransitCalculator.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import { getCollection } from 'astro:content';
+import { eventSchema } from '../../config/site';
+
+const targetDate = "2027-05-15T20:00:00+03:00";
+
+const allNews = await getCollection('news');
+const latestNews = allNews
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+---
+
+<Layout
+  title="Евровидение 2027 в Бургасе — независимый гид по жилью и транспорту"
+  description="Где жить в Бургасе на Евровидении 2027, как добраться из аэропортов Бургаса, Софии и Стамбула, что происходит в городе. Гид от местных, без туристических ловушек."
+  schema={eventSchema}
+>
+  <div class="container">
+    <HeroCapture
+      headline="Евровидение 2027 в Бургасе: гид от местных"
+      subheadline="Независимый разбор от тех, кто живёт на этом побережье: жильё, транспорт и город во время главного музыкального события Черноморья."
+    />
+
+    <div class="quick-links glass-panel" style="margin-top: -32px; margin-bottom: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 24px;">
+      <a href="/ru/where-to-stay/" class="btn btn-secondary">🏨 Найти жильё</a>
+      <a href="/ru/transfers/" class="btn btn-secondary">🚕 Трансфер из аэропорта</a>
+      <AffiliateButton text="📱 eSIM для туристов (Airalo)" href="https://www.airalo.com/bulgaria-esim" provider="generic" />
+      <AffiliateButton text="💳 Карта для поездок (Revolut)" href="https://revolut.com/referral/?referral-code=elena02b5!AUG1-26-AR-LL&geo-redirect" provider="generic" />
+    </div>
+
+    <CountdownBanner targetDate={targetDate} />
+
+    <section class="features">
+      <div class="feature-card glass-panel">
+        <h3>📍 Где жить</h3>
+        <p>Мимо туристических ловушек. Разбираем <strong>отели в пешей доступности от «Арены Бургас»</strong> и посёлки на побережье, откуда ходят шаттлы.</p>
+        <OccupancyMeter percentage={82} />
+        <a href="/ru/where-to-stay/" class="btn btn-primary" style="margin-top:16px;">Гид по жилью</a>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <h3>🚕 Транспорт и логистика</h3>
+        <p>Как доехать и не переплатить: от <strong>автобуса из аэропорта Стамбула в Бургас</strong> до ночных шаттлов после шоу.</p>
+        <TransitCalculator />
+        <a href="/ru/transfers/" class="btn btn-primary" style="margin-top:16px;">Транспортный гид</a>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <h3>🪩 События и вечеринки</h3>
+        <p>EuroVillage, официальные афтепати EuroClub и вечеринки на яхтах из порта Бургаса.</p>
+        <a href="/events-and-parties/" class="btn btn-primary" style="margin-top:16px; display: block;">Расписание (EN)</a>
+      </div>
+    </section>
+
+    {latestNews.length > 0 && (
+      <section class="latest-news-section glass-panel" style="margin: 64px 0; padding: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <h2 style="color: var(--accent-magenta); font-size: 2rem;">Последние новости</h2>
+          <a href="/news/" style="color: var(--accent-cyan); font-weight: 600;">Все новости (EN) &rarr;</a>
+        </div>
+        <div class="news-list" style="display: flex; flex-direction: column; gap: 16px;">
+          {latestNews.map((post) => (
+            <a href={`/news/${post.id}/`} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+                {post.data.date.toLocaleDateString('ru-RU', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </div>
+              <h3 style="color: var(--text-main); margin-bottom: 8px; font-size: 1.2rem;">{post.data.title}</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin: 64px 0;
+  }
+
+  .feature-card h3 {
+    color: var(--accent-amber);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+
+  .news-item:hover {
+    border-color: var(--accent-cyan) !important;
+  }
+</style>
