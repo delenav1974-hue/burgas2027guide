@@ -1,0 +1,20 @@
+{
+  // Configuration for Cloudflare Workers Builds.
+  //
+  // Production deploys (`wrangler deploy`, main branch) previously relied on
+  // Wrangler auto-detecting the project. Preview builds for pull requests run
+  // `wrangler versions upload`, which does NOT auto-detect and failed with
+  // "Missing entry-point to Worker script or to assets directory".
+  //
+  // Every value below mirrors what the Worker is already configured with, so
+  // production behaviour stays exactly the same.
+  "name": "burgas2027guide",
+  "compatibility_date": "2026-08-24",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
