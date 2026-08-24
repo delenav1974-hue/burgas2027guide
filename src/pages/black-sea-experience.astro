@@ -28,8 +28,9 @@ import PlaceCard from '../components/PlaceCard.astro';
         <section class="glass-panel mb-4">
           <h2>🏰 Day Trip: Old Nessebar</h2>
           <p>A UNESCO World Heritage site located just 40 minutes north of Burgas. Walk through ancient ruins and dine on the peninsula overlooking the sea.</p>
-          <div style="margin-top: 16px;">
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
             <AffiliateButton text="Book Nessebar Guided Tour" href="https://www.getyourguide.com/s?q=Nessebar" provider="getyourguide" />
+            <AffiliateButton text="WeGoTrip Audio Tour" href="https://wegotrip.com/" provider="wegotrip" />
           </div>
         </section>
 
@@ -99,14 +100,18 @@ import PlaceCard from '../components/PlaceCard.astro';
           <p>Don't wait until you arrive. The week of Eurovision will see tens of thousands of extra tourists in Burgas. Book your wine tasting, boat trips, and Nessebar tours in advance.</p>
           <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
             <AffiliateButton text="Explore on GetYourGuide" href="https://www.getyourguide.com/s?q=Burgas" provider="getyourguide" />
-            <AffiliateButton text="Explore on Viator" href="https://www.viator.com/searchResults/all?text=Burgas" provider="generic" />
+            <AffiliateButton text="Book on Tiqets" href="https://www.tiqets.com/en/search/?q=Burgas" provider="tiqets" />
+            <AffiliateButton text="WeGoTrip Audio Tour" href="https://wegotrip.com/" provider="wegotrip" />
           </div>
           
           <hr style="margin: 24px 0; border-color: var(--glass-border);" />
           
           <h3>Need a Car?</h3>
           <p style="font-size: 0.85rem; margin-bottom: 12px;">The best beaches and authentic villages require driving.</p>
-          <AffiliateButton text="Rent a Car" href="https://www.discovercars.com/" provider="discovercars" />
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+            <AffiliateButton text="Rent a Car" href="https://www.discovercars.com/" provider="discovercars" />
+            <AffiliateButton text="GetRentacar Deals" href="https://getrentacar.com/" provider="getrentacar" />
+          </div>
         </section>
       </div>
 
@@ -116,14 +121,18 @@ import PlaceCard from '../components/PlaceCard.astro';
           <p>Skip the planning. Join guided tours to Nessebar, Sozopol, or wine tasting trips.</p>
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <AffiliateButton text="Explore on GetYourGuide" href="https://www.getyourguide.com/s?q=Burgas" provider="getyourguide" />
-            <AffiliateButton text="Explore on Viator" href="https://www.viator.com/searchResults/all?text=Burgas" provider="generic" />
+            <AffiliateButton text="Book on Tiqets" href="https://www.tiqets.com/en/search/?q=Burgas" provider="tiqets" />
+            <AffiliateButton text="WeGoTrip Audio Tour" href="https://wegotrip.com/" provider="wegotrip" />
           </div>
           
           <hr style="margin: 24px 0; border-color: var(--glass-border);" />
           
           <h3>Need a Car?</h3>
           <p style="font-size: 0.85rem; margin-bottom: 12px;">The best beaches and authentic villages require driving.</p>
-          <AffiliateButton text="Rent a Car" href="https://www.discovercars.com/" provider="discovercars" />
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+            <AffiliateButton text="Rent a Car" href="https://www.discovercars.com/" provider="discovercars" />
+            <AffiliateButton text="GetRentacar Deals" href="https://getrentacar.com/" provider="getrentacar" />
+          </div>
         </div>
       </aside>
     </div>
