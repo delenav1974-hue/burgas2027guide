@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../config/site';
-import { LOCALES, LOCALE_NAMES, LOCALE_SHORT, LOCALE_TAGS, DEFAULT_LOCALE } from '../i18n/ui';
+import { LOCALES, LOCALE_NAMES, LOCALE_SHORT, LOCALE_TAGS, DEFAULT_LOCALE, MACHINE_ONLY_LANGUAGES } from '../i18n/ui';
 import {
   getLocaleFromUrl,
   useTranslations,
@@ -148,11 +148,19 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
     
     <!-- GTranslate -->
-    <script type="text/javascript">
-      // Russian and Bulgarian are served as real, indexable pages (/ru/, /bg/),
-      // so they are removed here — machine translation would compete with them.
-      // GTranslate stays for languages we do not hand-translate.
-      window.gtranslateSettings = {"default_language":"en","native_language_names":true,"languages":["en","tr","de","fr","it","es"],"wrapper_selector":".gtranslate_wrapper"};
+    <script is:inline define:vars={{ gtSource: LOCALE_TAGS[locale], gtLanguages: [LOCALE_TAGS[locale], ...MACHINE_ONLY_LANGUAGES] }}>
+      // English, Russian, Bulgarian and German are served as real, indexable
+      // pages, so they are absent from the list below — machine translation
+      // would compete with the hand-written copy on the same URL.
+      // The source language is the language of THIS page, so /bg/ is offered
+      // for translation from Bulgarian rather than from an English original
+      // that does not exist at that URL.
+      window.gtranslateSettings = {
+        default_language: gtSource,
+        native_language_names: true,
+        languages: gtLanguages,
+        wrapper_selector: ".gtranslate_wrapper",
+      };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
     
