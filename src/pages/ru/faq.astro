@@ -1,0 +1,256 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ru",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Когда начнётся продажа билетов на Евровидение 2027 в Бургасе?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обычно билеты на Евровидение поступают в продажу волнами начиная с конца ноября — начала декабря предыдущего года. Для Бургаса 2027 первую волну на живые шоу и репетиции жюри стоит ждать через официального партнёра примерно в конце 2026 года. Точные даты мы публикуем в рассылке."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как добраться из аэропорта Софии в Бургас на Евровидение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Есть четыре варианта: внутренний перелёт (45 минут), автобус с центрального автовокзала (около 5 часов), ночной поезд БДЖ (медленно, около 8 часов, но с купе) или аренда авто по магистрали А1 «Тракия» (примерно 3,5 часа). Билеты на поезд в пик сезона разбирают очень быстро."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где в Бургасе будет EuroVillage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Официально место пока не подтверждено. Местные ожидают, что фан-зону разместят в порту Бургаса (Морска гара) или в Морском саду: обе площадки вмещают большие открытые мероприятия и выходят к морю."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где лучше жить: в центре Бургаса или на Солнечном берегу?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Центр Бургаса, Лазур или Зорница удобнее всего: оттуда пешком до «Арены Бургас» и фан-зоны. Солнечный берег заметно дешевле и предлагает курортные вечеринки, но до арены придётся ехать около 40 минут в каждую сторону."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как не попасться на такси-разводы в Бургасе?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uber в Болгарии не работает. Пользуйтесь приложениями TaxiMe или Maxim либо вызывайте проверенных перевозчиков вроде Yellow! и Omega Taxi. Не садитесь к водителям, которые зазывают пассажиров в зале прилёта или на вокзале, не убедившись, что включён счётчик."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Евровидение 2027 в Бургасе: частые вопросы"
+  description="Ответы на главные вопросы о Евровидении 2027 в Бургасе: билеты, транспорт из Софии и Стамбула, жильё, такси и деньги. Отвечают местные."
+  schema={faqSchema}
+  breadcrumb="Вопросы и ответы"
+>
+
+  <div class="container page-content">
+    <h1 class="page-title text-gradient">Частые вопросы</h1>
+    <p class="subtitle">
+      Официальный FAQ Евровидения отвечает на базовое. Мы живём здесь, поэтому расскажем без прикрас, как устроен Бургас в мае 2027-го: от охоты за билетами до очередей на такси.
+    </p>
+
+    <div class="faq-container">
+
+      <div class="faq-section">
+        <h2>🎟️ Билеты и арена</h2>
+
+        <details class="faq-item">
+          <summary>Когда начнётся продажа билетов на Евровидение 2027 в Бургасе?</summary>
+          <div class="faq-answer">
+            <p><strong>Официально:</strong> следите за обновлениями на eurovision.tv.</p>
+            <p><strong>Взгляд местных:</strong> обычно билеты выбрасывают волнами с конца ноября по начало декабря. «Арена Бургас» меньше стадионных площадок, поэтому билеты на гранд-финал разлетятся за минуты. Советуем целиться в <em>шоу для жюри</em> или <em>семейные шоу</em>: постановка та же, а достать билеты заметно проще.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Какая вместимость у «Арены Бургас»?</summary>
+          <div class="faq-answer">
+            <p>«Арена Бургас» — современный многофункциональный зал. В концертной конфигурации он вмещает до 15 000 зрителей, но со сценой Евровидения, грин-румом и техническими зонами реальная вместимость на шоу будет заметно меньше. Зал компактный, и атмосфера в нём плотная.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>✈️ Транспорт и логистика</h2>
+
+        <details class="faq-item">
+          <summary>Как добраться из аэропорта Софии в Бургас?</summary>
+          <div class="faq-answer">
+            <p>Если вы прилетаете в Софию (SOF), до побережья есть четыре пути:</p>
+            <ul>
+              <li><strong>Внутренний перелёт:</strong> Bulgaria Air летает в Бургас (BOJ). 45 минут, но бронировать надо заранее.</li>
+              <li><strong>Аренда авто:</strong> 3,5 часа по магистрали А1 «Тракия». Не забудьте виньетку BGTOLL.</li>
+              <li><strong>Автобус:</strong> Union Ivkoni и Karat-S возят с центрального автовокзала Софии, около 5 часов.</li>
+              <li><strong>Ночной поезд (БДЖ):</strong> классика жанра, можно взять спальное купе. Около 8 часов. Билеты открываются за 30 дней и на неделю Евровидения разойдутся мгновенно.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Как не попасться на такси-разводы в Бургасе?</summary>
+          <div class="faq-answer">
+            <p><strong>Uber в Болгарии не работает.</strong> Чтобы не переплатить, не садитесь к тем, кто выкрикивает «Такси!» в зале прилёта. Поставьте местные приложения <strong>TaxiMe</strong> или <strong>Maxim</strong> либо вызывайте проверенных перевозчиков, например <strong>Omega Taxi</strong>. Если ловите машину на улице, посмотрите наклейку на стекле пассажирской двери: там указан тариф за километр.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>🏨 Жильё и быт</h2>
+
+        <details class="faq-item">
+          <summary>Где лучше жить: в центре Бургаса или на Солнечном берегу?</summary>
+          <div class="faq-answer">
+            <p>Всё упирается в бюджет и в то, какого отдыха вы хотите:</p>
+            <p><strong>Бургас (Лазур, Зорница, центр):</strong> если хотите доходить до арены и фан-зоны пешком. Цены будут кусаться.</p>
+            <p><strong>Солнечный берег или Несебр:</strong> если экономите или едете ещё и за курортом. Выбор отелей огромный, но закладывайте 40 минут дороги до арены на каждое шоу.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Где в Бургасе будет EuroVillage?</summary>
+          <div class="faq-answer">
+            <p>Официального объявления пока нет, но местные сходятся на двух вариантах: <strong>порт Бургаса (Морска гара)</strong> или <strong>Морской сад</strong>. Обе площадки регулярно принимают крупные летние фестивали, имеют нужную инфраструктуру безопасности и выходят прямо к морю.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Нужны ли наличные в Болгарии?</summary>
+          <div class="faq-answer">
+            <p>С 2026 года Болгария перешла на евро, так что менять валюту гражданам еврозоны не придётся. Картой (Visa или Mastercard) можно расплатиться примерно в 95% ресторанов, супермаркетов и отелей. Но небольшую сумму наличными держите при себе: на чаевые, маленькие пекарни и аренду лежаков на пляже.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    max-width: 900px;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 12px;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item[open] {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 0, 122, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-item summary {
+    padding: 20px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+    color: var(--accent-magenta);
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px 24px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .faq-answer p {
+    margin-bottom: 12px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer ul {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+  .faq-answer li {
+    margin-bottom: 8px;
+  }
+
+  .faq-answer strong {
+    color: var(--text-main);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

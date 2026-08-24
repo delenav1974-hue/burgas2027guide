@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import TransitCalculator from '../../components/TransitCalculator.astro';
+---
+
+<Layout
+  title="Как добраться до Бургаса: трансферы и транспорт | Евровидение 2027"
+  description="Пошаговые маршруты до Бургаса из аэропортов Бургаса, Софии, Варны и Стамбула на Евровидение 2027. Номера автобусов, цены в евро и реальное время в пути."
+  breadcrumb="Транспорт"
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Транспорт и логистика</h1>
+    <p class="lead">Не дайте дороге испортить поездку. Ниже — подробные пошаговые маршруты до Бургаса из всех крупных аэропортов региона.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <TransitCalculator />
+
+        <section class="glass-panel mb-4">
+          <h2>✈️ Из аэропорта Бургас (BOJ) в центр города</h2>
+          <p>Аэропорт Бургас (Сарафово) — ближайший и самый удобный вариант, всего 10 км от центра.</p>
+          <ul>
+            <li><strong>Шаг 1: городской автобус №15.</strong> Остановка прямо у терминала вылета.</li>
+            <li><strong>В пути:</strong> 20–30 минут до <strong>Автовокзала «Юг» (Автогара Юг)</strong> в центре Бургаса.</li>
+            <li><strong>Стоимость:</strong> 0,80 €. Билет покупается у кондуктора в салоне.</li>
+            <li><strong>Альтернативы:</strong> Eko Taxi (официальный партнёр аэропорта) — около 15 €. На неделе Евровидения лучше заказать трансфер заранее: очереди на такси будут заметными.</li>
+          </ul>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Заказать индивидуальный трансфер (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-sofia">
+          <h2>🏙️ Из аэропорта Софии (SOF) в Бургас</h2>
+          <p>Прилёт в столицу часто дешевле, но придётся пересечь страну — около 400 км.</p>
+          <ul>
+            <li><strong>Шаг 1: метро до центра.</strong> Линия 4 (жёлтая) идёт прямо от Терминала 2 до <strong>Центрального вокзала</strong> (остановка «Централна гара»).
+              <br/><em>Время: 30 минут | Стоимость: 0,80 €</em>
+            </li>
+            <li><strong>Шаг 2: автобус до Бургаса.</strong> Прямые рейсы перевозчиков Union Ivkoni и Karat-S до автовокзала «Юг».
+              <br/><em>Время: 5,5 часа | Стоимость: 18–20 €</em>
+            </li>
+            <li><strong>Итого в пути:</strong> около 6 часов.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-varna">
+          <h2>🌊 Из аэропорта Варны (VAR) в Бургас</h2>
+          <p>Варна — второй крупный аэропорт на побережье, примерно в 120 км севернее Бургаса.</p>
+          <ul>
+            <li><strong>Шаг 1: автобус №409.</strong> Городской маршрут от аэропорта до <strong>центрального автовокзала Варны</strong> (Автогара Варна).
+              <br/><em>Время: 20 минут | Стоимость: 1,00 €</em>
+            </li>
+            <li><strong>Шаг 2: маршрутка до Бургаса.</strong> Прибрежный рейс перевозчика M-Bus до автовокзала «Юг».
+              <br/><em>Время: 2 часа | Стоимость: 8–10 €</em>
+            </li>
+            <li><strong>Итого в пути:</strong> около 2,5 часов.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-istanbul">
+          <h2>🇹🇷 Из аэропортов Стамбула (IST / SAW) в Бургас</h2>
+          <p>Стамбул — крупный пересадочный узел и популярный вход в Болгарию для зрителей со всего мира.</p>
+          <ul>
+            <li><strong>Прямые автобусы:</strong> перевозчики <strong>Nisikli</strong> и <strong>Arda Tur</strong> возят напрямую с автовокзала Стамбула Эсенлер (Büyük Otogar) до автовокзала «Юг» в Бургасе.
+              <br/><em>Время: 5–6 часов | Стоимость: 30–40 €</em>
+            </li>
+            <li><strong>Граница:</strong> переход Малко-Тырново. В пиковые дни Евровидения закладывайте запас времени.</li>
+          </ul>
+          <div class="insider-note">
+            <strong>Совет местных:</strong> бронируйте междугородние билеты заранее через Omio или FlixBus. Болгарские автобусные компании во время летних событий распродаются очень быстро.
+          </div>
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <AffiliateButton text="Искать автобусы на Omio" href="https://www.omio.com/" provider="booking" />
+            <AffiliateButton text="Маршруты FlixBus" href="https://www.flixbus.com/" provider="booking" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="rent-a-car">
+          <h2>🚗 Аренда авто: полная свобода</h2>
+          <p>Между репетициями и финалом не обязательно сидеть в отеле. С машиной можно объехать всё побережье — от античных руин Несебра до диких пляжей южнее Созополя.</p>
+          <p><em>Загляните в наш <a href="/black-sea-experience/" style="color: var(--accent-cyan);">гид по Черноморскому побережью</a> (на английском), чтобы понять, куда стоит съездить.</em></p>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Сравнить цены аренды (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Забронируйте заранее</h3>
+          <p>На неделе Евровидения цены вырастут. Лучше бронировать сейчас.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <AffiliateButton text="Трансфер из аэропорта (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+            <AffiliateButton text="Аренда авто (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+          </div>
+
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+
+          <h4>Минивэны VIP</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">Нужен Mercedes V-Class из Стамбула или Софии для делегации? Напишите нам напрямую.</p>
+          <a href="mailto:info@burgas2027guide.com?subject=VIP%20Minivan%20Quote%20%E2%80%94%20Burgas%202027"
+             class="btn btn-secondary"
+             style="width: 100%; text-align: center; display: inline-block;">Запросить расчёт</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 16px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .insider-note {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3, .sticky-box h4 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,25 +1,28 @@
 ﻿---
 // Interactive Metro-Style Coast Map
+import { getLocaleFromUrl, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(getLocaleFromUrl(Astro.url));
 ---
 
 <div class="zone-map-container">
   <div class="map-header">
-    <h3>📍 The Burgas 2027 Coastal Map</h3>
-    <p>Click a station to explore accommodation options in that area.</p>
+    <h3>{t('map.title')}</h3>
+    <p>{t('map.hint')}</p>
   </div>
 
   <div class="metro-map">
     
     <!-- North Coast Area -->
     <div class="metro-section">
-      <div class="section-label north">North Coast (Area 2)</div>
+      <div class="section-label north">{t('map.north')}</div>
       
       <div class="station" onclick="scrollToZone(event, 'area2')">
         <div class="line north-line"></div>
         <div class="node north-node"></div>
         <div class="label">
-          Sunny Beach <span class="badge">Budget/Party</span>
-          <span class="time">🚗 40 min</span>
+          Sunny Beach <span class="badge">{t('map.budget')}</span>
+          <span class="time">🚗 40 {t('map.min')}</span>
         </div>
       </div>
       
@@ -27,8 +30,8 @@
         <div class="line north-line"></div>
         <div class="node north-node"></div>
         <div class="label">
-          Sveti Vlas <span class="badge">Luxury</span>
-          <span class="time">🚗 45 min</span>
+          Sveti Vlas <span class="badge">{t('map.luxury')}</span>
+          <span class="time">🚗 45 {t('map.min')}</span>
         </div>
       </div>
       
@@ -36,8 +39,8 @@
         <div class="line north-line"></div>
         <div class="node north-node"></div>
         <div class="label">
-          Nessebar <span class="badge">Heritage</span>
-          <span class="time">🚗 45 min</span>
+          Nessebar <span class="badge">{t('map.heritage')}</span>
+          <span class="time">🚗 45 {t('map.min')}</span>
         </div>
       </div>
       
@@ -45,22 +48,22 @@
         <div class="line north-line"></div>
         <div class="node north-node"></div>
         <div class="label">
-          Pomorie <span class="badge">Relaxed</span>
-          <span class="time">🚗 30 min</span>
+          Pomorie <span class="badge">{t('map.relaxed')}</span>
+          <span class="time">🚗 30 {t('map.min')}</span>
         </div>
       </div>
     </div>
 
     <!-- City Center Area -->
     <div class="metro-section">
-      <div class="section-label center">Burgas City (Area 1)</div>
+      <div class="section-label center">{t('map.city')}</div>
       
       <div class="station" onclick="scrollToZone(event, 'area1')">
         <div class="line center-line"></div>
         <div class="node center-node">✈️</div>
         <div class="label">
-          Sarafovo <span class="badge airport">Airport</span>
-          <span class="time">🚌 15 min</span>
+          Sarafovo <span class="badge airport">{t('map.airport')}</span>
+          <span class="time">🚌 15 {t('map.min')}</span>
         </div>
       </div>
 
@@ -68,8 +71,8 @@
         <div class="line center-line"></div>
         <div class="node center-node highlight">🎤</div>
         <div class="label">
-          Zornitsa / Izgrev <span class="badge primary">Arena</span>
-          <span class="time">🚶 10 min</span>
+          Zornitsa / Izgrev <span class="badge primary">{t('map.arena')}</span>
+          <span class="time">🚶 10 {t('map.min')}</span>
         </div>
       </div>
 
@@ -77,8 +80,8 @@
         <div class="line center-line"></div>
         <div class="node center-node"></div>
         <div class="label">
-          Lazur <span class="badge">Sea Garden</span>
-          <span class="time">🚶 25 min</span>
+          Lazur <span class="badge">{t('map.seagarden')}</span>
+          <span class="time">🚶 25 {t('map.min')}</span>
         </div>
       </div>
 
@@ -86,8 +89,8 @@
         <div class="line center-line"></div>
         <div class="node center-node">🏙️</div>
         <div class="label">
-          City Center <span class="badge secondary">EuroVillage</span>
-          <span class="time">🚌 15 min</span>
+          City Center <span class="badge secondary">{t('map.eurovillage')}</span>
+          <span class="time">🚌 15 {t('map.min')}</span>
         </div>
       </div>
       
@@ -95,22 +98,22 @@
         <div class="line center-line"></div>
         <div class="node center-node"></div>
         <div class="label">
-          Kraimorie <span class="badge">Beach</span>
-          <span class="time">🚌 25 min</span>
+          Kraimorie <span class="badge">{t('map.beach')}</span>
+          <span class="time">🚌 25 {t('map.min')}</span>
         </div>
       </div>
     </div>
 
     <!-- South Coast Area -->
     <div class="metro-section">
-      <div class="section-label south">South Coast (Area 3)</div>
+      <div class="section-label south">{t('map.south')}</div>
       
       <div class="station" onclick="scrollToZone(event, 'area3')">
         <div class="line south-line"></div>
         <div class="node south-node"></div>
         <div class="label">
-          Chernomorets <span class="badge">Quiet</span>
-          <span class="time">🚗 35 min</span>
+          Chernomorets <span class="badge">{t('map.quiet')}</span>
+          <span class="time">🚗 35 {t('map.min')}</span>
         </div>
       </div>
       
@@ -118,8 +121,8 @@
         <div class="line south-line"></div>
         <div class="node south-node"></div>
         <div class="label">
-          Sozopol <span class="badge">Riviera</span>
-          <span class="time">🚗 50 min</span>
+          Sozopol <span class="badge">{t('map.riviera')}</span>
+          <span class="time">🚗 50 {t('map.min')}</span>
         </div>
       </div>
     </div>

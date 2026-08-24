@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import ZoneMap from '../../components/ZoneMap.astro';
+import AccommodationCard from '../../components/AccommodationCard.astro';
+---
+
+<Layout
+  title="Къде да отседнете в Бургас за Евровизия 2027: квартали и хотели"
+  description="Къде да отседнете за Евровизия 2027 в Бургас: кварталите около залата, крайбрежните курорти — Поморие, Слънчев бряг, Созопол. Време за път и нощна логистика."
+  breadcrumb="Къде да отседнете"
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Къде да отседнете в Бургас</h1>
+    <p class="lead">Разбивка по квартали: колко близо е залата, как се прибирате нощем и на какво да гледате при резервация.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <ZoneMap />
+
+        <section class="glass-panel mb-4" id="area1">
+          <h2>📍 Зона 1: град Бургас (центърът на събитието)</h2>
+          <p>Най-добрият избор за зрителите. В града сте най-близо до фен зоната, залата и основните афтърпартита. Търсенето тук е най-голямо и цените го отразяват.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Зорница и Изгрев"
+              type="Апартаменти"
+              transitTime="🚶‍♂️ 10 минути пеша"
+              priceTier="€€€€"
+              description="Чисто жилищни квартали, но непосредствено до Арена Бургас. Голямото предимство: след големия финал се прибирате пеша, вместо да чакате такси с часове."
+              whatToDo="Парк „Велека“, спокойна нетуристическа атмосфера. Нощен живот почти няма, но спите на две крачки от залата."
+              transportInfo="5–10 минути пеша до Арена Бургас. Не са нужни нито автобуси, нито такси."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Zornitsa,+Burgas,+Bulgaria"
+              insiderNote="Тук няма хотели — само апартаменти в Booking и Airbnb. Резервирайте веднага, ще се изчерпат първи."
+            />
+            <AccommodationCard
+              name="Лазур"
+              type="Хотел / апартамент"
+              transitTime="🚶‍♂️ 25 минути пеша"
+              priceTier="€€€"
+              description="Най-красивият квартал на Бургас, точно до Морската градина. До залата се върви по-дълго, но сте до морето и до най-хубавите паркове."
+              whatToDo="Сутрешно бягане в Морската градина, Експо център „Флора“, кафенета на плажа, спокоен морски живот."
+              transportInfo="25 минути приятна разходка през парка до залата или 5 минути с такси."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Lazur,+Burgas,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Центърът"
+              type="Бутиков хотел"
+              transitTime="🚕 15 минути с такси"
+              priceTier="€€€€"
+              description="Сърцето на събитието: барове, ресторанти и най-вероятно самата фен зона. До залата ще ви трябва такси или шатъл."
+              whatToDo="EuroVillage, афтърпартитата на EuroClub, музеи, добри ресторанти и главният вход на Морската градина."
+              transportInfo="Бързите линии B1 и B2 се движат по бус ленти и стигат до залата за 20 минути. Или такси."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Burgas+Center,+Bulgaria"
+              insiderNote="Ако смятате да прекарвате всяка вечер в EuroClub — това е вашето място."
+            />
+            <AccommodationCard
+              name="Сарафово"
+              type="Крайморско предградие"
+              transitTime="🚕 15 минути с такси"
+              priceTier="€€"
+              description="Кварталът е непосредствено до летище Бургас (BOJ). Отлична логистика при пристигане, но до залата се пътува по-дълго."
+              whatToDo="Музей на авиацията, широки пясъчни плажове и тиха семейна атмосфера далеч от градския шум."
+              transportInfo="Градски автобус №15 стига директно до центъра на Бургас. С кола до залата са около 15 минути."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sarafovo,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Крайморие"
+              type="Крайградски плаж"
+              transitTime="🚕 25 минути с такси"
+              priceTier="€€"
+              description="Южен крайморски квартал на Бургас. Много спокойна плажна атмосфера, но е в противоположния на залата край на града."
+              whatToDo="Спокойни дни на плажа и разходка до рибарското селище Ченгене скеле за истински морски дарове."
+              transportInfo="Автобус №17 свързва Крайморие с Автогара Юг. До залата се пресича целият град — 20–25 минути с кола."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Kraimorie,+Bulgaria"
+            />
+          </div>
+
+          <div class="red-flag-zone mt-3" style="background: rgba(255, 184, 0, 0.1); border-left: 4px solid var(--accent-amber);">
+            <h3 style="color: var(--accent-amber); margin-bottom: 8px;">⚠️ Квартали, които изискват повече внимание</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">В <strong>Меден рудник</strong> и <strong>Победа</strong> се срещат много евтини апартаменти. Преди да резервирате, имайте предвид:</p>
+            <ul style="font-size: 0.9rem; padding-left: 20px; margin-bottom: 12px;">
+              <li style="margin-bottom: 8px;"><strong>Меден рудник, зони А и Б:</strong> най-благоустроените и зелени части с нормален транспорт. Ако отсядате тук, изберете тези зони.</li>
+              <li style="margin-bottom: 8px;"><strong>Меден рудник, зона В:</strong> активно се застроява, но може да срещнете неасфалтирани подходи, затруднено паркиране и сериозни задръствания в пиковите часове.</li>
+              <li><strong>Победа:</strong> индустриална периферия, далеч от залата и неудобна за придвижване.</li>
+            </ul>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;"><em>Имайте предвид: Меден рудник е най-отдалечената точка от залата. Настаняването е евтино, но спестеното лесно отива за таксита през целия град.</em></p>
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="area2">
+          <h2>🏖️ Зона 2: северното крайбрежие (курортите)</h2>
+          <p>Северно от Бургас са големите курорти и цените са чувствително по-ниски. Компромисът: обратният път след полунощ трябва да се организира предварително — градските автобуси вече не се движат.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Поморие"
+              type="Крайморски град"
+              transitTime="🚕 30 минути с такси"
+              priceTier="€€"
+              description="Отделен град на полуостров, известен със солените си езера и бавния ритъм. Удобно се стига от летището."
+              whatToDo="Музеят на солта, прочутата лечебна кал и разходка из стария град."
+              transportInfo="Междуградските автобуси тръгват от Автогара Юг на всеки 30 минути. С кола до залата — 30 минути."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Pomorie,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Слънчев бряг"
+              type="Мегакурорт"
+              transitTime="🚕 40 минути с такси"
+              priceTier="€"
+              description="Най-големият курорт в България: хиляди евтини хотели, големи клубове и безкрайни плажове. По-далеч е от залата, но е най-икономичният вариант."
+              whatToDo="Нощен живот, огромни плажни барове и непрекъснати летни партита."
+              transportInfo="Директни автобуси от Автогара Юг за около 45 минути. С кола или такси — 40 минути."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sunny+Beach,+Bulgaria"
+              insiderNote="Тук почти сигурно ще има голям възел на официалните шатъли на Евровизия. Добър вариант при ограничен бюджет."
+            />
+            <AccommodationCard
+              name="Свети Влас"
+              type="Премиум курорт"
+              transitTime="🚕 45 минути с такси"
+              priceTier="€€€€"
+              description="Сгушен между планината и морето. По-спокойната и скъпа алтернатива на Слънчев бряг, с атмосфера на яхтено пристанище."
+              whatToDo="Разходка по марина Диневи, добри ресторанти и еко пътеки в близките склонове."
+              transportInfo="С автобус до Слънчев бряг и прекачване или с кола — от 45 минути до залата."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sveti+Vlas,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Несебър (Старият град)"
+              type="Наследство на ЮНЕСКО"
+              transitTime="🚕 45 минути с такси"
+              priceTier="€€€"
+              description="Един от най-старите градове в Европа, разположен на скалист полуостров. Много красиво, но далеч от залата."
+              whatToDo="Старинни дървени къщи, руини на византийски църкви и рибни ресторанти надвиснали над самите скали."
+              transportInfo="Автобусите тръгват от Автогара Юг. С такси или кола до залата са около 45 минути."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Old+Town+Nessebar,+Bulgaria"
+            />
+          </div>
+        </section>
+
+        <section class="glass-panel" id="area3">
+          <h2>🌅 Зона 3: южното крайбрежие (истинската Ривиера)</h2>
+          <p>Югът е по-живописен и по-автентичен. Но Арена Бургас е в най-северната част на града, така че от юг ще пресичате целия Бургас за всяко шоу.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Созопол"
+              type="Бутиков хотел"
+              transitTime="🚕 50 минути с такси"
+              priceTier="€€€"
+              description="Един от най-старите градове в Европа: дървени къщи и отлична рибна кухня. Добър избор за делегации и за хора, които идват и на почивка."
+              whatToDo="Калдъръмените улички на Стария град, пресни черноморски миди и приказният замък Равадиново."
+              transportInfo="Автобуси за Бургас на всеки 30 минути, но с кола до залата са 45–50 минути през целия град."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sozopol,+Bulgaria"
+              insiderNote="Важно: пътят от Созопол до залата отнема 45–50 минути. Резервирайте тук само ако имате кола или личен шофьор."
+            />
+            <AccommodationCard
+              name="Черноморец"
+              type="Крайморско селище"
+              transitTime="🚕 35 минути с такси"
+              priceTier="€€"
+              description="По-тихата алтернатива на Созопол и малко по-близо до Бургас. Хубави плажове и много спокойна атмосфера."
+              whatToDo="Плажът Вромос и бавна семейна почивка без туристическите тълпи."
+              transportInfo="Има междуградски автобуси, но за нощно връщане от шоуто е по-разумна кола или такси — 35 минути."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Chernomorets,+Bulgaria"
+            />
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Резервирайте настаняване</h3>
+          <p>Свободните места намаляват бързо. Към избраната зона:</p>
+
+          <div class="zone-filters" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+            <a href="#area1" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🎤 До залата</a>
+            <a href="#area2" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🏖️ Северните курорти</a>
+            <a href="#area3" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🌅 Южната Ривиера</a>
+          </div>
+
+          <AffiliateButton text="Търсене в целия регион" href="https://www.booking.com/searchresults.html?ss=Burgas+Province,+Bulgaria" provider="booking" />
+
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+
+          <h4>Важно за транспорта</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px; color: var(--text-muted);">
+            Ако резервирате извън Бургас, <strong>не разчитайте на градски транспорт след 23:00</strong>. Шоутата свършват късно. Осигурете си кола под наем или официален шатъл.
+          </p>
+          <a href="/bg/transfers/" class="btn btn-secondary" style="width: 100%; text-align: center; display: inline-block;">Транспортен наръчник</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 48px;
+  }
+
+  .mt-3 {
+    margin-top: 24px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: 8px;
+    scroll-margin-top: 100px; /* offset for sticky header */
+  }
+
+  .places-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .red-flag-zone {
+    padding: 16px;
+    background: rgba(255, 68, 68, 0.1);
+    border-left: 4px solid #ff4444;
+    border-radius: 4px;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

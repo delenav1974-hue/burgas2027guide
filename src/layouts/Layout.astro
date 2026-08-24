@@ -1,6 +1,15 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../config/site';
+import { LOCALES, LOCALE_NAMES, LOCALE_SHORT, LOCALE_TAGS, DEFAULT_LOCALE } from '../i18n/ui';
+import {
+  getLocaleFromUrl,
+  useTranslations,
+  stripLocale,
+  localizedPath,
+  isLocalizedRoute,
+  switchTarget,
+} from '../i18n/utils';
 
 interface Props {
   title: string;
@@ -25,6 +34,29 @@ const {
 const canonicalPath = Astro.url.pathname.replace(/\/+$/, '') || '';
 const canonicalURL = new URL(canonicalPath + '/', SITE.url).href;
 
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const route = stripLocale(canonicalPath);
+
+// hreflang is only emitted where a real translation exists in every locale.
+// Advertising an alternate that 404s is worse than advertising none.
+const alternates = isLocalizedRoute(route)
+  ? LOCALES.map((l) => ({
+      hreflang: LOCALE_TAGS[l],
+      href: new URL(localizedPath(route, l), SITE.url).href,
+    }))
+  : [];
+const xDefault = isLocalizedRoute(route)
+  ? new URL(localizedPath(route, DEFAULT_LOCALE), SITE.url).href
+  : null;
+
+// Nav destinations: translated pages switch with the reader, the rest stay
+// on their English URLs because that is where the content actually lives.
+const navHref = (r: string) =>
+  isLocalizedRoute(r) ? localizedPath(r, locale) : `/${r}/`;
+
+const homeLabel = { en: 'Home', ru: 'Главная', bg: 'Начало' }[locale];
+
 // Breadcrumb trail, built from the URL. Home-only pages get no trail.
 const segments = canonicalPath.split('/').filter(Boolean);
 const breadcrumbSchema =
@@ -36,7 +68,7 @@ const breadcrumbSchema =
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Home',
+            name: homeLabel,
             item: `${SITE.url}/`,
           },
           ...segments.map((seg, i) => ({
@@ -65,7 +97,7 @@ const siteSchema = {
       url: `${SITE.url}/`,
       name: SITE.name,
       description: SITE.description,
-      inLanguage: 'en',
+      inLanguage: LOCALE_TAGS[locale],
       publisher: { '@id': `${SITE.url}/#organization` },
     },
     {
@@ -84,13 +116,17 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+    ))}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
@@ -113,7 +149,10 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
     
     <!-- GTranslate -->
     <script type="text/javascript">
-      window.gtranslateSettings = {"default_language":"en","native_language_names":true,"languages":["en","bg","ru","tr","de","fr","it","es"],"wrapper_selector":".gtranslate_wrapper"};
+      // Russian and Bulgarian are served as real, indexable pages (/ru/, /bg/),
+      // so they are removed here — machine translation would compete with them.
+      // GTranslate stays for languages we do not hand-translate.
+      window.gtranslateSettings = {"default_language":"en","native_language_names":true,"languages":["en","tr","de","fr","it","es"],"wrapper_selector":".gtranslate_wrapper"};
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
     
@@ -142,23 +181,40 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         <button
           class="nav-toggle"
           id="nav-toggle"
-          aria-label="Open navigation menu"
+          aria-label={t('nav.open')}
           aria-expanded="false"
           aria-controls="main-nav"
+          data-label-open={t('nav.open')}
+          data-label-close={t('nav.close')}
         >
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
         </button>
         <nav class="main-nav" id="main-nav">
-          <a href="/news">News</a>
-          <a href="/where-to-stay">Stay & Zones</a>
-          <a href="/transfers">Transport</a>
-          <a href="/events-and-parties">Events</a>
-          <a href="/black-sea-experience">Experience</a>
-          <a href="/faq" class="text-cyan-400 font-bold">FAQ</a>
-          <a href="/essential-apps" class="text-pink-400">Survival Apps</a>
+          <a href={navHref('news')}>{t('nav.news')}</a>
+          <a href={navHref('where-to-stay')}>{t('nav.stay')}</a>
+          <a href={navHref('transfers')}>{t('nav.transport')}</a>
+          <a href={navHref('events-and-parties')}>{t('nav.events')}</a>
+          <a href={navHref('black-sea-experience')}>{t('nav.experience')}</a>
+          <a href={navHref('faq')} class="text-cyan-400 font-bold">{t('nav.faq')}</a>
+          <a href={navHref('essential-apps')} class="text-pink-400">{t('nav.apps')}</a>
         </nav>
+        <div class="lang-switch" aria-label={t('lang.label')}>
+          {LOCALES.map((l) => (
+            <a
+              href={switchTarget(Astro.url.pathname, l)}
+              class={l === locale ? 'lang-active' : ''}
+              hreflang={LOCALE_TAGS[l]}
+              lang={LOCALE_TAGS[l]}
+              aria-current={l === locale ? 'true' : undefined}
+              aria-label={LOCALE_NAMES[l]}
+              title={LOCALE_NAMES[l]}
+            >
+              {LOCALE_SHORT[l]}
+            </a>
+          ))}
+        </div>
         <div class="gtranslate_wrapper"></div>
       </div>
     </header>
@@ -172,27 +228,27 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         <div class="footer-grid">
           <div class="disclaimer">
             <div class="about-copy">
-              <h4>The Local Insider Team</h4>
-              <p>Burgas 2027 Guide is an independent event and travel portal. We are locals in love with Burgas and the coast. We cut through the noise to bring international fans, travelers, and delegations verified lodging picks, stress-free transit playbooks, and genuine coastal recommendations.</p>
+              <h4>{t('footer.team')}</h4>
+              <p>{t('footer.about')}</p>
             </div>
             <p style="margin-top: 16px;">
-              <em>Disclaimer: burgas2027guide.com is an independent fan travel portal and is not affiliated with, endorsed by, or connected to the European Broadcasting Union (EBU), Bulgarian National Television (BNT), or the official Eurovision Song Contest.</em>
+              <em>{t('footer.disclaimer')}</em>
             </p>
           </div>
           <div class="b2b-links">
-            <h4>Community & Legal</h4>
+            <h4>{t('footer.community')}</h4>
             <ul>
-              <li><a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer">Join RU Telegram</a></li>
-              <li><a href="/about" class="discreet-b2b-link">Contact & About Us</a></li>
-              <li><a href="/privacy" class="discreet-b2b-link">Privacy Policy</a></li>
-              <li><a href="/terms" class="discreet-b2b-link">Terms of Service</a></li>
+              <li><a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer">{t('footer.telegram')}</a></li>
+              <li><a href="/about/" class="discreet-b2b-link">{t('footer.contact')}</a></li>
+              <li><a href="/privacy/" class="discreet-b2b-link">{t('footer.privacy')}</a></li>
+              <li><a href="/terms/" class="discreet-b2b-link">{t('footer.terms')}</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Partner</h4>
+            <h4>{t('footer.partner')}</h4>
             <ul>
-              <li><a href="/investors">For Property Owners (B2B)</a></li>
-              <li><a href="/disclosure">Affiliate Disclosure</a></li>
+              <li><a href="/investors/">{t('footer.investors')}</a></li>
+              <li><a href="/disclosure/">{t('footer.disclosure')}</a></li>
             </ul>
           </div>
         </div>
@@ -215,9 +271,11 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
       }
 
       .logo {
+        white-space: nowrap;
         font-family: 'Outfit', sans-serif;
         font-size: 1.5rem;
         font-weight: 800;
@@ -239,6 +297,38 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
 
       .gtranslate_wrapper {
         min-width: 120px;
+      }
+
+      /* Hand-translated locales get a real switcher; GTranslate keeps the
+         machine-translated remainder next to it. */
+      .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 2px;
+        border: 1px solid var(--glass-border);
+        border-radius: 999px;
+      }
+
+      .lang-switch a {
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: none;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+
+      .lang-switch a:hover {
+        color: var(--text-main);
+        text-shadow: none;
+      }
+
+      .lang-switch a.lang-active {
+        color: var(--text-main);
+        background: rgba(255, 255, 255, 0.1);
       }
 
       main {
@@ -342,7 +432,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 1300px) {
         .site-header .container {
           flex-wrap: wrap;
           gap: 12px;
@@ -353,9 +443,19 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
           order: 3;
         }
 
-        .gtranslate_wrapper {
+        .lang-switch {
           order: 2;
           margin-left: auto;
+        }
+
+        .gtranslate_wrapper {
+          order: 5;
+          flex-basis: 100%;
+          min-width: 0;
+        }
+
+        .lang-switch a {
+          padding: 7px 10px;
         }
 
         .main-nav {
@@ -404,7 +504,9 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
           toggle.setAttribute('aria-expanded', String(open));
           toggle.setAttribute(
             'aria-label',
-            open ? 'Close navigation menu' : 'Open navigation menu'
+            (open
+              ? toggle.dataset.labelClose
+              : toggle.dataset.labelOpen) ?? 'Navigation menu'
           );
         });
 

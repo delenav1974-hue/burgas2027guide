@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroCapture from '../../components/HeroCapture.astro';
+import CountdownBanner from '../../components/CountdownBanner.astro';
+import OccupancyMeter from '../../components/OccupancyMeter.astro';
+import TransitCalculator from '../../components/TransitCalculator.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import { getCollection } from 'astro:content';
+import { eventSchema } from '../../config/site';
+
+const targetDate = "2027-05-15T20:00:00+03:00";
+
+const allNews = await getCollection('news');
+const latestNews = allNews
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+---
+
+<Layout
+  title="Eurovision 2027 in Burgas — unabhängiger Guide zu Unterkunft und Anreise"
+  description="Wo Sie beim Eurovision 2027 in Burgas übernachten, wie Sie von den Flughäfen Burgas, Sofia und Istanbul anreisen und was in der Stadt läuft. Ein Guide von Einheimischen, ohne Touristenfallen."
+  schema={eventSchema}
+>
+  <div class="container">
+    <HeroCapture
+      headline="Eurovision 2027 in Burgas: der Guide von Einheimischen"
+      subheadline="Ein unabhängiger Überblick von Menschen, die an dieser Küste leben: Unterkunft, Anreise und die Stadt während des größten Musikereignisses am Schwarzen Meer."
+    />
+
+    <div class="quick-links glass-panel" style="margin-top: -32px; margin-bottom: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 24px;">
+      <a href="/de/where-to-stay/" class="btn btn-secondary">🏨 Unterkunft finden</a>
+      <a href="/de/transfers/" class="btn btn-secondary">🚕 Flughafentransfer</a>
+      <AffiliateButton text="📱 eSIM für Reisende (Airalo)" href="https://www.airalo.com/bulgaria-esim" provider="generic" />
+      <AffiliateButton text="💳 Reisekarte (Revolut)" href="https://revolut.com/referral/?referral-code=elena02b5!AUG1-26-AR-LL&geo-redirect" provider="generic" />
+    </div>
+
+    <CountdownBanner targetDate={targetDate} />
+
+    <section class="features">
+      <div class="feature-card glass-panel">
+        <h3>📍 Wo übernachten</h3>
+        <p>Vorbei an den Touristenfallen. Wir zeigen die <strong>Hotels in Gehweite zur Arena Burgas</strong> und die Küstenorte mit Shuttle-Anbindung.</p>
+        <OccupancyMeter percentage={82} />
+        <a href="/de/where-to-stay/" class="btn btn-primary" style="margin-top:16px;">Zum Unterkunfts-Guide</a>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <h3>🚕 Anreise und Verkehr</h3>
+        <p>Ankommen, ohne draufzuzahlen: vom <strong>Bus vom Flughafen Istanbul nach Burgas</strong> bis zu den Nachtshuttles nach der Show.</p>
+        <TransitCalculator />
+        <a href="/de/transfers/" class="btn btn-primary" style="margin-top:16px;">Zum Verkehrs-Guide</a>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <h3>🪩 Events und Partys</h3>
+        <p>EuroVillage, die offiziellen EuroClub-Aftershowpartys und Yacht-Events vom Hafen Burgas aus.</p>
+        <a href="/events-and-parties/" class="btn btn-primary" style="margin-top:16px; display: block;">Programm (EN)</a>
+      </div>
+    </section>
+
+    {latestNews.length > 0 && (
+      <section class="latest-news-section glass-panel" style="margin: 64px 0; padding: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <h2 style="color: var(--accent-magenta); font-size: 2rem;">Neueste Meldungen</h2>
+          <a href="/news/" style="color: var(--accent-cyan); font-weight: 600;">Alle News (EN) &rarr;</a>
+        </div>
+        <div class="news-list" style="display: flex; flex-direction: column; gap: 16px;">
+          {latestNews.map((post) => (
+            <a href={`/news/${post.id}/`} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+                {post.data.date.toLocaleDateString('de-DE', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </div>
+              <h3 style="color: var(--text-main); margin-bottom: 8px; font-size: 1.2rem;">{post.data.title}</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin: 64px 0;
+  }
+
+  .feature-card h3 {
+    color: var(--accent-amber);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+
+  .news-item:hover {
+    border-color: var(--accent-cyan) !important;
+  }
+</style>

@@ -1,0 +1,256 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wann startet der Ticketverkauf für den Eurovision 2027 in Burgas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Erfahrungsgemäß kommen Eurovision-Tickets in Wellen ab Ende November oder Anfang Dezember des Vorjahres in den Verkauf. Für Burgas 2027 ist die erste Welle für die Live-Shows und die Juryproben über den offiziellen Ticketpartner gegen Ende 2026 zu erwarten. Die genauen Termine geben wir in unserem Newsletter bekannt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie komme ich vom Flughafen Sofia nach Burgas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es gibt vier Wege: Inlandsflug (45 Minuten), Fernbus vom zentralen Busbahnhof (rund 5 Stunden), Nachtzug der BDZ (langsam, etwa 8 Stunden, dafür mit Schlafwagen) oder Mietwagen über die Autobahn A1 Trakia (etwa 3,5 Stunden). Zugtickets sind in der Hochsaison sehr schnell vergriffen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo wird das Eurovision Village in Burgas sein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Ort ist offiziell noch nicht bestätigt. Vor Ort rechnet man mit dem Hafen von Burgas (Morska Gara) oder dem Meergarten — beide Flächen fassen große Open-Air-Veranstaltungen und liegen direkt am Meer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Burgas Zentrum oder Sonnenstrand — was ist besser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Zentrum von Burgas sowie die Viertel Lazur und Zornitsa sind am praktischsten: von dort geht es zu Fuß zur Arena Burgas und zum Eurovision Village. Der Sonnenstrand ist deutlich günstiger und bietet Resort-Partys, dafür fahren Sie je Richtung rund 40 Minuten zur Arena."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie vermeide ich Taxi-Abzocke in Burgas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uber gibt es in Bulgarien nicht. Nutzen Sie Apps wie TaxiMe oder Maxim oder rufen Sie etablierte Anbieter wie Yellow! oder Omega Taxi. Steigen Sie nicht bei Fahrern ein, die in der Ankunftshalle oder am Bahnhof Fahrgäste anwerben, ohne dass das Taxameter läuft."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Eurovision 2027 in Burgas: häufige Fragen"
+  description="Antworten auf die wichtigsten Fragen zum Eurovision 2027 in Burgas: Tickets, Anreise aus Sofia und Istanbul, Unterkunft, Taxi und Bezahlen. Von Einheimischen beantwortet."
+  schema={faqSchema}
+  breadcrumb="Häufige Fragen"
+>
+
+  <div class="container page-content">
+    <h1 class="page-title text-gradient">Häufige Fragen</h1>
+    <p class="subtitle">
+      Die offizielle Eurovision-FAQ deckt die Grundlagen ab. Wir leben hier und erzählen deshalb ungeschönt, wie Burgas im Mai 2027 funktioniert — von der Jagd nach Tickets bis zur Taxischlange.
+    </p>
+
+    <div class="faq-container">
+
+      <div class="faq-section">
+        <h2>🎟️ Tickets und Arena</h2>
+
+        <details class="faq-item">
+          <summary>Wann startet der Ticketverkauf für den Eurovision 2027 in Burgas?</summary>
+          <div class="faq-answer">
+            <p><strong>Offiziell:</strong> Verfolgen Sie die Meldungen auf eurovision.tv.</p>
+            <p><strong>Unsere Einschätzung:</strong> Üblicherweise kommen die Tickets in Wellen von Ende November bis Anfang Dezember. Die Arena Burgas ist kleiner als Stadionhallen, deshalb wird das große Finale binnen Minuten ausverkauft sein. Zielen Sie auf die <em>Juryshows</em> oder die <em>Familienshows</em> — die Inszenierung ist dieselbe, die Tickets sind deutlich leichter zu bekommen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie viele Plätze hat die Arena Burgas?</summary>
+          <div class="faq-answer">
+            <p>Die Arena Burgas ist eine moderne Mehrzweckhalle. In Konzertbestuhlung fasst sie bis zu 15.000 Zuschauer; mit Eurovision-Bühne, Green Room und Technikflächen fällt die reale Kapazität pro Show allerdings spürbar kleiner aus. Die Halle ist kompakt und die Stimmung entsprechend dicht.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>✈️ Anreise und Verkehr</h2>
+
+        <details class="faq-item">
+          <summary>Wie komme ich vom Flughafen Sofia nach Burgas?</summary>
+          <div class="faq-answer">
+            <p>Wenn Sie in Sofia (SOF) landen, haben Sie vier Möglichkeiten an die Küste:</p>
+            <ul>
+              <li><strong>Inlandsflug:</strong> Bulgaria Air fliegt nach Burgas (BOJ). 45 Minuten, aber früh buchen.</li>
+              <li><strong>Mietwagen:</strong> 3,5 Stunden über die Autobahn A1 Trakia. Vignette nicht vergessen.</li>
+              <li><strong>Fernbus:</strong> Union Ivkoni und Karat-S fahren ab dem zentralen Busbahnhof Sofia, rund 5 Stunden.</li>
+              <li><strong>Nachtzug (BDZ):</strong> ein Klassiker, Schlafwagen möglich. Etwa 8 Stunden. Tickets gibt es 30 Tage im Voraus und sie sind für die Eurovision-Woche sofort weg.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie vermeide ich Taxi-Abzocke in Burgas?</summary>
+          <div class="faq-answer">
+            <p><strong>Uber gibt es in Bulgarien nicht.</strong> Damit Sie nicht draufzahlen: Steigen Sie nicht bei Leuten ein, die in der Ankunftshalle „Taxi!“ rufen. Installieren Sie stattdessen <strong>TaxiMe</strong> oder <strong>Maxim</strong> oder rufen Sie etablierte Anbieter wie <strong>Omega Taxi</strong>. Wenn Sie auf der Straße heranwinken, prüfen Sie den Aufkleber an der Beifahrerscheibe — dort steht der Kilometerpreis (etwa 0,60–0,80 €/km).</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-section">
+        <h2>🏨 Unterkunft und Alltag</h2>
+
+        <details class="faq-item">
+          <summary>Burgas Zentrum oder Sonnenstrand — was ist besser?</summary>
+          <div class="faq-answer">
+            <p>Das hängt vom Budget ab und davon, was für einen Aufenthalt Sie wollen:</p>
+            <p><strong>Burgas (Lazur, Zornitsa, Zentrum):</strong> wenn Sie zu Fuß zur Arena und zum Eurovision Village wollen. Die Preise sind entsprechend hoch.</p>
+            <p><strong>Sonnenstrand oder Nessebar:</strong> wenn Sie sparen oder zusätzlich Urlaub machen wollen. Die Hotelauswahl ist riesig, rechnen Sie aber pro Show mit 40 Minuten Fahrt zur Arena.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wo wird das Eurovision Village in Burgas sein?</summary>
+          <div class="faq-answer">
+            <p>Eine offizielle Ankündigung steht noch aus, vor Ort kristallisieren sich zwei Varianten heraus: der <strong>Hafen von Burgas (Morska Gara)</strong> oder der <strong>Meergarten</strong>. Beide Orte richten regelmäßig große Sommerfestivals aus, verfügen über die nötige Sicherheitsinfrastruktur und liegen direkt am Meer.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Brauche ich Bargeld in Bulgarien?</summary>
+          <div class="faq-answer">
+            <p>Seit 2026 gehört Bulgarien zur Eurozone — Geld wechseln müssen Sie also nicht. Mit Karte (Visa oder Mastercard) zahlen Sie in rund 95% der Restaurants, Supermärkte und Hotels. Etwas Bargeld sollten Sie trotzdem dabeihaben (25–50 €): für Trinkgeld, kleine Bäckereien oder die Liege am Strand.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    max-width: 900px;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 12px;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item[open] {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 0, 122, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-item summary {
+    padding: 20px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+    color: var(--accent-magenta);
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px 24px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .faq-answer p {
+    margin-bottom: 12px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer ul {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+  .faq-answer li {
+    margin-bottom: 8px;
+  }
+
+  .faq-answer strong {
+    color: var(--text-main);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

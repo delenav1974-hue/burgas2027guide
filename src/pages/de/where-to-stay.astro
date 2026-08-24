@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import ZoneMap from '../../components/ZoneMap.astro';
+import AccommodationCard from '../../components/AccommodationCard.astro';
+---
+
+<Layout
+  title="Unterkunft in Burgas zum Eurovision 2027: Viertel und Hotels"
+  description="Wo Sie zum Eurovision 2027 in Burgas übernachten: die Viertel rund um die Arena, die Küstenorte Pomorie, Sonnenstrand und Sozopol. Fahrzeiten und Rückweg bei Nacht."
+  breadcrumb="Unterkunft"
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Unterkunft in Burgas</h1>
+    <p class="lead">Die Viertel im Überblick: wie weit es zur Arena ist, wie Sie nachts zurückkommen und worauf Sie beim Buchen achten sollten.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <ZoneMap />
+
+        <section class="glass-panel mb-4" id="area1">
+          <h2>📍 Zone 1: Stadt Burgas (das Zentrum des Geschehens)</h2>
+          <p>Die beste Wahl für Zuschauer. In der Stadt sind Sie am nächsten am Eurovision Village, an der Arena und an den Aftershowpartys. Die Nachfrage ist entsprechend hoch — und die Preise auch.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Zornitsa und Izgrev"
+              type="Apartments"
+              transitTime="🚶‍♂️ 10 Min. zu Fuß"
+              priceTier="€€€€"
+              description="Reine Wohnviertel, dafür unmittelbar an der Arena Burgas. Der größte Vorteil: Nach dem Finale gehen Sie zu Fuß nach Hause, statt stundenlang auf ein Taxi zu warten."
+              whatToDo="Park Veleka, ruhige, untouristische Atmosphäre. Nachtleben gibt es kaum, dafür schlafen Sie zwei Schritte von der Arena entfernt."
+              transportInfo="5–10 Minuten zu Fuß zur Arena Burgas. Weder Bus noch Taxi nötig."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Zornitsa,+Burgas,+Bulgaria"
+              insiderNote="Hotels gibt es hier nicht, nur Apartments über Booking und Airbnb. Buchen Sie sofort — diese sind zuerst weg."
+            />
+            <AccommodationCard
+              name="Lazur"
+              type="Hotel / Apartment"
+              transitTime="🚶‍♂️ 25 Min. zu Fuß"
+              priceTier="€€€"
+              description="Das schönste Viertel von Burgas, direkt am Meergarten. Der Weg zur Arena ist länger, dafür haben Sie das Meer und die besten Parks vor der Tür."
+              whatToDo="Morgenlauf im Meergarten, Expo-Zentrum Flora, Cafés am Strand, entspanntes Leben am Wasser."
+              transportInfo="25 Minuten angenehmer Spaziergang durch den Park zur Arena oder 5 Minuten mit dem Taxi."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Lazur,+Burgas,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Stadtzentrum"
+              type="Boutique-Hotel"
+              transitTime="🚕 15 Min. mit Taxi"
+              priceTier="€€€€"
+              description="Das Herz des Geschehens: Bars, Restaurants und aller Voraussicht nach das Eurovision Village selbst. Zur Arena brauchen Sie Taxi oder Shuttle."
+              whatToDo="EuroVillage, EuroClub-Aftershowpartys, Museen, gute Restaurants und der Haupteingang zum Meergarten."
+              transportInfo="Die Schnelllinien B1 und B2 fahren auf eigenen Spuren und erreichen die Arena in 20 Minuten. Alternativ Taxi."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Burgas+Center,+Bulgaria"
+              insiderNote="Wenn Sie jeden Abend im EuroClub verbringen wollen, ist das Ihr Viertel."
+            />
+            <AccommodationCard
+              name="Sarafovo"
+              type="Küstenvorort"
+              transitTime="🚕 15 Min. mit Taxi"
+              priceTier="€€"
+              description="Das Viertel liegt direkt am Flughafen Burgas (BOJ). Hervorragend bei der Ankunft, zur Arena fahren Sie dafür länger."
+              whatToDo="Luftfahrtmuseum, breite Sandstrände und eine ruhige, familienfreundliche Atmosphäre abseits des Stadtlärms."
+              transportInfo="Stadtbus Nr. 15 fährt direkt ins Zentrum von Burgas. Mit dem Auto sind es etwa 15 Minuten zur Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sarafovo,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Kraimorie"
+              type="Strand am Stadtrand"
+              transitTime="🚕 25 Min. mit Taxi"
+              priceTier="€€"
+              description="Südliches Küstenviertel von Burgas. Sehr entspannte Strandatmosphäre, allerdings am entgegengesetzten Ende der Stadt von der Arena aus."
+              whatToDo="Ruhige Strandtage und ein Abstecher ins Fischerdorf Chengene Skele für echten Fisch."
+              transportInfo="Bus Nr. 17 verbindet Kraimorie mit dem Busbahnhof Süd. Zur Arena durchqueren Sie die ganze Stadt — 20–25 Minuten mit dem Auto."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Kraimorie,+Bulgaria"
+            />
+          </div>
+
+          <div class="red-flag-zone mt-3" style="background: rgba(255, 184, 0, 0.1); border-left: 4px solid var(--accent-amber);">
+            <h3 style="color: var(--accent-amber); margin-bottom: 8px;">⚠️ Viertel, die einen zweiten Blick verdienen</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">In <strong>Meden Rudnik</strong> und <strong>Pobeda</strong> finden Sie sehr günstige Apartments. Bevor Sie buchen, sollten Sie wissen:</p>
+            <ul style="font-size: 0.9rem; padding-left: 20px; margin-bottom: 12px;">
+              <li style="margin-bottom: 8px;"><strong>Meden Rudnik, Zonen A und B:</strong> die am besten ausgebauten und grünsten Teile mit ordentlicher Anbindung. Wenn hier, dann in diesen Zonen.</li>
+              <li style="margin-bottom: 8px;"><strong>Meden Rudnik, Zone V:</strong> wird stark bebaut, es gibt aber unbefestigte Zufahrten, wenig Parkraum und dichten Verkehr zu den Stoßzeiten.</li>
+              <li><strong>Pobeda:</strong> Industriegebiet am Stadtrand, schlecht angebunden für den nächtlichen Rückweg von der Arena.</li>
+            </ul>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;"><em>Bedenken Sie: Meden Rudnik ist der am weitesten von der Arena entfernte Punkt. Die Unterkunft ist günstig, das Ersparte geht aber leicht für Taxifahrten quer durch die Stadt drauf.</em></p>
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="area2">
+          <h2>🏖️ Zone 2: die Nordküste (die Resorts)</h2>
+          <p>Nördlich von Burgas liegen die großen Resorts, die Preise sind deutlich niedriger. Der Haken: Den Rückweg nach Mitternacht müssen Sie vorab organisieren — die Stadtbusse fahren dann nicht mehr.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Pomorie"
+              type="Küstenstadt"
+              transitTime="🚕 30 Min. mit Taxi"
+              priceTier="€€"
+              description="Eigenständige Stadt auf einer Halbinsel, bekannt für ihre Salzseen und den ruhigen Rhythmus. Vom Flughafen aus gut erreichbar."
+              whatToDo="Salzmuseum, die berühmten Heilschlammbäder und ein Bummel durch die Altstadt."
+              transportInfo="Überlandbusse fahren alle 30 Minuten ab dem Busbahnhof Süd. Mit dem Auto 30 Minuten zur Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Pomorie,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Sonnenstrand"
+              type="Großresort"
+              transitTime="🚕 40 Min. mit Taxi"
+              priceTier="€"
+              description="Das größte Resort Bulgariens: Tausende günstige Hotels, große Clubs und endlose Strände. Weiter weg von der Arena, dafür die sparsamste Variante."
+              whatToDo="Nachtleben, riesige Strandbars und durchgehende Sommerpartys."
+              transportInfo="Direkte Überlandbusse ab Busbahnhof Süd in rund 45 Minuten. Mit Auto oder Taxi 40 Minuten."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sunny+Beach,+Bulgaria"
+              insiderNote="Hier wird mit hoher Wahrscheinlichkeit ein großer Knotenpunkt der offiziellen Eurovision-Shuttles liegen. Gut für ein knappes Budget."
+            />
+            <AccommodationCard
+              name="Sveti Vlas"
+              type="Premium-Resort"
+              transitTime="🚕 45 Min. mit Taxi"
+              priceTier="€€€€"
+              description="Eingebettet zwischen Bergen und Meer. Die ruhigere und teurere Alternative zum Sonnenstrand, mit Yachthafen-Atmosphäre."
+              whatToDo="Spaziergang an der Marina Dinevi, gute Restaurants und Öko-Pfade in den Hängen ringsum."
+              transportInfo="Mit dem Bus zum Sonnenstrand und umsteigen oder mit dem Auto — ab 45 Minuten zur Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sveti+Vlas,+Bulgaria"
+            />
+            <AccommodationCard
+              name="Nessebar (Altstadt)"
+              type="UNESCO-Welterbe"
+              transitTime="🚕 45 Min. mit Taxi"
+              priceTier="€€€"
+              description="Eine der ältesten Städte Europas auf einer Felsenhalbinsel. Sehr schön, aber weit von der Arena entfernt."
+              whatToDo="Alte Holzhäuser, Ruinen byzantinischer Kirchen und Fischrestaurants direkt über den Klippen."
+              transportInfo="Busse fahren ab dem Busbahnhof Süd. Mit Taxi oder Auto rund 45 Minuten zur Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Old+Town+Nessebar,+Bulgaria"
+            />
+          </div>
+        </section>
+
+        <section class="glass-panel" id="area3">
+          <h2>🌅 Zone 3: die Südküste (die echte Riviera)</h2>
+          <p>Der Süden ist malerischer und ursprünglicher. Die Arena Burgas liegt aber ganz im Norden der Stadt — von Süden aus durchqueren Sie für jede Show ganz Burgas.</p>
+
+          <div class="places-grid mt-3">
+            <AccommodationCard
+              name="Sozopol"
+              type="Boutique-Hotel"
+              transitTime="🚕 50 Min. mit Taxi"
+              priceTier="€€€"
+              description="Eine der ältesten Städte Europas: Holzhäuser und ausgezeichnete Fischküche. Gut für Delegationen und alle, die zugleich Urlaub machen wollen."
+              whatToDo="Die Kopfsteinpflastergassen der Altstadt, frische Schwarzmeermuscheln und das märchenhafte Schloss Ravadinovo."
+              transportInfo="Busse nach Burgas alle 30 Minuten, mit dem Auto sind es aber 45–50 Minuten quer durch die Stadt zur Arena."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Sozopol,+Bulgaria"
+              insiderNote="Wichtig: Die Fahrt von Sozopol zur Arena dauert 45–50 Minuten. Buchen Sie hier nur mit Mietwagen oder eigenem Fahrer."
+            />
+            <AccommodationCard
+              name="Chernomorets"
+              type="Küstendorf"
+              transitTime="🚕 35 Min. mit Taxi"
+              priceTier="€€"
+              description="Die ruhigere Alternative zu Sozopol und etwas näher an Burgas. Schöne Strände und sehr entspannte Atmosphäre."
+              whatToDo="Der Strand Vromos und gemächlicher Familienurlaub ohne Touristenmassen."
+              transportInfo="Überlandbusse gibt es, für den nächtlichen Rückweg von der Show sind Auto oder Taxi aber sinnvoller — 35 Minuten."
+              bookingUrl="https://www.booking.com/searchresults.html?ss=Chernomorets,+Bulgaria"
+            />
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Unterkunft sichern</h3>
+          <p>Die freien Plätze werden schnell weniger. Direkt zur Zone:</p>
+
+          <div class="zone-filters" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+            <a href="#area1" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🎤 An der Arena</a>
+            <a href="#area2" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🏖️ Resorts im Norden</a>
+            <a href="#area3" class="btn btn-secondary" style="font-size: 0.9rem; text-align: left;">🌅 Südliche Riviera</a>
+          </div>
+
+          <AffiliateButton text="In der ganzen Region suchen" href="https://www.booking.com/searchresults.html?ss=Burgas+Province,+Bulgaria" provider="booking" />
+
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+
+          <h4>Wichtig zum Verkehr</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px; color: var(--text-muted);">
+            Wenn Sie außerhalb von Burgas buchen, <strong>verlassen Sie sich nach 23:00 Uhr nicht auf den öffentlichen Nahverkehr</strong>. Die Shows enden spät. Nehmen Sie einen Mietwagen oder den offiziellen Shuttle.
+          </p>
+          <a href="/de/transfers/" class="btn btn-secondary" style="width: 100%; text-align: center; display: inline-block;">Zum Verkehrs-Guide</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 48px;
+  }
+
+  .mt-3 {
+    margin-top: 24px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: 8px;
+    scroll-margin-top: 100px; /* offset for sticky header */
+  }
+
+  .places-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .red-flag-zone {
+    padding: 16px;
+    background: rgba(255, 68, 68, 0.1);
+    border-left: 4px solid #ff4444;
+    border-radius: 4px;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

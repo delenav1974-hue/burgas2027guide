@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import TransitCalculator from '../../components/TransitCalculator.astro';
+---
+
+<Layout
+  title="Anreise nach Burgas: Transfers und Verkehr | Eurovision 2027"
+  description="Schritt für Schritt nach Burgas — von den Flughäfen Burgas, Sofia, Varna und Istanbul zum Eurovision 2027. Buslinien, Preise in Euro und realistische Fahrzeiten."
+  breadcrumb="Anreise"
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">Anreise und Verkehr</h1>
+    <p class="lead">Lassen Sie die Anreise nicht die Reise ruinieren. Hier stehen die Wege nach Burgas von allen großen Flughäfen der Region — Schritt für Schritt.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <TransitCalculator />
+
+        <section class="glass-panel mb-4">
+          <h2>✈️ Vom Flughafen Burgas (BOJ) ins Zentrum</h2>
+          <p>Der Flughafen Burgas (Sarafovo) ist die nächstgelegene und bequemste Variante — nur 10 km vom Zentrum entfernt.</p>
+          <ul>
+            <li><strong>Schritt 1: Stadtbus Nr. 15.</strong> Die Haltestelle liegt direkt vor dem Abflugterminal.</li>
+            <li><strong>Fahrzeit:</strong> 20–30 Minuten bis zum <strong>Busbahnhof Süd (Avtogara Yug)</strong> im Zentrum von Burgas.</li>
+            <li><strong>Preis:</strong> 0,80 €. Das Ticket kaufen Sie beim Schaffner im Bus.</li>
+            <li><strong>Alternativen:</strong> Eko Taxi (offizieller Partner des Flughafens) kostet rund 15 €. In der Eurovision-Woche buchen Sie den Transfer besser vorab — die Taxischlangen werden spürbar.</li>
+          </ul>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Privattransfer buchen (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-sofia">
+          <h2>🏙️ Vom Flughafen Sofia (SOF) nach Burgas</h2>
+          <p>Der Flug in die Hauptstadt ist oft günstiger, dafür durchqueren Sie anschließend das Land — rund 400 km.</p>
+          <ul>
+            <li><strong>Schritt 1: Metro ins Zentrum.</strong> Linie 4 (gelb) fährt direkt vom Terminal 2 bis zum <strong>Hauptbahnhof</strong> (Haltestelle „Tsentralna gara“).
+              <br/><em>Zeit: 30 Minuten | Preis: 0,80 €</em>
+            </li>
+            <li><strong>Schritt 2: Fernbus nach Burgas.</strong> Direktverbindungen von Union Ivkoni und Karat-S zum Busbahnhof Süd.
+              <br/><em>Zeit: 5,5 Stunden | Preis: 18–20 €</em>
+            </li>
+            <li><strong>Gesamtdauer:</strong> etwa 6 Stunden.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-varna">
+          <h2>🌊 Vom Flughafen Varna (VAR) nach Burgas</h2>
+          <p>Varna ist der zweite große Küstenflughafen, rund 120 km nördlich von Burgas.</p>
+          <ul>
+            <li><strong>Schritt 1: Bus Nr. 409.</strong> Stadtlinie vom Flughafen zum <strong>zentralen Busbahnhof Varna</strong>.
+              <br/><em>Zeit: 20 Minuten | Preis: 1,00 €</em>
+            </li>
+            <li><strong>Schritt 2: Kleinbus nach Burgas.</strong> Küstenverbindung von M-Bus bis zum Busbahnhof Süd.
+              <br/><em>Zeit: 2 Stunden | Preis: 8–10 €</em>
+            </li>
+            <li><strong>Gesamtdauer:</strong> etwa 2,5 Stunden.</li>
+          </ul>
+        </section>
+
+        <section class="glass-panel mb-4" id="from-istanbul">
+          <h2>🇹🇷 Von den Flughäfen Istanbul (IST / SAW) nach Burgas</h2>
+          <p>Istanbul ist ein großes Drehkreuz und für viele internationale Fans das Tor nach Bulgarien.</p>
+          <ul>
+            <li><strong>Direkte Fernbusse:</strong> <strong>Nisikli</strong> und <strong>Arda Tur</strong> fahren direkt vom Busbahnhof Esenler (Büyük Otogar) zum Busbahnhof Süd in Burgas.
+              <br/><em>Zeit: 5–6 Stunden | Preis: 30–40 €</em>
+            </li>
+            <li><strong>Grenzkontrolle:</strong> Sie passieren den Übergang Malko Tarnovo. An den Spitzentagen der Eurovision sollten Sie Puffer einplanen.</li>
+          </ul>
+          <div class="insider-note">
+            <strong>Tipp von uns:</strong> Buchen Sie Fernbustickets vorab über Omio oder FlixBus. Bulgarische Busunternehmen sind bei Sommerveranstaltungen sehr schnell ausverkauft.
+          </div>
+          <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <AffiliateButton text="Busse auf Omio suchen" href="https://www.omio.com/" provider="booking" />
+            <AffiliateButton text="FlixBus-Verbindungen" href="https://www.flixbus.com/" provider="booking" />
+          </div>
+        </section>
+
+        <section class="glass-panel mb-4" id="rent-a-car">
+          <h2>🚗 Mietwagen: die volle Freiheit</h2>
+          <p>Zwischen den Proben und dem Finale müssen Sie nicht im Hotel sitzen. Mit dem Auto fahren Sie die ganze Küste ab — von den antiken Ruinen in Nessebar bis zu den wilden Stränden südlich von Sozopol.</p>
+          <p><em>Werfen Sie einen Blick in unseren <a href="/black-sea-experience/" style="color: var(--accent-cyan);">Guide zur Schwarzmeerküste</a> (auf Englisch).</em></p>
+          <div style="margin-top: 16px;">
+            <AffiliateButton text="Mietwagenpreise vergleichen (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Transfer sichern</h3>
+          <p>In der Eurovision-Woche ziehen die Preise an. Buchen Sie jetzt.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <AffiliateButton text="Flughafentransfer (KiwiTaxi)" href="https://kiwitaxi.com/" provider="kiwitaxi" />
+            <AffiliateButton text="Mietwagen (DiscoverCars)" href="https://www.discovercars.com/" provider="discovercars" />
+          </div>
+
+          <hr style="margin: 24px 0; border-color: var(--glass-border);" />
+
+          <h4>VIP-Vans</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">Sie brauchen eine Mercedes V-Klasse ab Istanbul oder Sofia für Ihre Delegation? Schreiben Sie uns direkt.</p>
+          <a href="mailto:info@burgas2027guide.com?subject=VIP%20Minivan%20Quote%20%E2%80%94%20Burgas%202027"
+             class="btn btn-secondary"
+             style="width: 100%; text-align: center; display: inline-block;">Angebot anfragen</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .mb-4 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 16px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .insider-note {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sticky-box h3, .sticky-box h4 {
+    color: var(--accent-magenta);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
