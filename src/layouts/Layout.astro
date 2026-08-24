@@ -1,13 +1,86 @@
 ---
 import '../styles/global.css';
+import { SITE } from '../config/site';
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  /** Page-specific JSON-LD (Event, FAQPage, Article...). Object or array. */
+  schema?: object | object[];
+  /** Human label for this page in the breadcrumb trail. */
+  breadcrumb?: string;
 }
 
-const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
+const {
+  title,
+  description,
+  image = SITE.defaultImage,
+  schema,
+  breadcrumb,
+} = Astro.props;
+
+// Canonical: always the trailing-slash form on the production origin,
+// stripped of query strings and fragments.
+const canonicalPath = Astro.url.pathname.replace(/\/+$/, '') || '';
+const canonicalURL = new URL(canonicalPath + '/', SITE.url).href;
+
+// Breadcrumb trail, built from the URL. Home-only pages get no trail.
+const segments = canonicalPath.split('/').filter(Boolean);
+const breadcrumbSchema =
+  segments.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${SITE.url}/`,
+          },
+          ...segments.map((seg, i) => ({
+            '@type': 'ListItem',
+            position: i + 2,
+            name:
+              i === segments.length - 1 && breadcrumb
+                ? breadcrumb
+                : seg
+                    .split('-')
+                    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                    .join(' '),
+            item: `${SITE.url}/${segments.slice(0, i + 1).join('/')}/`,
+          })),
+        ],
+      }
+    : null;
+
+// Site-wide identity graph: emitted once, on every page.
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: `${SITE.url}/`,
+      name: SITE.name,
+      description: SITE.description,
+      inLanguage: 'en',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: `${SITE.url}/`,
+      logo: `${SITE.url}${SITE.logo}`,
+      sameAs: [SITE.telegram],
+    },
+  ],
+};
+
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []), ...pageSchemas];
 ---
 
 <!doctype html>
@@ -17,19 +90,23 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Preload the hero art so it is not discovered late -->
+    <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
@@ -50,6 +127,11 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
           document.head.appendChild(script);
       })();
     </script>
+
+    <!-- Structured data -->
+    {allSchemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
   </head>
   <body>
     <header class="site-header glass-panel">
@@ -57,7 +139,18 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
         <a href="/" class="logo">
           <span class="text-gradient">Burgas 2027</span> Guide
         </a>
-        <nav class="main-nav">
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
           <a href="/news">News</a>
           <a href="/where-to-stay">Stay & Zones</a>
           <a href="/transfers">Transport</a>
@@ -214,14 +307,123 @@ const { title, description, image = '/images/hero-bg.jpg' } = Astro.props;
         text-shadow: none;
       }
 
+      /* Hamburger — hidden on desktop, shown below 900px */
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        background: transparent;
+        border: 1px solid var(--glass-border);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .nav-toggle-bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 0 auto;
+        background: var(--text-main);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      @media (max-width: 900px) {
+        .site-header .container {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .nav-toggle {
+          display: flex;
+          order: 3;
+        }
+
+        .gtranslate_wrapper {
+          order: 2;
+          margin-left: auto;
+        }
+
+        .main-nav {
+          order: 4;
+          flex-basis: 100%;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .main-nav.is-open {
+          max-height: 70vh;
+          overflow-y: auto;
+          margin-top: 8px;
+          border-top: 1px solid var(--glass-border);
+        }
+
+        .main-nav a {
+          padding: 14px 4px;
+          font-size: 1rem;
+          border-bottom: 1px solid var(--glass-border);
+        }
+
+        .main-nav a:last-child {
+          border-bottom: none;
+        }
+      }
+
       @media (max-width: 768px) {
         .footer-grid {
           grid-template-columns: 1fr;
         }
-        .main-nav {
-          display: none; /* Mobile menu should be implemented later */
-        }
       }
     </style>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const nav = document.getElementById('main-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute(
+            'aria-label',
+            open ? 'Close navigation menu' : 'Open navigation menu'
+          );
+        });
+
+        // Close the menu when a link is followed or Escape is pressed.
+        nav.addEventListener('click', (e) => {
+          if ((e.target as HTMLElement).tagName === 'A') {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import { SITE } from '../../config/site';
 
 export async function getStaticPaths() {
   const newsEntries = await getCollection('news');
@@ -13,12 +14,34 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: entry.data.title,
+  description: entry.data.description,
+  datePublished: entry.data.date.toISOString(),
+  dateModified: entry.data.date.toISOString(),
+  image: [new URL(entry.data.image ?? SITE.defaultImage, SITE.url).href],
+  author: {
+    '@type': 'Organization',
+    name: entry.data.author,
+    url: `${SITE.url}/about/`,
+  },
+  publisher: { '@id': `${SITE.url}/#organization` },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/news/${entry.id}/`,
+  },
+};
 ---
 
 <Layout 
   title={`${entry.data.title} | Burgas 2027 News`}
   description={entry.data.description}
   image={entry.data.image}
+  schema={articleSchema}
+  breadcrumb={entry.data.title}
 >
   <div class="container page-content">
     <a href="/news" class="back-link">&larr; Back to News</a>
