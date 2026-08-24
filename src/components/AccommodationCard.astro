@@ -11,6 +11,8 @@ interface Props {
   insiderNote?: string;
 }
 
+import { getLocaleFromUrl, useTranslations } from '../i18n/utils';
+
 const { 
   name, 
   type, 
@@ -22,6 +24,8 @@ const {
   bookingUrl,
   insiderNote
 } = Astro.props;
+
+const t = useTranslations(getLocaleFromUrl(Astro.url));
 ---
 
 <div class="acc-card glass-panel">
@@ -46,7 +50,7 @@ const {
         <div class="guide-item">
           <span class="guide-icon">🎯</span>
           <div>
-            <strong>Vibe & Attractions:</strong> {whatToDo}
+            <strong>{t('card.vibe')}</strong> {whatToDo}
           </div>
         </div>
       )}
@@ -54,7 +58,7 @@ const {
         <div class="guide-item">
           <span class="guide-icon">🚌</span>
           <div>
-            <strong>Logistics:</strong> {transportInfo}
+            <strong>{t('card.logistics')}</strong> {transportInfo}
           </div>
         </div>
       )}
@@ -63,13 +67,13 @@ const {
 
   {insiderNote && (
     <div class="insider-note-compact">
-      <strong>Insider Tip:</strong> {insiderNote}
+      <strong>{t('card.insider')}</strong> {insiderNote}
     </div>
   )}
 
   <div class="acc-actions">
     <a href={bookingUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary book-btn">
-      Check Availability &rarr;
+      {t('card.book')} &rarr;
     </a>
   </div>
 </div>

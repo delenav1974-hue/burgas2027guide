@@ -1,10 +1,19 @@
 ---
+import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/utils';
+import { SITE } from '../config/site';
+
 interface Props {
   headline: string;
   subheadline: string;
 }
 
 const { headline, subheadline } = Astro.props;
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+// Send the reader back to the home page of the language they signed up in.
+const redirectTo = new URL(localizedPath('', locale), SITE.url).href;
 ---
 
 <section class="hero-capture">
@@ -13,23 +22,23 @@ const { headline, subheadline } = Astro.props;
     <p class="subheadline">{subheadline}</p>
     
     <div class="capture-box glass-panel">
-      <h3>Join the Secret Waitlist</h3>
-      <p>Get notified instantly on ticket sales & access our secret accommodation list before the crowds.</p>
+      <h3>{t('hero.waitlist')}</h3>
+      <p>{t('hero.waitlistText')}</p>
       
       <form class="capture-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395">
-        <input type="email" name="email" placeholder="Enter your email address" required />
-        <input type="hidden" name="redirect" value="https://burgas2027guide.com/">
-        <input type="hidden" name="subject" value="New Subscriber from Hero Section!">
-        <button type="submit" class="btn btn-primary">Get Early Access</button>
+        <input type="email" name="email" placeholder={t('hero.emailPlaceholder')} required />
+        <input type="hidden" name="redirect" value={redirectTo}>
+        <input type="hidden" name="subject" value={`New Subscriber (${locale.toUpperCase()}) from Hero Section!`}>
+        <button type="submit" class="btn btn-primary">{t('hero.cta')}</button>
       </form>
-      <div class="spam-notice">We respect your privacy. No spam.</div>
+      <div class="spam-notice">{t('hero.privacy')}</div>
       
       <div class="telegram-banner">
-        <p>🇷🇺 🇧🇬 Русскоязычный? Узнай о билетах первым!</p>
+        <p>{t('hero.telegramPitch')}</p>
         <a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
           <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
-          Присоединиться к Telegram
+          {t('hero.telegramCta')}
         </a>
       </div>
     </div>
