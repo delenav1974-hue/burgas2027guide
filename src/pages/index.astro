@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import HeroCapture from '../components/HeroCapture.astro';
 import CountdownBanner from '../components/CountdownBanner.astro';
-import OccupancyMeter from '../components/OccupancyMeter.astro';
 import TransitCalculator from '../components/TransitCalculator.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import { getCollection } from 'astro:content';
@@ -40,8 +39,7 @@ const latestNews = allNews
       <div class="feature-card glass-panel">
         <h3>📍 Where to Stay</h3>
         <p>Avoid the tourist traps. We map out the best <strong>hotels walking distance to arena burgas</strong> and coastal shuttle towns.</p>
-        <OccupancyMeter percentage={82} />
-        <a href="/where-to-stay" class="btn btn-primary" style="margin-top:16px;">View Lodging Guide</a>
+<a href="/where-to-stay" class="btn btn-primary" style="margin-top:16px;">View Lodging Guide</a>
       </div>
 
       <div class="feature-card glass-panel">
