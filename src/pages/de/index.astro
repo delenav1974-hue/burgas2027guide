@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import HeroCapture from '../../components/HeroCapture.astro';
 import CountdownBanner from '../../components/CountdownBanner.astro';
-import OccupancyMeter from '../../components/OccupancyMeter.astro';
 import TransitCalculator from '../../components/TransitCalculator.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import { getCollection } from 'astro:content';
@@ -40,8 +39,7 @@ const latestNews = allNews
       <div class="feature-card glass-panel">
         <h3>📍 Wo übernachten</h3>
         <p>Vorbei an den Touristenfallen. Wir zeigen die <strong>Hotels in Gehweite zur Arena Burgas</strong> und die Küstenorte mit Shuttle-Anbindung.</p>
-        <OccupancyMeter percentage={82} />
-        <a href="/de/where-to-stay/" class="btn btn-primary" style="margin-top:16px;">Zum Unterkunfts-Guide</a>
+<a href="/de/where-to-stay/" class="btn btn-primary" style="margin-top:16px;">Zum Unterkunfts-Guide</a>
       </div>
 
       <div class="feature-card glass-panel">
