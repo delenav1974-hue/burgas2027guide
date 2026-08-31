@@ -1,4 +1,4 @@
-// Locale dictionaries for shared UI chrome (navigation, footer, forms,
+﻿// Locale dictionaries for shared UI chrome (navigation, footer, forms,
 // components). Page prose lives in the per-locale page files themselves.
 
 export const LOCALES = ['en', 'ru', 'bg', 'de'] as const;
@@ -49,6 +49,8 @@ export const MACHINE_ONLY_LANGUAGES = ['tr', 'fr', 'it', 'es', 'pl', 'cs', 'nl']
 
 export const ui = {
   en: {
+    'nav.packages': 'Packages',
+    'nav.packages': 'Pakete',
     'nav.news': 'News',
     'nav.stay': 'Stay & Zones',
     'nav.transport': 'Transport',
@@ -103,6 +105,7 @@ export const ui = {
     'map.min': 'min',
   },
   ru: {
+    'nav.packages': 'Пакеты',
     'nav.news': 'Новости',
     'nav.stay': 'Где жить',
     'nav.transport': 'Транспорт',
@@ -157,6 +160,7 @@ export const ui = {
     'map.min': 'мин',
   },
   bg: {
+    'nav.packages': 'Пакети',
     'nav.news': 'Новини',
     'nav.stay': 'Къде да отседнете',
     'nav.transport': 'Транспорт',
@@ -211,6 +215,8 @@ export const ui = {
     'map.min': 'мин',
   },
   de: {
+    'nav.packages': 'Packages',
+    'nav.packages': 'Pakete',
     'nav.news': 'News',
     'nav.stay': 'Unterkunft',
     'nav.transport': 'Anreise',
@@ -265,3 +271,4 @@ export const ui = {
     'map.min': 'Min.',
   },
 } as const;
+

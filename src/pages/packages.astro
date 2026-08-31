@@ -1,0 +1,204 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import { eventSchema } from '../config/site';
+---
+
+<Layout 
+  title="Eurovision 2027 Burgas Packages | Hotel & Transfer Deals" 
+  description="Book all-inclusive Eurovision 2027 packages in Burgas. We offer Essential, Fan, VIP, and Delegation packages including hotels, transfers, and experiences."
+  breadcrumb="Packages"
+>
+  <div class="container page-content">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+      <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 24px;">Eurovision 2027 Packages</h1>
+      <p class="lead" style="font-size: 1.2rem; color: var(--text-muted);">Take the stress out of planning. From basic logistics to all-inclusive VIP treatment, our local team has curated the ultimate Burgas 2027 packages.</p>
+    </div>
+
+    <div class="packages-grid">
+      
+      <!-- Essential -->
+      <div class="package-card glass-panel">
+        <div class="package-header">
+          <h2>Essential</h2>
+          <div class="price-tag">From €499<span>/person</span></div>
+        </div>
+        <p class="pkg-desc">The bare necessities. Secure your bed and your ride from the airport before prices skyrocket.</p>
+        <ul class="pkg-features">
+          <li>✅ 3 Nights Accommodation (3★ or Apartment)</li>
+          <li>✅ Return Airport Transfer (BOJ/SOF/VAR)</li>
+          <li>✅ Local Transport Map & Guide</li>
+          <li>❌ Restaurant Reservations</li>
+          <li>❌ Private Driver</li>
+        </ul>
+        <a href="/concierge" class="btn btn-secondary pkg-btn">PLAN YOUR TRIP</a>
+      </div>
+
+      <!-- Fan -->
+      <div class="package-card glass-panel popular-tier">
+        <div class="badge">Most Popular</div>
+        <div class="package-header">
+          <h2 style="color: var(--accent-magenta);">Fan</h2>
+          <div class="price-tag">From €899<span>/person</span></div>
+        </div>
+        <p class="pkg-desc">The ultimate fan experience. Stay close to the action and hit the best official events.</p>
+        <ul class="pkg-features">
+          <li>✅ 5 Nights Accommodation (4★ near Arena)</li>
+          <li>✅ Premium Return Airport Transfer</li>
+          <li>✅ EuroClub & EuroVillage Access Guide</li>
+          <li>✅ 1x Black Sea Cultural Tour</li>
+          <li>❌ Multi-day Private Driver</li>
+        </ul>
+        <a href="/concierge" class="btn btn-primary pkg-btn">PLAN YOUR TRIP</a>
+      </div>
+
+      <!-- VIP -->
+      <div class="package-card glass-panel">
+        <div class="package-header">
+          <h2 style="color: var(--accent-amber);">VIP</h2>
+          <div class="price-tag">From €1,999<span>/person</span></div>
+        </div>
+        <p class="pkg-desc">Luxury coastal living. High-end dining, private yachts, and zero logistical friction.</p>
+        <ul class="pkg-features">
+          <li>✅ 7 Nights Premium Hotel (5★ or Resort)</li>
+          <li>✅ Mercedes V-Class Airport Transfers</li>
+          <li>✅ VIP Restaurant Reservations (Nightly)</li>
+          <li>✅ Private Black Sea Yacht Experience</li>
+          <li>✅ 24/7 Local Concierge Support</li>
+        </ul>
+        <a href="/concierge" class="btn btn-secondary pkg-btn">GET VIP HELP</a>
+      </div>
+
+      <!-- Delegation -->
+      <div class="package-card glass-panel delegation-tier" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.3);">
+        <div>
+          <h2 style="color: var(--accent-cyan); font-size: 2.5rem; margin-bottom: 16px;">Delegation & Media</h2>
+          <p class="pkg-desc" style="font-size: 1.1rem; margin-bottom: 24px;">Custom-built infrastructure for official delegations, large press groups, and corporate sponsors requiring complex logistics.</p>
+          <ul class="pkg-features" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <li>✅ Large Hotel Blocks (40+ rooms)</li>
+            <li>✅ Full-time Minibus & Driver</li>
+            <li>✅ Dedicated Translators / Interpreters</li>
+            <li>✅ Private Rehearsal / Meeting Spaces</li>
+            <li>✅ Private Security & Escorts</li>
+            <li>✅ VIP Afterparty Organization</li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.2rem; margin-bottom: 24px; color: var(--text-muted);">Custom Pricing Based on Requirements</div>
+          <a href="/delegation-services" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 32px; display: inline-block;">View Delegation Services</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .package-card {
+    position: relative;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--glass-border);
+  }
+
+  .popular-tier {
+    border-top-color: var(--accent-magenta);
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 0, 122, 0.15);
+  }
+
+  .badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-magenta);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .package-header {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .package-header h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .price-tag span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .pkg-desc {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.6;
+    flex-grow: 0;
+  }
+
+  .pkg-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    flex-grow: 1;
+  }
+
+  .pkg-features li {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.95rem;
+  }
+
+  .pkg-features li:last-child {
+    border-bottom: none;
+  }
+
+  .pkg-btn {
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 14px 0;
+  }
+
+  @media (max-width: 1024px) {
+    .packages-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .popular-tier {
+      transform: none;
+    }
+    
+    .delegation-tier {
+      grid-template-columns: 1fr !important;
+      text-align: center;
+    }
+  }
+</style>

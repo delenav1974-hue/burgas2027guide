@@ -1,0 +1,203 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import { eventSchema } from '../config/site';
+---
+
+<Layout 
+  title="Eurovision Concierge Burgas | Custom Trip Planning" 
+  description="Hire a local expert to plan your Eurovision 2027 trip to Burgas. We handle hotel sourcing, restaurant reservations, yacht bookings, and VIP logistics."
+  breadcrumb="Concierge"
+>
+  <div class="container page-content">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+      <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 24px;">Eurovision Concierge Burgas</h1>
+      <p class="lead" style="font-size: 1.2rem; color: var(--text-muted);">Don't speak Bulgarian? Don't have time to research? Let our local experts handle the logistics. We secure the best tables, hidden gem hotels, and seamless transport for your Eurovision trip.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Tier 1 -->
+      <div class="glass-panel concierge-tier">
+        <h3>Trip Planning</h3>
+        <div class="price">€99 <span>/ trip</span></div>
+        <p>Perfect for independent travelers who just want a vetted itinerary and hotel recommendations.</p>
+        <ul>
+          <li>✅ Custom Digital Itinerary</li>
+          <li>✅ Hotel Sourcing (3 Options)</li>
+          <li>✅ Transit Logistics Plan</li>
+          <li>✅ EuroVillage & Events Guide</li>
+          <li>❌ Restaurant Reservations</li>
+          <li>❌ On-call Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Request Service</a>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="glass-panel concierge-tier popular">
+        <div class="badge">Premium</div>
+        <h3 style="color: var(--accent-magenta);">Premium Concierge</h3>
+        <div class="price">€249 <span>/ trip</span></div>
+        <p>We do the heavy lifting. We book your transfers, dinners, and day trips so you can just show up.</p>
+        <ul>
+          <li>✅ Everything in Trip Planning</li>
+          <li>✅ Airport Transfer Booking</li>
+          <li>✅ Restaurant Reservations (Up to 3)</li>
+          <li>✅ Tickets Information & Alerts</li>
+          <li>✅ Day Trip Bookings (Nessebar/Sozopol)</li>
+          <li>❌ 24/7 WhatsApp Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Request Premium</a>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="glass-panel concierge-tier">
+        <h3 style="color: var(--accent-amber);">VIP Support</h3>
+        <div class="price">€499 <span>/ trip</span></div>
+        <p>Zero friction. You get a dedicated local fixer available on WhatsApp to solve any problem instantly.</p>
+        <ul>
+          <li>✅ Everything in Premium</li>
+          <li>✅ 24/7 WhatsApp Local Fixer</li>
+          <li>✅ VIP Restaurant & Club Tables</li>
+          <li>✅ Private Yacht Charter Booking</li>
+          <li>✅ Dedicated Multi-day Driver Sourcing</li>
+          <li>✅ Emergency Translation Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Request VIP</a>
+      </div>
+    </div>
+
+    <div class="glass-panel" id="contact" style="margin-top: 64px; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 style="text-align: center; margin-bottom: 32px;">Start Planning Your Trip</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" class="concierge-form">
+        <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+        <input type="hidden" name="subject" value="New Concierge Request" />
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <input type="text" name="name" required placeholder="Your Name" />
+          <input type="email" name="email" required placeholder="Your Email" />
+        </div>
+        
+        <select name="tier" style="width: 100%; margin-bottom: 16px;" required>
+          <option value="" disabled selected>Select a Concierge Tier</option>
+          <option value="Trip Planning (€99)">Trip Planning (€99)</option>
+          <option value="Premium (€249)">Premium (€249)</option>
+          <option value="VIP (€499)">VIP (€499)</option>
+          <option value="Delegation (€999+)">Delegation / Group (€999+)</option>
+        </select>
+
+        <textarea name="details" rows="5" placeholder="Tell us about your trip (dates, group size, what you need help with...)" style="width: 100%; margin-bottom: 24px;" required></textarea>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 16px;">SEND REQUEST</button>
+      </form>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 64px 24px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .concierge-tier {
+    position: relative;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .concierge-tier h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .concierge-tier p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .concierge-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    flex-grow: 1;
+  }
+
+  .concierge-tier li {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.95rem;
+  }
+
+  .concierge-tier.popular {
+    border-top: 4px solid var(--accent-magenta);
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 0 40px rgba(255, 0, 122, 0.1);
+  }
+
+  .badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-magenta);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .concierge-tier a {
+    text-align: center;
+    width: 100%;
+  }
+
+  input, select, textarea {
+    padding: 12px 16px;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .concierge-tier.popular {
+      transform: none;
+    }
+  }
+</style>

@@ -1,4 +1,4 @@
----
+﻿---
 import '../styles/global.css';
 import { SITE } from '../config/site';
 import { LOCALES, LOCALE_NAMES, LOCALE_SHORT, LOCALE_TAGS, DEFAULT_LOCALE, MACHINE_ONLY_LANGUAGES } from '../i18n/ui';
@@ -200,6 +200,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
           <span class="nav-toggle-bar"></span>
         </button>
         <nav class="main-nav" id="main-nav">
+          <a href={navHref('packages')} style="color: var(--accent-magenta); font-weight: 800;">{t('nav.packages')}</a>
           <a href={navHref('news')}>{t('nav.news')}</a>
           <a href={navHref('where-to-stay')}>{t('nav.stay')}</a>
           <a href={navHref('transfers')}>{t('nav.transport')}</a>
@@ -256,6 +257,9 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
             <h4>{t('footer.partner')}</h4>
             <ul>
               <li><a href="/investors/">{t('footer.investors')}</a></li>
+              <li><a href="/delegation-services/">Delegations & Media</a></li>
+              <li><a href="/concierge/">Concierge</a></li>
+              <li><a href="/vip-transfers/">VIP Transfers</a></li>
               <li><a href="/disclosure/">{t('footer.disclosure')}</a></li>
             </ul>
           </div>
@@ -537,3 +541,4 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
     </script>
   </body>
 </html>
+
