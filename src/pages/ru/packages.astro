@@ -1,0 +1,108 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Пакеты Евровидение 2027 Бургас | Отели и Трансферы" 
+  description="Забронируйте пакеты «все включено» на Евровидение 2027 в Бургасе. Тарифы Essential, Fan, VIP и Delegation с отелями, трансферами и развлечениями."
+  breadcrumb="Пакеты"
+>
+  <div class="container page-content">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+      <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 24px;">Пакеты Евровидения 2027</h1>
+      <p class="lead" style="font-size: 1.2rem; color: var(--text-muted);">Избавьтесь от стресса при планировании. Наша местная команда собрала лучшие пакеты для поездки в Бургас: от базовой логистики до премиум VIP-туров.</p>
+    </div>
+
+    <div class="packages-grid">
+      <!-- Essential -->
+      <div class="package-card glass-panel">
+        <div class="package-header">
+          <h2>Essential</h2>
+          <div class="price-tag">От €499<span>/чел</span></div>
+        </div>
+        <p class="pkg-desc">Базовый набор. Забронируйте кровать и трансфер из аэропорта, пока цены не взлетели в космос.</p>
+        <ul class="pkg-features">
+          <li>✅ 3 ночи проживания (3★ или апартаменты)</li>
+          <li>✅ Трансфер из аэропорта туда и обратно (BOJ/SOF/VAR)</li>
+          <li>✅ Карта транспорта и гид</li>
+          <li>❌ Бронирование ресторанов</li>
+          <li>❌ Личный водитель</li>
+        </ul>
+        <a href="/ru/concierge" class="btn btn-secondary pkg-btn">СПЛАНИРОВАТЬ ПОЕЗДКУ</a>
+      </div>
+
+      <!-- Fan -->
+      <div class="package-card glass-panel popular-tier">
+        <div class="badge">Самый популярный</div>
+        <div class="package-header">
+          <h2 style="color: var(--accent-magenta);">Fan</h2>
+          <div class="price-tag">От €899<span>/чел</span></div>
+        </div>
+        <p class="pkg-desc">Идеально для фанатов. Живите рядом с ареной и посещайте лучшие официальные вечеринки.</p>
+        <ul class="pkg-features">
+          <li>✅ 5 ночей проживания (4★ рядом с Ареной)</li>
+          <li>✅ Премиум трансфер из аэропорта</li>
+          <li>✅ Доступ в EuroClub и EuroVillage</li>
+          <li>✅ 1x Культурный тур по Черному морю</li>
+          <li>❌ Личный водитель на весь день</li>
+        </ul>
+        <a href="/ru/concierge" class="btn btn-primary pkg-btn">СПЛАНИРОВАТЬ ПОЕЗДКУ</a>
+      </div>
+
+      <!-- VIP -->
+      <div class="package-card glass-panel">
+        <div class="package-header">
+          <h2 style="color: var(--accent-amber);">VIP</h2>
+          <div class="price-tag">От €1,999<span>/чел</span></div>
+        </div>
+        <p class="pkg-desc">Роскошный отдых. Лучшие рестораны, частные яхты и ноль логистических проблем.</p>
+        <ul class="pkg-features">
+          <li>✅ 7 ночей в премиум-отеле (5★ или курорт)</li>
+          <li>✅ Трансфер Mercedes V-Class</li>
+          <li>✅ Ежедневная бронь VIP-столиков в ресторанах</li>
+          <li>✅ Аренда частной яхты</li>
+          <li>✅ Местный консьерж 24/7</li>
+        </ul>
+        <a href="/ru/concierge" class="btn btn-secondary pkg-btn">ПОЛУЧИТЬ VIP</a>
+      </div>
+
+      <!-- Delegation -->
+      <div class="package-card glass-panel delegation-tier" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.3);">
+        <div>
+          <h2 style="color: var(--accent-cyan); font-size: 2.5rem; margin-bottom: 16px;">Делегации и Пресса</h2>
+          <p class="pkg-desc" style="font-size: 1.1rem; margin-bottom: 24px;">Кастомная инфраструктура для официальных делегаций, крупных пресс-групп и спонсоров.</p>
+          <ul class="pkg-features" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <li>✅ Выкуп отелей (40+ номеров)</li>
+            <li>✅ Микроавтобусы и водители</li>
+            <li>✅ Переводчики</li>
+            <li>✅ Конференц-залы</li>
+            <li>✅ Частная охрана</li>
+            <li>✅ Организация VIP-афтепати</li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.2rem; margin-bottom: 24px; color: var(--text-muted);">Индивидуальный расчет</div>
+          <a href="/ru/delegation-services" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 32px; display: inline-block;">Смотреть услуги B2B</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content { padding: 64px 24px; }
+  .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .package-card { position: relative; padding: 40px 32px; display: flex; flex-direction: column; border-top: 4px solid var(--glass-border); }
+  .popular-tier { border-top-color: var(--accent-magenta); transform: scale(1.02); box-shadow: 0 0 30px rgba(255, 0, 122, 0.15); }
+  .badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent-magenta); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .package-header { margin-bottom: 24px; text-align: center; }
+  .package-header h2 { font-size: 2rem; margin-bottom: 8px; }
+  .price-tag { font-size: 2.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; }
+  .price-tag span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+  .pkg-desc { color: var(--text-muted); margin-bottom: 32px; text-align: center; line-height: 1.6; flex-grow: 0; }
+  .pkg-features { list-style: none; padding: 0; margin: 0 0 40px 0; flex-grow: 1; }
+  .pkg-features li { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+  .pkg-features li:last-child { border-bottom: none; }
+  .pkg-btn { text-align: center; width: 100%; display: block; padding: 14px 0; }
+  @media (max-width: 1024px) { .packages-grid { grid-template-columns: 1fr; } .popular-tier { transform: none; } .delegation-tier { grid-template-columns: 1fr !important; text-align: center; } }
+</style>

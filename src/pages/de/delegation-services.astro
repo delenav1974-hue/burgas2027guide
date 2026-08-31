@@ -1,0 +1,109 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Delegationsdienste Burgas | B2B Logistik Eurovision" 
+  description="Umfassende B2B-Logistik und Delegationsdienste für den Eurovision Song Contest 2027. Hotelkontingente, Sicherheit, privater Transport und Dolmetscher in Burgas."
+  breadcrumb="Delegationen"
+>
+  <div class="container page-content">
+    <div style="text-align: center; max-width: 900px; margin: 0 auto 64px;">
+      <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 24px;">Delegations- & Mediendienste</h1>
+      <p class="lead" style="font-size: 1.2rem; color: var(--text-muted);">Burgas 2027 Guide agiert als Ihr B2B-Partner vor Ort. Wir bieten umfassende logistische Unterstützung für nationale Rundfunkanstalten, offizielle Delegationen, Unternehmenssponsoren und große Mediengruppen.</p>
+    </div>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <div class="glass-panel mb-4">
+          <h2>Unsere B2B-Fähigkeiten</h2>
+          <p>Der Transport einer Delegation von 40+ Personen durch Europa erfordert eine fehlerfreie Durchführung. Unser lokales Team nutzt tiefgreifende regionale Verbindungen, um die benötigte Infrastruktur zu sichern, lange bevor sie öffentlich zugänglich wird.</p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
+            <div class="capability-box">
+              <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">🏨 Unterkunft</h4>
+              <ul style="font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                <li>Große Hotelkontingente (50+ Zimmer)</li>
+                <li>Exklusive Villenvermietung</li>
+                <li>Langfristige Apartmentvermietung</li>
+                <li>Private Besprechungsräume</li>
+              </ul>
+            </div>
+            <div class="capability-box">
+              <h4 style="color: var(--accent-amber); margin-bottom: 8px;">🚕 Transport & Sicherheit</h4>
+              <ul style="font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                <li>Flotte von Mercedes V-Klasse Minivans</li>
+                <li>Engagierte 24/7 Fahrer</li>
+                <li>Flughafen-Bustransfers</li>
+                <li>Private Sicherheitsdienste</li>
+              </ul>
+            </div>
+            <div class="capability-box">
+              <h4 style="color: var(--accent-magenta); margin-bottom: 8px;">🥂 Gastgewerbe & Events</h4>
+              <ul style="font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                <li>Private Restaurant-Buyouts</li>
+                <li>Catering</li>
+                <li>VIP Afterparty Organisation</li>
+                <li>Private Yachtcharter</li>
+              </ul>
+            </div>
+            <div class="capability-box">
+              <h4 style="color: white; margin-bottom: 8px;">🗣️ Lokale Unterstützung</h4>
+              <ul style="font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                <li>Professionelle Dolmetscher</li>
+                <li>Lokale Fixer & Runner</li>
+                <li>Ausrüstungsverleih & Logistik</li>
+                <li>Pressefotografen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box" style="background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.3);">
+          <h3>Beratung anfordern</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 24px; color: var(--text-muted);">Bitte geben Sie grobe Details zu Ihrer Delegationsgröße und Ihren Anforderungen an. Unser B2B-Manager wird sich mit Ihnen in Verbindung setzen.</p>
+          
+          <form action="https://api.web3forms.com/submit" method="POST" class="b2b-form">
+            <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+            <input type="hidden" name="subject" value="New B2B Delegation Request (DE)" />
+            
+            <div class="form-group">
+              <input type="text" name="organization" required placeholder="Organisation / Sender" />
+            </div>
+            <div class="form-group">
+              <input type="text" name="name" required placeholder="Kontaktperson" />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" required placeholder="Arbeits-E-Mail" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="number" name="group_size" required placeholder="Gruppengröße" />
+              </div>
+              <div class="form-group">
+                <input type="text" name="country" required placeholder="Land" />
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea name="requirements" rows="6" placeholder="Beschreiben Sie kurz Ihre Anforderungen (z.B. 40 Hotelzimmer, 3 Minivans, 1 Dolmetscher...)" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">ANFRAGE SENDEN</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content { padding: 64px 24px; }
+  .content-grid { display: grid; grid-template-columns: 1fr 400px; gap: 32px; }
+  .capability-box { background: rgba(0,0,0,0.2); padding: 24px; border-radius: 8px; border: 1px solid var(--glass-border); }
+  .b2b-form .form-group { margin-bottom: 16px; }
+  .b2b-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .b2b-form input, .b2b-form textarea { width: 100%; padding: 12px 16px; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--text-main); font-family: inherit; }
+  .b2b-form input:focus, .b2b-form textarea:focus { outline: none; border-color: var(--accent-cyan); }
+  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
+</style>

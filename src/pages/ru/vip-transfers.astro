@@ -1,0 +1,111 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="VIP Трансферы Евровидение | Бургас 2027" 
+  description="Забронируйте премиум-трансфер из аэропорта, Mercedes V-Class и транспорт для делегаций на Евровидение 2027 в Бургасе."
+  breadcrumb="VIP Трансферы"
+>
+  <div class="container page-content">
+    <h1 class="text-gradient">VIP Трансферы Евровидения</h1>
+    <p class="lead">Премиум-встреча в аэропорту, многодневная аренда авто с водителем и транспорт для делегаций из Софии или Стамбула прямо в ваш отель в Бургасе.</p>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <div class="glass-panel mb-4">
+          <h2>Премиальный Автопарк и Услуги</h2>
+          <p>Мы предоставляем эксклюзивный транспорт для делегаций, СМИ и VIP-фанатов, которым важны конфиденциальность, комфорт и надежность.</p>
+          <ul style="margin-top: 16px; margin-bottom: 24px; line-height: 1.8;">
+            <li><strong>Mercedes V-Class:</strong> Роскошные минивэны, идеально подходящие для групп до 6 человек с тяжелым багажом.</li>
+            <li><strong>Встреча в Аэропорту (Meet & Greet):</strong> Наши водители будут ждать вас в зале прилета с именной табличкой в Софии (SOF), Стамбуле (IST) или Бургасе (BOJ).</li>
+            <li><strong>Водитель на несколько дней:</strong> Наймите водителя на весь срок пребывания для поездок между отелем, Ареной и EuroVillage.</li>
+            <li><strong>Поддержка делегаций:</strong> Координация транспорта для больших групп с использованием нескольких автомобилей.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="glass-panel sticky-box">
+          <h3>Запросить VIP Расчет</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 24px; color: var(--text-muted);">Заполните форму ниже, и наш местный диспетчер ответит в течение 24 часов с индивидуальным предложением.</p>
+          
+          <form action="https://api.web3forms.com/submit" method="POST" class="quote-form">
+            <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+            <input type="hidden" name="subject" value="New VIP Transfer Quote Request (RU)" />
+            
+            <div class="form-group">
+              <label>Имя / Делегация</label>
+              <input type="text" name="name" required placeholder="Иван Иванов" />
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required placeholder="ivan@example.com" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Дата прибытия</label>
+                <input type="date" name="arrival_date" required />
+              </div>
+              <div class="form-group">
+                <label>Пассажиры</label>
+                <input type="number" name="passengers" min="1" max="50" required placeholder="4" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Место посадки (Аэропорт/Город)</label>
+              <input type="text" name="pickup" required placeholder="напр. Аэропорт Софии (SOF)" />
+            </div>
+
+            <div class="form-group">
+              <label>Отель в Бургасе (Высадка)</label>
+              <input type="text" name="dropoff" required placeholder="напр. Grand Hotel Promorie" />
+            </div>
+            
+            <div class="form-group">
+              <label>Предпочтения по Автомобилю</label>
+              <select name="vehicle">
+                <option value="Sedan">Премиум Седан (1-3 чел)</option>
+                <option value="V-Class" selected>Mercedes V-Class (4-6 чел)</option>
+                <option value="Minibus">Микроавтобус (7-15 чел)</option>
+                <option value="Coach">Полноценный Автобус (Делегация)</option>
+              </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" name="return_transfer" value="Yes" />
+                Включить обратный трансфер
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>Багаж / Особые пожелания</label>
+              <textarea name="requests" rows="3" placeholder="Количество сумок, крупногабаритное оборудование и т.д."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">ПОЛУЧИТЬ РАСЧЕТ</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content { padding: 64px 24px; }
+  h1 { font-size: 3rem; margin-bottom: 16px; }
+  .lead { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 48px; }
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
+  .quote-form .form-group { margin-bottom: 16px; }
+  .quote-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quote-form label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
+  .quote-form input[type="text"], .quote-form input[type="email"], .quote-form input[type="date"], .quote-form input[type="number"], .quote-form select, .quote-form textarea { width: 100%; padding: 10px 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--text-main); font-family: inherit; }
+  .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { outline: none; border-color: var(--accent-cyan); }
+  .checkbox-group label { display: flex; align-items: center; gap: 8px; text-transform: none; font-size: 0.95rem; cursor: pointer; }
+  .checkbox-group input { cursor: pointer; }
+</style>
