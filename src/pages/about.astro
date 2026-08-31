@@ -1,7 +1,7 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Contact & About Us | Burgas 2027 Guide" description="Learn more about the local team behind the independent Burgas 2027 Guide."
+<Layout title="Contact & About Us | Burgas 2027 Guide" description="Learn more about the local team behind the independent Burgas 2027 Guide. Read about our verification process and facts."
   breadcrumb="About"
 >
   <div class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 800px;">
@@ -9,15 +9,29 @@ import Layout from '../layouts/Layout.astro';
     <div class="glass-panel mt-4">
       <h2>Who We Are</h2>
       <p>Burgas 2027 Guide is an independent event and travel portal created by a team of local Black Sea residents. We are locals in love with Burgas and the coast. We cut through the noise to bring international fans, travelers, and delegations verified lodging picks, stress-free transit playbooks, and genuine coastal recommendations.</p>
-      <p>As Burgas prepares to host the Eurovision Song Contest in May 2027, we saw the need for a truly local perspective. We want to ensure that visitors don't just see the inside of Arena Burgas, but also experience the rich culture, fantastic food, and beautiful beaches of our region.</p>
       
+      <h2 style="margin-top: 32px; color: var(--accent-cyan);">What does "Verified" mean?</h2>
+      <p>When we recommend a hotel, apartment, or service, it means it has passed our local verification process:</p>
+      <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 12px; margin-bottom: 24px;">
+        <li>✅ <strong>Property Exists:</strong> We physically know the building or have cross-referenced local cadastre data.</li>
+        <li>✅ <strong>Address Verified:</strong> No misleading map pins (a common problem on booking engines).</li>
+        <li>✅ <strong>Transit Reality Check:</strong> We verify the actual walking times and bus routes, not the "crow flies" distance.</li>
+        <li>✅ <strong>Cancellation Policy Checked:</strong> We prioritize recommendations that protect your money.</li>
+      </ul>
+
+      <h2 style="margin-top: 32px;">How We Make Money</h2>
+      <p>This site is free to use. When you book a hotel, flight, or tour through our links, we may earn a small affiliate commission at absolutely no extra cost to you. This keeps the servers running and the coffee flowing. We also offer premium B2B concierge services for delegations and large groups.</p>
+
+      <h2 style="margin-top: 32px;">Facts & Accuracy</h2>
+      <p>We strive to be the most accurate independent guide on the web. For example, while <strong>Arena Burgas</strong> has a total maximum capacity of 15,000 for standard concerts, the heavy stage design and green room requirements for the Eurovision Song Contest typically reduce the available audience capacity to roughly <strong>8,000 – 10,000</strong>. We use realistic estimates for all our logistical planning.</p>
+
       <h2 style="margin-top: 32px;">Contact Us</h2>
       <p>Whether you have a question about getting around, need advice on where to stay, or are interested in business partnerships, we'd love to hear from you.</p>
       <ul>
         <li><strong>Email:</strong> info@burgas2027guide.com</li>
         <li><strong>Telegram:</strong> <a href="https://t.me/burgas2027guide" target="_blank">@burgas2027guide</a></li>
       </ul>
-      <p style="margin-top: 24px; font-size: 0.9em; opacity: 0.8;">Disclaimer: This is an independent fan-run project and is not affiliated with the EBU or BNT.</p>
+      <p style="margin-top: 24px; font-size: 0.9em; opacity: 0.8; border-top: 1px solid var(--glass-border); padding-top: 16px;"><strong>Disclaimer:</strong> This is an independent fan-run project and is not affiliated with the EBU, BNT, or the official Eurovision Song Contest.</p>
     </div>
   </div>
 </Layout>

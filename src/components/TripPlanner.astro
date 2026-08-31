@@ -1,0 +1,91 @@
+﻿---
+// TripPlanner.astro
+---
+<div class="trip-planner glass-panel">
+  <h2 class="planner-title">Build Your Eurovision Trip</h2>
+  
+  <div class="step">
+    <h3>1. Where are you staying?</h3>
+    <div class="options">
+      <a href="/where-to-stay" class="opt-btn">Burgas</a>
+      <a href="/where-to-stay" class="opt-btn">Sarafovo</a>
+      <a href="/where-to-stay" class="opt-btn">Sunny Beach</a>
+      <a href="/where-to-stay" class="opt-btn">Nessebar</a>
+      <a href="/where-to-stay" class="opt-btn">Sozopol</a>
+    </div>
+  </div>
+
+  <div class="step">
+    <h3>2. How are you arriving?</h3>
+    <div class="options">
+      <a href="/transfers" class="opt-btn">Burgas Airport (BOJ)</a>
+      <a href="/news/flights-airlines-overview-2027" class="opt-btn">Sofia (SOF)</a>
+      <a href="/news/burgas-istanbul-logistics-eurovision-2027" class="opt-btn">Istanbul (IST)</a>
+      <a href="/transfers" class="opt-btn">Varna (VAR)</a>
+    </div>
+  </div>
+
+  <div class="step">
+    <h3>3. What do you need?</h3>
+    <div class="options">
+      <a href="/where-to-stay" class="opt-btn action-btn">BOOK STAY</a>
+      <a href="/vip-transfers" class="opt-btn action-btn">BOOK TRANSFER</a>
+      <a href="/essential-apps" class="opt-btn action-btn">GET eSIM</a>
+      <a href="/black-sea-experience" class="opt-btn action-btn">BOOK EXPERIENCES</a>
+      <a href="/restaurants" class="opt-btn action-btn">RESERVE TABLE</a>
+      <a href="/nightlife" class="opt-btn action-btn">VIP NIGHTLIFE</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .trip-planner {
+    padding: 32px;
+    margin: 48px 0;
+    text-align: center;
+  }
+  .planner-title {
+    color: var(--accent-amber);
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  .step {
+    margin-bottom: 32px;
+  }
+  .step h3 {
+    color: var(--text-main);
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .opt-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .opt-btn:hover {
+    background: var(--accent-magenta);
+    color: white;
+    border-color: var(--accent-magenta);
+  }
+  .action-btn {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+  }
+  .action-btn:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-dark);
+  }
+</style>

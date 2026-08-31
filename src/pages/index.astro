@@ -1,9 +1,8 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import HeroCapture from '../components/HeroCapture.astro';
 import CountdownBanner from '../components/CountdownBanner.astro';
-import TransitCalculator from '../components/TransitCalculator.astro';
-import AffiliateButton from '../components/AffiliateButton.astro';
+import TripPlanner from '../components/TripPlanner.astro';
 import { getCollection } from 'astro:content';
 import { eventSchema } from '../config/site';
 
@@ -12,7 +11,7 @@ const targetDate = "2027-05-15T20:00:00+03:00"; // Assuming 20:00 EEST
 const allNews = await getCollection('news');
 const latestNews = allNews
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 2);
+  .slice(0, 3);
 ---
 
 <Layout 
@@ -26,35 +25,9 @@ const latestNews = allNews
       subheadline="The independent local playbook for surviving and thriving during the biggest music event on the Black Sea coast."
     />
 
-    <div class="quick-links glass-panel" style="margin-top: -32px; margin-bottom: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 24px;">
-      <a href="/where-to-stay" class="btn btn-secondary">🏨 Find Accommodation</a>
-      <a href="/transfers" class="btn btn-secondary">🚕 Book Airport Transfer</a>
-      <a href="/essential-apps" class="btn btn-secondary">📱 Mobile Internet & eSIM Guide</a>
-        <AffiliateButton text="💳 Travel Card (Revolut)" href="https://revolut.com/referral/?referral-code=elena02b5!AUG1-26-AR-LL&geo-redirect" provider="generic" />
-    </div>
-
     <CountdownBanner targetDate={targetDate} />
 
-    <section class="features">
-      <div class="feature-card glass-panel">
-        <h3>📍 Where to Stay</h3>
-        <p>Avoid the tourist traps. We map out the best <strong>hotels walking distance to arena burgas</strong> and coastal shuttle towns.</p>
-<a href="/where-to-stay" class="btn btn-primary" style="margin-top:16px;">View Lodging Guide</a>
-      </div>
-
-      <div class="feature-card glass-panel">
-        <h3>🚕 Transit & Logistics</h3>
-        <p>Master your commute. From <strong>bus from istanbul new airport to burgas timetable</strong> to official night shuttles.</p>
-        <TransitCalculator />
-        <a href="/transfers" class="btn btn-primary" style="margin-top:16px;">View Transit Hub</a>
-      </div>
-      
-      <div class="feature-card glass-panel">
-        <h3>🪩 Events & Parties</h3>
-        <p>Discover the EuroVillage, official EuroClub afterparties, and VIP yacht events departing from the Port of Burgas.</p>
-        <a href="/events-and-parties" class="btn btn-primary" style="margin-top:16px; display: block;">See the Schedule</a>
-      </div>
-    </section>
+    <TripPlanner />
 
     {latestNews.length > 0 && (
       <section class="latest-news-section glass-panel" style="margin: 64px 0; padding: 32px;">
@@ -64,7 +37,7 @@ const latestNews = allNews
         </div>
         <div class="news-list" style="display: flex; flex-direction: column; gap: 16px;">
           {latestNews.map((post) => (
-            <a href={`/news/${post.id}`} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
+            <a href={/news/} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
                 {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
               </div>
@@ -79,24 +52,6 @@ const latestNews = allNews
 </Layout>
 
 <style>
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    margin: 64px 0;
-  }
-
-  .feature-card h3 {
-    color: var(--accent-amber);
-    margin-bottom: 16px;
-    font-size: 1.5rem;
-  }
-
-  .feature-card p {
-    font-size: 1.05rem;
-    margin-bottom: 24px;
-  }
-
   .news-item:hover {
     border-color: var(--accent-cyan) !important;
   }

@@ -16,6 +16,64 @@ import AccommodationCard from '../components/AccommodationCard.astro';
 
     <div class="content-grid">
       <div class="main-column">
+        <div class="glass-panel mb-4" style="overflow-x: auto;">
+          <h2 style="border:none; margin-bottom: 16px;">At a Glance: Best Areas</h2>
+          <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--accent-magenta); color: var(--accent-cyan);">
+                <th style="padding: 12px;">Area</th>
+                <th style="padding: 12px;">Arena</th>
+                <th style="padding: 12px;">Nightlife</th>
+                <th style="padding: 12px;">Beach</th>
+                <th style="padding: 12px;">Price</th>
+                <th style="padding: 12px;">Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--glass-border);">
+                <td style="padding: 12px;"><strong>Zornitsa / Izgrev</strong></td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐</td>
+                <td style="padding: 12px;">€€€</td>
+                <td style="padding: 12px;">Eurovision</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--glass-border);">
+                <td style="padding: 12px;"><strong>Lazur</strong></td>
+                <td style="padding: 12px;">⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">€€€</td>
+                <td style="padding: 12px;">Couples</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--glass-border);">
+                <td style="padding: 12px;"><strong>City Center</strong></td>
+                <td style="padding: 12px;">⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">€€€</td>
+                <td style="padding: 12px;">Parties</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--glass-border);">
+                <td style="padding: 12px;"><strong>Sarafovo</strong></td>
+                <td style="padding: 12px;">⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">€€</td>
+                <td style="padding: 12px;">Airport</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px;"><strong>Sunny Beach</strong></td>
+                <td style="padding: 12px;">⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">⭐⭐⭐⭐⭐</td>
+                <td style="padding: 12px;">€</td>
+                <td style="padding: 12px;">Budget</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <ZoneMap />
 
         <section class="glass-panel mb-4" id="area1">
