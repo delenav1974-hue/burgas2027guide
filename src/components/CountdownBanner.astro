@@ -1,15 +1,17 @@
----
+﻿---
 interface Props {
   targetDate: string; // ISO string, e.g. '2027-05-15T20:00:00+03:00'
 }
 
 const { targetDate } = Astro.props;
+// Parse date safely on the server during build
+const targetTimestamp = new Date(targetDate).getTime();
 ---
 
 <div class="countdown-banner glass-panel">
   <div class="countdown-content">
     <h2>Countdown to Eurovision 2027</h2>
-    <div class="timer" id="countdown-timer" data-target={targetDate}>
+    <div class="timer" id="countdown-timer" data-target={targetTimestamp}>
       <div class="time-block">
         <span class="number" id="cd-days">00</span>
         <span class="label">Days</span>
@@ -98,7 +100,7 @@ const { targetDate } = Astro.props;
     const timerElement = document.getElementById('countdown-timer');
     if (!timerElement) return;
 
-    const target = new Date(timerElement.dataset.target || '').getTime();
+    const target = parseInt(timerElement.dataset.target || '0', 10);
     
     function tick() {
       const now = new Date().getTime();
@@ -129,3 +131,4 @@ const { targetDate } = Astro.props;
   // Run on client-side navigation (if Astro ViewTransitions are added later)
   document.addEventListener('astro:page-load', updateCountdown);
 </script>
+
