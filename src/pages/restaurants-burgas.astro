@@ -36,10 +36,26 @@ import Layout from '../layouts/Layout.astro';
       
       <div class="glass-panel mb-4" style="border-left: 4px solid var(--accent-cyan);">
         <h3>Need Guaranteed Reservations?</h3>
-        <p>If you are traveling with a large group or delegation, walking in to top restaurants during Eurovision week will be impossible. We secure prime tables for our B2B and Concierge clients.</p>
-        <div style="margin-top: 24px;">
-          <a href="/concierge" class="btn btn-secondary">Book via Concierge</a>
-        </div>
+        <p>If you are traveling with a large group or delegation, walking in to top restaurants during Eurovision week will be impossible. <strong>Fill in your details below, we will contact you and personally arrange your reservation.</strong></p>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+          <input type="hidden" name="subject" value="Restaurant Reservation Request" />
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="text" name="name" placeholder="Your Name or Delegation" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+            <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="number" name="people" placeholder="Number of People" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+            <input type="date" name="date" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+          </div>
+
+          <textarea name="details" rows="3" placeholder="Preferences (e.g., Seafood, Traditional, Sea View...)" style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" required></textarea>
+          
+          <button type="submit" class="btn btn-secondary" style="padding: 14px; font-weight: bold;">Request Reservation</button>
+        </form>
       </div>
 
     </div>
@@ -71,3 +87,4 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.6;
   }
 </style>
+

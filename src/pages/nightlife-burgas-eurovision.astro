@@ -37,11 +37,31 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="glass-panel mb-4" style="border-left: 4px solid var(--accent-magenta);">
         <h3>👑 VIP Table Booking & Private Yachts</h3>
-        <p>Want to skip the queues? We have direct contacts with the top club managers in Burgas. Leave your email, and we will send you the secret links for private yacht parties and VIP table reservations before they sell out.</p>
+        <p>Want to skip the queues? We have direct contacts with the top club managers in Burgas. <strong>Fill in your details below, we will contact you and personally arrange your VIP access and table reservations.</strong></p>
         
-        <div style="margin-top: 24px; text-align: center;">
-          <a href="/concierge" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 32px;">Request VIP Access via Concierge</a>
-        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+          <input type="hidden" name="subject" value="VIP Nightlife Reservation Request" />
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="text" name="name" placeholder="Your Name or Delegation" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+            <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="number" name="people" placeholder="Number of People" required style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" />
+            <select name="interest" style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" required>
+              <option value="" disabled selected>What are you looking for?</option>
+              <option value="Club VIP Table">EuroClub / Beach Club VIP Table</option>
+              <option value="Private Yacht">Private Yacht Party</option>
+              <option value="Both">Both (Full VIP Experience)</option>
+            </select>
+          </div>
+
+          <textarea name="details" rows="3" placeholder="Tell us more about your group or specific requests..." style="padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 4px; color: #fff;" required></textarea>
+          
+          <button type="submit" class="btn btn-primary" style="padding: 14px; font-weight: bold; font-size: 1.1rem;">Request VIP Access</button>
+        </form>
       </div>
 
     </div>
@@ -73,3 +93,4 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.6;
   }
 </style>
+
