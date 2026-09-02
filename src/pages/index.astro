@@ -37,7 +37,7 @@ const latestNews = allNews
         </div>
         <div class="news-list" style="display: flex; flex-direction: column; gap: 16px;">
           {latestNews.map((post) => (
-            <a href={/news/} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
+            <a href={`/news/${post.id}`} class="news-item" style="display: block; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; text-decoration: none; border: 1px solid var(--glass-border); transition: border-color 0.2s;">
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
                 {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
               </div>
@@ -56,3 +56,4 @@ const latestNews = allNews
     border-color: var(--accent-cyan) !important;
   }
 </style>
+
