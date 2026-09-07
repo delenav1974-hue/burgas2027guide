@@ -1,4 +1,4 @@
-// Centralised site + event constants used for SEO metadata and JSON-LD.
+﻿// Centralised site + event constants used for SEO metadata and JSON-LD.
 
 export const SITE = {
   url: 'https://burgas2027guide.com',
@@ -8,7 +8,7 @@ export const SITE = {
     'Independent fan travel portal for the Eurovision Song Contest 2027 in Burgas, Bulgaria.',
   logo: '/favicon.svg',
   defaultImage: '/images/hero-bg.jpg',
-  telegram: 'https://t.me/burgas2027guide',
+  telegram: 'https://t.me/byrgas2027guide',
   locale: 'en',
 } as const;
 
@@ -63,3 +63,5 @@ export const eventSchema = {
   location: place,
   url: `${SITE.url}/`,
 };
+
+

@@ -1,4 +1,4 @@
----
+﻿---
 import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/utils';
 import { SITE } from '../config/site';
 
@@ -36,7 +36,7 @@ const redirectTo = new URL(localizedPath('', locale), SITE.url).href;
       
       <div class="telegram-banner">
         <p>{t('hero.telegramPitch')}</p>
-        <a href="https://t.me/burgas2027guide" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
+        <a href="https://t.me/byrgas2027guide" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
           <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
           {t('hero.telegramCta')}
         </a>
@@ -175,3 +175,5 @@ const redirectTo = new URL(localizedPath('', locale), SITE.url).href;
     }
   }
 </style>
+
+
