@@ -1,6 +1,6 @@
 ---
 title: "Discover Burgas: Top Things to Do in the Eurovision 2027 Host City"
-pubDate: 2026-09-08
+date: 2026-09-08
 description: "From the beautiful Sea Garden to the ancient ruins of Nessebar, explore the best tours, sights, and activities in Burgas during the Eurovision 2027 Song Contest."
 author: "Burgas Guide Team"
 image: "/images/burgas-sea-garden.jpg"
