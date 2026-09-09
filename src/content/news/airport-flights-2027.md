@@ -12,7 +12,7 @@ Getting to Eurovision 2027 just got a whole lot easier. Following the announceme
 ## New Routes and Massive Capacity
 Fraport Twin Star, the operator of both Burgas (BOJ) and Varna (VAR) airports, has confirmed that the existing infrastructure can easily handle up to **50,000 passengers per day**, meaning no structural expansions are needed. Instead, the focus is entirely on bringing more planes to the tarmac.
 
-According to recent aviation reports and [TravelRadar](https://travelradar.bg/poveche-poleti-varna-burgas-2027/), Several major expansions are already locked in for the Spring/Summer 2027 season:
+According to recent aviation reports and [TravelRadar](https://travelradar.bg/poveche-poleti-varna-burgas-2027/), several major expansions are already locked in for the Spring/Summer 2027 season:
 
 *   **Condor:** The German leisure airline is adding approximately **15,500 extra seats** to Burgas, with direct flights from Frankfurt, Nuremberg, and Leipzig. 
 *   **Corendon Airlines:** Has confirmed new connections bridging Cologne, Nuremberg, and Stuttgart directly to Burgas and Varna.
