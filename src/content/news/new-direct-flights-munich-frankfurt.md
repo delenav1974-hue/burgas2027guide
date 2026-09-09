@@ -1,6 +1,6 @@
 ---
 title: "New Direct Flights from Munich and Frankfurt to Burgas Announced for Eurovision 2027"
-pubDate: 2026-09-08
+date: 2026-09-08
 description: "Major airlines announce expanded direct flight schedules connecting German hubs Munich and Frankfurt to Burgas ahead of Eurovision 2027."
 author: "Burgas Guide Team"
 image: "/images/news-flights.jpg"
