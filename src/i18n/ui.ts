@@ -50,7 +50,6 @@ export const MACHINE_ONLY_LANGUAGES = ['tr', 'fr', 'it', 'es', 'pl', 'cs', 'nl']
 export const ui = {
   en: {
     'nav.packages': 'Packages',
-    'nav.packages': 'Pakete',
     'nav.news': 'News',
     'nav.stay': 'Stay & Zones',
     'nav.transport': 'Transport',
@@ -215,7 +214,6 @@ export const ui = {
     'map.min': 'мин',
   },
   de: {
-    'nav.packages': 'Packages',
     'nav.packages': 'Pakete',
     'nav.news': 'News',
     'nav.stay': 'Unterkunft',
