@@ -175,8 +175,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
       })();
     </script>
 
-      <script is:inline src="https://www.anrdoezrs.net/am/101863800/include/allCj/impressions/page/am.js"></script>
-      <!-- Structured data -->
+            <!-- Structured data -->
     {allSchemas.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
