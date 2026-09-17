@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<Layout title="B2B Travel Agents & DMC Services | Eurovision 2027 Burgas" description="Partner with Burgas 2027 Guide for reliable local ground handling, DMC services, premium accommodation sourcing, and VIP transfers for Eurovision."
+  breadcrumb="B2B Partners"
+>
+  <div class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 900px;">
+    <h1>Partner with Us: B2B Services for Travel Agencies</h1>
+    <p class="subtitle" style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+      Elevate your clients' Eurovision 2027 experience with a trusted local partner on the ground.
+    </p>
+    
+    <div class="glass-panel mt-4">
+      <p>
+        As Eurovision 2027 brings millions of fans to Burgas, Bulgaria (May 11-15), international travel agencies face a significant challenge: finding reliable local suppliers, securing premium accommodation, and organizing seamless logistics in a city that is rapidly booking out.
+      </p>
+      <p>
+        That’s where we come in. <strong>Burgas 2027 Guide</strong> is an independent team of local experts providing boutique Destination Management (DMC) and Concierge services. We act as your reliable "boots on the ground," ensuring your clients receive VIP treatment while you maintain healthy margins.
+      </p>
+    </div>
+
+    <div class="glass-panel mt-4">
+      <h2 style="color: var(--accent-magenta);">Why Partner With Us?</h2>
+      
+      <div style="display: grid; gap: 24px; margin-top: 24px;">
+        <div>
+          <h3>1. Local Expertise & Independent Verification</h3>
+          <p>We live and breathe the Bulgarian Black Sea coast. Unlike global aggregators, we personally verify every apartment, hotel, and transport provider we recommend. We know the fastest routes to Arena Burgas and the hidden gems tourists miss.</p>
+        </div>
+        <div>
+          <h3>2. Dedicated B2B Support</h3>
+          <p>When you partner with us, you get a dedicated local manager available 24/7 during Eurovision week to handle any last-minute requests or emergencies your clients might face.</p>
+        </div>
+        <div>
+          <h3>3. Favorable B2B Net Rates</h3>
+          <p>Increase your Eurovision package margins. We offer transparent, competitive net rates (or commission models) for our B2B partners across all our services.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-panel mt-4">
+      <h2 style="color: var(--accent-cyan);">Our B2B Services</h2>
+      
+      <div style="display: grid; gap: 24px; margin-top: 24px;">
+        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+          <h3>🏨 Premium Accommodation Sourcing</h3>
+          <p>Standard booking platforms are already exhausted. We utilize our local network to secure allocations in verified premium apartments, luxury villas, and boutique hotels in the most desirable districts (Sea Garden, Lazur, and the Historical Center).</p>
+        </div>
+        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+          <h3>🚘 VIP Logistics & Transfers</h3>
+          <p>Seamless travel from touchdown to the arena:</p>
+          <ul>
+            <li>Meet & Greet services at major regional airports (Sofia, Istanbul, Burgas, Varna).</li>
+            <li>Luxury private transfers and group shuttles.</li>
+            <li>Dedicated drivers for delegations or VIP clients.</li>
+          </ul>
+        </div>
+        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+          <h3>🥂 Bespoke Local Experiences & Concierge</h3>
+          <p>Make your packages stand out with exclusive local add-ons:</p>
+          <ul>
+            <li>Guaranteed reservations at Burgas's top-tier seafood and fine-dining restaurants.</li>
+            <li>Private guided tours to the UNESCO World Heritage town of Nessebar.</li>
+            <li>Wine tasting experiences at exclusive Bulgarian coastal vineyards.</li>
+            <li>Yacht charters in the Bay of Burgas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-panel mt-4" style="background: rgba(255, 255, 255, 0.05); text-align: center; padding: 40px 20px;">
+      <h2>Let's Build the Perfect Eurovision Package</h2>
+      <p style="margin-bottom: 30px;">Don't leave your clients' experience to chance. Partner with the local experts who know Burgas best.</p>
+      
+      <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+        <ContactForm 
+          id="b2b-contact" 
+          title="Request B2B Rates & Allocations" 
+          fields={[
+            { name: "agency_name", label: "Travel Agency Name", type: "text", required: true },
+            { name: "name", label: "Your Name", type: "text", required: true },
+            { name: "email", label: "Work Email", type: "email", required: true },
+            { name: "clients", label: "Expected Number of Clients", type: "text", required: true },
+            { name: "message", label: "How can we help?", type: "textarea", required: true }
+          ]}
+          submitText="Send Request"
+        />
+      </div>
+      
+      <p style="margin-top: 20px;">
+        Or contact us directly:<br/>
+        📧 <strong>b2b@burgas2027guide.com</strong><br/>
+      </p>
+    </div>
+
+  </div>
+</Layout>
