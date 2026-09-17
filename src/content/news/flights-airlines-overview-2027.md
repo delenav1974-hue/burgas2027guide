@@ -53,3 +53,21 @@ Either tool is worth checking against the direct options above before you commit
 <a href="https://www.jdoqocy.com/click-101863800-15347259" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none; margin: 4px;">Search Flights on eSky</a>
 <p style="font-size: 0.8rem; color: #888; margin-top: 8px;">*Disclosure: We may earn a commission if you book through these links, at no extra cost to you.*</p>
 </div>
+
+## 5. Another Route Option: Air Serbia via Belgrade
+If you are travelling from Southeastern Europe or connecting through the Balkans, it is worth checking **Air Serbia**, the national carrier of Serbia, as an alternative to the Warsaw route above. Air Serbia operates out of Belgrade Nikola Tesla Airport (BEG), a fast-growing regional hub with connections across Europe, the Middle East, and North America, and offers convenient onward links toward Bulgaria and the Black Sea coast.
+
+<div style="margin-top: 32px; text-align: center;">
+<a href="https://www.dpbolvw.net/click-101863800-13957405" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none;">Check Flights on Air Serbia</a>
+<p style="font-size: 0.8rem; color: #888; margin-top: 8px;">*Disclosure: We may earn a commission if you book through this link, at no extra cost to you.*</p>
+</div>
+
+## 6. What If Your Flight Is Delayed or Cancelled?
+With so many connections, seasonal schedules, and a single Eurovision week driving huge demand, flight disruptions are worth planning for. Under EU and UK air passenger rights rules, you may be entitled to compensation of up to €600 if your flight to or from Burgas, Sofia, or Varna is delayed by several hours, cancelled, or overbooked, even on a connecting itinerary through Warsaw or Belgrade.
+
+**AirHelp** specializes in handling these claims on your behalf: it checks your eligibility for free and deals directly with the airline, so you are not stuck chasing compensation yourself during a busy travel week.
+
+<div style="margin-top: 32px; text-align: center;">
+<a href="https://www.kqzyfj.com/click-101863800-13668835" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none;">Check If You Are Owed Compensation</a>
+<p style="font-size: 0.8rem; color: #888; margin-top: 8px;">*Disclosure: We may earn a commission if you use this link, at no extra cost to you.*</p>
+</div>
