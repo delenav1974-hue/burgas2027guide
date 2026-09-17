@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroCapture from '../components/HeroCapture.astro';
+---
+<Layout title="Event Calendar & Schedule | Eurovision 2027 Burgas" description="Complete schedule of events for the Eurovision Song Contest 2027 in Burgas. Turquoise carpet, semi-finals, grand final, and EuroVillage opening dates."
+  breadcrumb="Calendar"
+>
+  <div class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 900px;">
+    <h1>Eurovision 2027 Event Calendar</h1>
+    <p class="subtitle">Plan your ultimate Eurovision week in Burgas. Here is the official schedule of the shows and major accompanying events.</p>
+    
+    <div class="glass-panel mt-4">
+      <h2 style="color: var(--accent-magenta);">Official Show Dates</h2>
+      <p>All main shows will take place at the state-of-the-art <strong>Arena Burgas</strong>. Please note that exact broadcast times will be confirmed closer to the event.</p>
+      
+      <div class="schedule-grid" style="display: grid; gap: 20px; margin-top: 20px;">
+        <div class="schedule-item" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-cyan);">
+          <h3>Tuesday, May 11, 2027</h3>
+          <p><strong>Semi-Final 1</strong> (Live TV Broadcast)</p>
+          <p style="font-size: 0.9em; opacity: 0.8;"><em>Note: The Jury Show for Semi-Final 1 takes place on the evening of May 10, and the Family Show takes place on the afternoon of May 11.</em></p>
+        </div>
+        
+        <div class="schedule-item" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-cyan);">
+          <h3>Thursday, May 13, 2027</h3>
+          <p><strong>Semi-Final 2</strong> (Live TV Broadcast)</p>
+          <p style="font-size: 0.9em; opacity: 0.8;"><em>Note: The Jury Show for Semi-Final 2 takes place on the evening of May 12, and the Family Show takes place on the afternoon of May 13.</em></p>
+        </div>
+        
+        <div class="schedule-item" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-magenta);">
+          <h3>Saturday, May 15, 2027</h3>
+          <p><strong>Grand Final</strong> (Live TV Broadcast)</p>
+          <p style="font-size: 0.9em; opacity: 0.8;"><em>Note: The Jury Show for the Grand Final takes place on the evening of May 14, and the Family Show takes place on the afternoon of May 15.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-panel mt-4">
+      <h2 style="color: var(--accent-cyan);">Fan Events & EuroVillage</h2>
+      
+      <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 16px; margin-top: 20px;">
+        <li style="display: flex; gap: 16px; align-items: flex-start;">
+          <span style="font-size: 24px;">📸</span>
+          <div>
+            <strong>Sunday, May 9, 2027: The Turquoise Carpet (Opening Ceremony)</strong>
+            <p>The official kick-off to Eurovision week! Watch all the participating artists walk the spectacular Turquoise Carpet, interact with the press, and officially open the contest. Location TBA (expected near the Sea Casino or Burgas Port).</p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px; align-items: flex-start;">
+          <span style="font-size: 24px;">🎪</span>
+          <div>
+            <strong>May 5 - 15, 2027: EuroVillage</strong>
+            <p>The official fan zone located in the beautiful Burgas Sea Garden. It will feature live performances, sponsor activations, food stalls, and massive screens broadcasting the live shows. Free entry for all fans!</p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 16px; align-items: flex-start;">
+          <span style="font-size: 24px;">🪩</span>
+          <div>
+            <strong>May 9 - 15, 2027: EuroClub</strong>
+            <p>The exclusive official after-party venue for delegations, press, and OGAE fan club members. Expect surprise performances from Eurovision legends every night until the early hours.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <HeroCapture 
+        title="Don't miss a beat!" 
+        subtitle="Subscribe to our Telegram channel for real-time updates on ticket sales, secret parties, and schedule changes."
+        buttonText="Join Official Telegram"
+        buttonLink="https://t.me/byrgas2027guide"
+      />
+    </div>
+  </div>
+</Layout>
