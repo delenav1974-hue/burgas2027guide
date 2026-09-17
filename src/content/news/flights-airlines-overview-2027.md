@@ -39,3 +39,17 @@ Because LOT is a full-service legacy carrier (Star Alliance), you get a much mor
   <a href="https://www.dpbolvw.net/click-101863800-16943092" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none;">Search Flights on LOT Polish Airlines</a>
   <p style="font-size: 0.8rem; color: #888; margin-top: 8px;">*Disclosure: We may earn a commission if you book through this link, at no extra cost to you.*</p>
 </div>
+
+## 4. Compare Prices Before You Book: Flight Search Engines
+Airline websites rarely show you the full picture. Before you lock in a fare with Wizz Air, Ryanair, Bulgaria Air, or LOT, it is worth running your dates through a flight search engine that compares all of them side by side — especially as fares for Eurovision week begin to climb closer to May 2027.
+
+*   **Kiwi.com** is particularly useful for reaching Burgas: its "virtual interlining" technology can combine two separate tickets — for example, a budget flight into Sofia or Varna with a connecting bus or short hop — even when the airlines involved have no official partnership with each other. That often uncovers routes and prices you will not find by searching an airline's own website directly.
+*   **eSky** compares low-cost and full-service carriers in a single search and regularly bundles flights with hotels or a rental car, which can work out cheaper than booking each part separately.
+
+Either tool is worth checking against the direct options above before you commit to a route.
+
+<div style="margin-top: 32px; text-align: center;">
+<a href="https://www.anrdoezrs.net/click-101863800-12624156" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none; margin: 4px;">Compare Flights on Kiwi.com</a>
+<a href="https://www.jdoqocy.com/click-101863800-15347259" class="btn btn-primary" style="display: inline-block; padding: 12px 24px; font-size: 1.1rem; text-decoration: none; margin: 4px;">Search Flights on eSky</a>
+<p style="font-size: 0.8rem; color: #888; margin-top: 8px;">*Disclosure: We may earn a commission if you book through these links, at no extra cost to you.*</p>
+</div>
