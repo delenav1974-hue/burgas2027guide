@@ -1,29 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContactForm from '../components/ContactForm.astro';
 ---
 <Layout title="B2B Travel Agents & DMC Services | Eurovision 2027 Burgas" description="Partner with Burgas 2027 Guide for reliable local ground handling, DMC services, premium accommodation sourcing, and VIP transfers for Eurovision."
   breadcrumb="B2B Partners"
 >
-  <div class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 900px;">
+  <div class="container page-content">
     <h1>Partner with Us: B2B Services for Travel Agencies</h1>
-    <p class="subtitle" style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+    <p class="subtitle">
       Elevate your clients' Eurovision 2027 experience with a trusted local partner on the ground.
     </p>
-    
+
     <div class="glass-panel mt-4">
       <p>
         As Eurovision 2027 brings millions of fans to Burgas, Bulgaria (May 11-15), international travel agencies face a significant challenge: finding reliable local suppliers, securing premium accommodation, and organizing seamless logistics in a city that is rapidly booking out.
       </p>
       <p>
-        That’s where we come in. <strong>Burgas 2027 Guide</strong> is an independent team of local experts providing boutique Destination Management (DMC) and Concierge services. We act as your reliable "boots on the ground," ensuring your clients receive VIP treatment while you maintain healthy margins.
+        That's where we come in. <strong>Burgas 2027 Guide</strong> is an independent team of local experts providing boutique Destination Management (DMC) and Concierge services. We act as your reliable "boots on the ground," ensuring your clients receive VIP treatment while you maintain healthy margins.
       </p>
     </div>
 
     <div class="glass-panel mt-4">
       <h2 style="color: var(--accent-magenta);">Why Partner With Us?</h2>
-      
-      <div style="display: grid; gap: 24px; margin-top: 24px;">
+
+      <div class="why-grid">
         <div>
           <h3>1. Local Expertise & Independent Verification</h3>
           <p>We live and breathe the Bulgarian Black Sea coast. Unlike global aggregators, we personally verify every apartment, hotel, and transport provider we recommend. We know the fastest routes to Arena Burgas and the hidden gems tourists miss.</p>
@@ -41,13 +40,13 @@ import ContactForm from '../components/ContactForm.astro';
 
     <div class="glass-panel mt-4">
       <h2 style="color: var(--accent-cyan);">Our B2B Services</h2>
-      
-      <div style="display: grid; gap: 24px; margin-top: 24px;">
-        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+
+      <div class="services-grid">
+        <div class="service-item">
           <h3>🏨 Premium Accommodation Sourcing</h3>
           <p>Standard booking platforms are already exhausted. We utilize our local network to secure allocations in verified premium apartments, luxury villas, and boutique hotels in the most desirable districts (Sea Garden, Lazur, and the Historical Center).</p>
         </div>
-        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+        <div class="service-item">
           <h3>🚘 VIP Logistics & Transfers</h3>
           <p>Seamless travel from touchdown to the arena:</p>
           <ul>
@@ -56,7 +55,7 @@ import ContactForm from '../components/ContactForm.astro';
             <li>Dedicated drivers for delegations or VIP clients.</li>
           </ul>
         </div>
-        <div style="padding-left: 16px; border-left: 3px solid var(--accent-cyan);">
+        <div class="service-item">
           <h3>🥂 Bespoke Local Experiences & Concierge</h3>
           <p>Make your packages stand out with exclusive local add-ons:</p>
           <ul>
@@ -69,30 +68,119 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </div>
 
-    <div class="glass-panel mt-4" style="background: rgba(255, 255, 255, 0.05); text-align: center; padding: 40px 20px;">
-      <h2>Let's Build the Perfect Eurovision Package</h2>
-      <p style="margin-bottom: 30px;">Don't leave your clients' experience to chance. Partner with the local experts who know Burgas best.</p>
-      
-      <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-        <ContactForm 
-          id="b2b-contact" 
-          title="Request B2B Rates & Allocations" 
-          fields={[
-            { name: "agency_name", label: "Travel Agency Name", type: "text", required: true },
-            { name: "name", label: "Your Name", type: "text", required: true },
-            { name: "email", label: "Work Email", type: "email", required: true },
-            { name: "clients", label: "Expected Number of Clients", type: "text", required: true },
-            { name: "message", label: "How can we help?", type: "textarea", required: true }
-          ]}
-          submitText="Send Request"
-        />
-      </div>
-      
-      <p style="margin-top: 20px;">
-        Or contact us directly:<br/>
-        📧 <strong>b2b@burgas2027guide.com</strong><br/>
+    <div class="glass-panel mt-4 cta-panel" style="border-color: var(--accent-magenta);">
+      <h2 style="color: var(--accent-magenta);">Let's Build the Perfect Eurovision Package</h2>
+      <p>Don't leave your clients' experience to chance. Partner with the local experts who know Burgas best.</p>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="b2b-form">
+        <input type="hidden" name="access_key" value="03b548cb-5509-4e30-91a0-785800f9f395" />
+        <input type="hidden" name="subject" value="New B2B Travel Agency Partnership Request" />
+        <input type="hidden" name="redirect" value="https://burgas2027guide.com/b2b/" />
+
+        <div class="form-group">
+          <input type="text" name="agency_name" required placeholder="Travel Agency Name" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="email" name="email" required placeholder="Work Email" />
+          </div>
+          <div class="form-group">
+            <input type="text" name="clients" required placeholder="Expected Number of Clients" />
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Request</button>
+      </form>
+
+      <p class="contact-line">
+        Or contact us directly:<br />
+        📧 <strong>b2b@burgas2027guide.com</strong>
       </p>
     </div>
 
   </div>
 </Layout>
+
+<style>
+  .page-content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    max-width: 900px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .mt-4 {
+    margin-top: 32px;
+  }
+
+  .why-grid,
+  .services-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .service-item {
+    padding-left: 16px;
+    border-left: 3px solid var(--accent-cyan);
+  }
+
+  .cta-panel {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .b2b-form {
+    max-width: 500px;
+    margin: 24px auto 0;
+    text-align: left;
+  }
+
+  .b2b-form .form-group {
+    margin-bottom: 16px;
+  }
+
+  .b2b-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .b2b-form input,
+  .b2b-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    color: var(--text-main);
+    font-family: inherit;
+  }
+
+  .b2b-form input:focus,
+  .b2b-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+  }
+
+  .contact-line {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .b2b-form .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
