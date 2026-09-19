@@ -120,6 +120,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="impact-site-verification" value="61741614-476c-47de-b5f1-ec3a87f95e18">
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
@@ -211,7 +212,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         </nav>
         <div class="lang-switch" aria-label={t('lang.label')}>
           {LOCALES.map((l) => (
-            <a
+            
               href={switchTarget(Astro.url.pathname, l)}
               class={l === locale ? 'lang-active' : ''}
               hreflang={LOCALE_TAGS[l]}
