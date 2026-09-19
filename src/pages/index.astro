@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import HeroCapture from '../components/HeroCapture.astro';
 import CountdownBanner from '../components/CountdownBanner.astro';
@@ -29,6 +29,12 @@ const latestNews = allNews
 
     <TripPlanner />
 
+    <section class="glass-panel book-cta" style="margin: 40px 0; padding: 32px; text-align: center;">
+      <h2 style="color: var(--accent-cyan); margin-bottom: 12px;">Ready to Lock In Your Trip?</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 20px;">Verified stays, flights, tours, and travel protection — everything you need to book, in one place.</p>
+      <a href="/book" class="btn btn-primary">Book Your Eurovision Trip</a>
+    </section>
+
     {latestNews.length > 0 && (
       <section class="latest-news-section glass-panel" style="margin: 64px 0; padding: 32px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
@@ -56,4 +62,3 @@ const latestNews = allNews
     border-color: var(--accent-cyan) !important;
   }
 </style>
-
