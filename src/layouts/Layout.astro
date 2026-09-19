@@ -212,7 +212,7 @@ const allSchemas = [siteSchema, ...(breadcrumbSchema ? [breadcrumbSchema] : []),
         </nav>
         <div class="lang-switch" aria-label={t('lang.label')}>
           {LOCALES.map((l) => (
-            
+            <a
               href={switchTarget(Astro.url.pathname, l)}
               class={l === locale ? 'lang-active' : ''}
               hreflang={LOCALE_TAGS[l]}
