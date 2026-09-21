@@ -5,7 +5,7 @@ import AffiliateButton from '../../components/AffiliateButton.astro';
 import { SITE } from '../../config/site';
 
 export async function getStaticPaths() {
-  const newsEntries = await getCollection('news');
+    const newsEntries = await getCollection('news', ({ id }) => !id.startsWith('ru/'));
   return newsEntries.map(entry => ({
     params: { slug: entry.id },
     props: { entry },
