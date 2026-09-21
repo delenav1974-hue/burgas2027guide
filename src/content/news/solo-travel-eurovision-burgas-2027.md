@@ -1,6 +1,6 @@
 ---
 title: "First Time at Eurovision Alone? A Local's Honest Guide to Solo Travel in Burgas"
-pubDate: 2026-09-20
+date: 2026-09-20
 description: "Is it safe? Where should I eat? How do I get around? Everything a solo traveler needs to know about attending Eurovision 2027 in Burgas, Bulgaria."
 author: "Burgas 2027 Guide"
 image: "/images/hero-bg.jpg"
