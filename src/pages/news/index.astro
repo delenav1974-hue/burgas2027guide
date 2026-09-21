@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const allNews = await getCollection('news');
+const allNews = await getCollection('news', ({ id }) => !id.startsWith('ru/'));
 // Sort by date descending
 allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
